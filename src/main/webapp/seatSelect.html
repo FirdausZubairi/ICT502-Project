@@ -7,7 +7,7 @@
   <title>Booking</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="seatSelect.CSS">
+  <link rel="stylesheet" href="css/seatSelect.CSS">
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -23,17 +23,17 @@
         <div class="dropdown">
           <button class="btn dropdown-toggle nav-box" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Farid</button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="index.html">Logout</a></li>
+            <li><a class="dropdown-item" href="login.html">Logout</a></li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
 
-  <!--Sidebar menu-->
+ <!--Sidebar menu-->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-3 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
+      <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
         <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white" style="padding: 15px 0">
           <a class="nav-link active" aria-current="page" href="dashboard.html" style="margin-top: 70px">
             <span class="fas fa-home" style="margin-right: 20px"></span>
@@ -47,14 +47,13 @@
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
           <a class="nav-link mb-2" href="/view">
             <img src="/img-icon/box-open.png" style="margin-right: 20px" />
-            <span>Booking</span>
+            <span>Ticket</span>
           </a>
         </div>
       </div>
     </div>
   </div>
   <!-- End sidebar -->
-
   <section class="col-9 offset-3 main-section" style="padding-top: 70px">
     <div class="container">
       <div class="row">
@@ -173,5 +172,7 @@
   </section>
 
   <script src="seatSelect.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
