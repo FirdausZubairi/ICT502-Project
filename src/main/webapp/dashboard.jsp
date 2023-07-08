@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+<<<<<<< HEAD:src/main/webapp/dashboard.html
  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link rel="stylesheet" href="css/dasboard.css">
 
+=======
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+  	<link rel="stylesheet" href="dasboard.css">
+>>>>>>> b0d823c2c1091302cc8d6521fb650ae51d794dd1:src/main/webapp/dashboard.jsp
 </head>
 <body>
     <!--Nav bar-->
@@ -30,7 +38,7 @@
     </div>
   </nav>
 
-  <!--Side bar menu-->
+   <!--Sidebar menu-->
   <div class="container-fluid">
     <div class="row">
       <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
@@ -53,15 +61,15 @@
       </div>
     </div>
   </div>
-  <!-- End side bar -->
+  <!-- End sidebar -->
 
     <section class="col-10 offset-2 main-section" style="padding-top: 70px">
       <h3>Welcome</h3>
       <hr style="height:2px; border-width:0; color:#808080; background-color:#808080">
-      <img alt="Dashboard" src="/ICT502-Project/image/Dashboard.jpg" style="width: 100%; height: 50%;">
-      <p style="text-align: center; margin-bottom: 15%;">Discover a seam less way to travel with our advanced bus booking system. Experience convenience, reliability, and efficiency as you effortlessly reserve your bus tickets, manage your bookings, and stay updated on bus schedules. With our user-friendly interface and comprehensive features, embark on a hassle-free journey and explore the world one bus ride at a time.</p>
+      <img alt="Dashboard" src="/ICT502-Project/image/Dashboard.jpg" style="width: 60%; height: 60%;" class=" container d-flex justify-content-center">
+      <p style="text-align: center;">Discover a seamless way to travel with our advanced bus booking system. Experience convenience, reliability, and efficiency as you effortlessly reserve your bus tickets, manage your bookings, and stay updated on bus schedules. With our user-friendly interface and comprehensive features, embark on a hassle-free journey and explore the world one bus ride at a time.</p>
       <div class="text-center">
-        <a href="booking.html" class="btn btn-primary btn-lg">Booking Now</a>
+         <a href="booking.html" class="btn btn-primary btn-lg ">Booking Now</a>
       </div>
     </section>
     

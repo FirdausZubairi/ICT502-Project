@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +79,7 @@
           class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
           <!-- Copyright -->
           <div class="text-white mb-5 mb-md-0">
-            Copyright Â© 2020. All rights reserved.
+            Copyright © 2020. All rights reserved.
           </div>
           <!-- Copyright -->
       </section>

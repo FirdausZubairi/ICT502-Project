@@ -57,7 +57,7 @@
                         </div>
 
                         <div>
-                            <p>Already have an account? <a href="login.html">Log in</a>.</p>
+                            <p>Already have an account? <a href="login.jsp">Log in</a>.</p>
                         </div>
                     </form>
                 </div>
