@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +31,7 @@
     </div>
   </nav>
 
-  <!--Sidebar menu-->
+   <!--Sidebar menu-->
   <div class="container-fluid">
     <div class="row">
       <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
@@ -57,10 +59,10 @@
     <section class="col-10 offset-2 main-section" style="padding-top: 70px">
       <h3>Welcome</h3>
       <hr style="height:2px; border-width:0; color:#808080; background-color:#808080">
-      <img alt="Dashboard" src="/ICT502-Project/image/Dashboard.jpg" style="width: 100%; height: 50%;">
-      <p style="text-align: center; margin-bottom: 15%;">Discover a seamless way to travel with our advanced bus booking system. Experience convenience, reliability, and efficiency as you effortlessly reserve your bus tickets, manage your bookings, and stay updated on bus schedules. With our user-friendly interface and comprehensive features, embark on a hassle-free journey and explore the world one bus ride at a time.</p>
+      <img alt="Dashboard" src="/ICT502-Project/image/Dashboard.jpg" style="width: 60%; height: 60%;" class=" container d-flex justify-content-center">
+      <p style="text-align: center;">Discover a seamless way to travel with our advanced bus booking system. Experience convenience, reliability, and efficiency as you effortlessly reserve your bus tickets, manage your bookings, and stay updated on bus schedules. With our user-friendly interface and comprehensive features, embark on a hassle-free journey and explore the world one bus ride at a time.</p>
       <div class="text-center">
-        <a href="booking.html" class="btn btn-primary btn-lg">Booking Now</a>
+         <a href="booking.html" class="btn btn-primary btn-lg ">Booking Now</a>
       </div>
     </section>
     
