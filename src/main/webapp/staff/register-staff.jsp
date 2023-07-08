@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Staff</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/reg.css">
+    <link rel="stylesheet" href="reg.css">
 </head>
 
 <body style="height: 100%;">
@@ -56,9 +56,7 @@
                             <button type="submit">Register</button>
                         </div>
 
-                        <div>
-                            <p>Already have an account? <a href="login.jsp">Log in</a>.</p>
-                        </div>
+                      
                     </form>
                 </div>
             </div>
