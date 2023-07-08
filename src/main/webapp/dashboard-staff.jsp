@@ -1,40 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Create Bus Trip Schedule</title>
-   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+ 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link rel="stylesheet" href="css/dashboard-staff.css">
-  <style>
-    body {
-      padding-top: 50px;
-      background-color: #f2f2f2;
-    }
 
-    .form-container {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-    }
-
-    .form-container h2 {
-      text-align: center;
-    }
-
-    .form-container .form-group label {
-      font-weight: bold;
-    }
-
-    .form-container .btn {
-      margin-top: 20px;
-    }
-  </style>
 </head>
 <body>
-   <!--Navbar-->
+    <!--Navbar-->
 <nav class="navbar fixed-top navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between">
         <a class="navbar-brand" href="login.html">
@@ -85,56 +64,28 @@
     </div>
   </div>
   <!-- End side bar -->
-  
-  <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-  <div class="container">
-    <div class="form-container">
-      <h2>Create Bus Trip Schedule</h2>
-      <form>
-        <div class="form-group">
-          <label for="bus-number">Bus Number:</label>
-          <input type="text" class="form-control" id="bus-number" name="bus-number" required>
-        </div>
 
-        <div class="form-group">
-        <label for="destination">Departure Location :</label>
-        <select class="form-control" id="departure" name="departure" required>
-          <option value="">Select location</option>
-          <option value="Melaka Sentral">Melaka Sentral</option>
-          <option value="KL Sentral">KL Sentral</option>
-          <option value="Cheras Sentral">Cheras Sentral</option>
-          <option value="Terminal Bas Kota Bharu">Terminal Bas Kota Bharu</option>
-        </select>
-      </div>
-
-        <div class="form-group">
-        <label for="destination">Destination:</label>
-        <select class="form-control" id="destination" name="destination" required>
-          <option value="">Select destination</option>
-          <option value="Melaka Sentral">Melaka Sentral</option>
-          <option value="KL Sentral">KL Sentral</option>
-          <option value="Cheras Sentral">Cheras Sentral</option>
-          <option value="STerminal Bas Kota Bharu">Terminal Bas Kota Bharu</option>
-        </select>
-      </div>
-
-        <div class="form-group">
-          <label for="departure-time">Departure Time:</label>
-          <input type="time" class="form-control" id="departure-time" name="departure-time" required>
-        </div>
-
-        <div class="form-group">
-          <label for="arrival-time">Arrival Time:</label>
-          <input type="time" class="form-control" id="arrival-time" name="arrival-time" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Create Schedule</button>
-      </form>
+<section class="col-10 offset-2 main-section" style="padding-top: 70px">
+  <h3>Staff Dashboard</h3>
+  <hr style="height: 2px; border-width: 0; color: #808080; background-color: #808080">
+  <div style="display: flex; justify-content: space-between;">
+    <div class="hover-shadow">
+      <a href="busdetail-staff.jsp" style="flex: 1; text-align: center; display: block;">
+        <img alt="Dashboard Bus" src="/ICT502-Project/image/DashboardBus-staff.jpg" style="width: 60%;">
+        <p>View Bus</p>
+      </a>
+    </div>
+    <div class="hover-shadow">
+      <a href="accountdetails-staff.jsp" style="flex: 1; text-align: center; display: block;">
+        <img alt="Dashboard Account" src="/ICT502-Project/image/DashboardAccount-staff.jpg" style="width: 60%;">
+        <p>View Account</p> 
+      </a>
     </div>
   </div>
-  </section>
+</section>
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
-
