@@ -19,4 +19,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>staff</display-name>
+    <servlet-name>staff</servlet-name>
+    <servlet-class>bean.staff</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>staff</servlet-name>
+    <url-pattern>/staff</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>loginController</display-name>
+    <servlet-name>loginController</servlet-name>
+    <servlet-class>controller.loginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginController</servlet-name>
+    <url-pattern>/loginController</url-pattern>
+  </servlet-mapping>
 </web-app>
