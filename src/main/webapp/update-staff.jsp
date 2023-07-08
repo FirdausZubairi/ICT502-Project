@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Staff Update </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reg.css">
 </head>
 
@@ -33,26 +35,27 @@
                 <div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
                     <form>
                         <div class="container mt-3">
-                            <h1>Register</h1>
-                            <p>Kindly fill in this form to register.</p>
-                            <label for="username"><b>Username</b></label>
+                            <h1>Staff Update</h1>
+                            <p>Kindly fill in this form to update.</p>
+                            <label for="username"><b>User name</b></label>
                             <input type="text" placeholder="Enter Username" name="username" id="username" required />
                             
-                             <label for="name"><b>Name</b></label>
+                            <label for="name"><b>Name</b></label>
                             <input type="text" placeholder="Enter Full Name" name="name" id="name" required />
-
-                            <label for="phone"><b>Phone</b></label>
-                            <input type="text" placeholder="Enter Phone Number" name="phone" id="phone" required />
-
+                            
                             <label for="password"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="password" id="password" required />
 
-                            <button type="submit">Register</button>
+                            <label for="role"><b>Role</b></label>
+                            <select name="role" id="role" required>
+                            <option value="">Select Role</option>
+                            <option value="clerk">Clerk</option>
+                            <option value="driver">Driver</option>
+                            </select><br>
+
+                            <button type="submit">Update</button>
                         </div>
 
-                        <div>
-                            <p>Already have an account? <a href="login.html">Log in</a>.</p>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -61,11 +64,11 @@
 
     <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
         <div class="text-white mb-3 mb-md-0">
-            Copyright Â© 2020. All rights reserved.
+            Copyright © 2020. All rights reserved.
         </div>
     </div>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>
 
