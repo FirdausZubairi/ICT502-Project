@@ -17,7 +17,7 @@ import bean.booking;
 import bean.staff;
 
 /**
- * Servlet implementation class bookingControl
+ *Servlet  implementation class bookingControl
  */
 @WebServlet("/customer/bookingControl")
 public class bookingControl extends HttpServlet {

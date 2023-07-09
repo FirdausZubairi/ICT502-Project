@@ -139,12 +139,11 @@
   </div>
 </section>
 
-   <footer class="mt-auto">
-    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-        &copy; 2023. All rights reserved.
-    </div>
+<footer class="fixed-bottom">
+  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
+    &copy; 2023. All rights reserved.
+  </div>
 </footer>
-        
         
     
     

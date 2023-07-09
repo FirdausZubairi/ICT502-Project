@@ -65,14 +65,14 @@
 <!-- End sidebar -->
   
   <section class="col-9 offset-3 main-section" style="padding-top: 70px">
-    <div class="container">
+    <div class="container" >
       <div class="row">
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <div class="container-fluid bus">
-                <div class="select">
-                  <h1>Please select a seat</h1>
+        <div class="col-md-4" >
+          <div class="card" style="width: 18rem;" >
+            <div class="card-body" >
+             <div class="container-fluid bus" style="height: 500px;">
+                <div class="select" style="height: 150px;" >
+                  <h2>Please select a seat</h2>
                 </div>
                 <div class="steering">
                   <img src="image/STEERING.png">
@@ -186,15 +186,11 @@
       </div>
     </div>
   </section>
- 
   
-  
-  		
-  
-     <footer class="mt-auto">
-    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-        &copy; 2023. All rights reserved.
-    </div>
+<footer class="fixed-bottom">
+  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
+    &copy; 2023. All rights reserved.
+  </div>
 </footer>
 
   <script src="seatSelect.js"></script>

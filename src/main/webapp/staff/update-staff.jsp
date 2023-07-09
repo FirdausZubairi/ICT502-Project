@@ -95,10 +95,10 @@
                                 <option disabled selected>Select Role</option>
                                 <option value="clerk">Clerk</option>
                                 <option value="driver">Driver</option>
-                            </select>
-                            <br><br>
+                            </select><br>
+
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary btn-block">Update</button>
                             </div>
                         </div>
                     </form>
@@ -107,10 +107,10 @@
         </div>
     </section>
 
-<footer class="mt-auto">
-    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-        &copy; 2023. All rights reserved.
-    </div>
+    <footer class="fixed-bottom">
+  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
+    &copy; 2023. All rights reserved.
+  </div>
 </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

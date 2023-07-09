@@ -97,9 +97,9 @@
                     <div class="form-group">
                         <label for="arrival-time">Arrival Time:</label>
                         <input type="time" class="form-control" id="arrival-time" name="arrival-time" required>
-                    </div><br>
+                    </div>
             <div class="text-center"> <!-- Added text-center class here -->
-              <button type="submit" class="btn btn-primary">Create Schedule</button>
+              <button type="submit" class="btn btn-primary btn-block">Create Schedule</button>
             </div>
                     
                     </div><br>
@@ -110,10 +110,10 @@
   
     </section>
 
-<footer class="mt-auto">
-    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-        &copy; 2023. All rights reserved.
-    </div>
+    <footer class="fixed-bottom">
+  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
+    &copy; 2023. All rights reserved.
+  </div>
 </footer>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

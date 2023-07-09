@@ -68,17 +68,6 @@
 <section class="col-10 offset-2 main-section" style="padding-top: 70px">
   <h3>Dashboard</h3>
   <hr style="height: 2px; border-width: 0; color: #808080; background-color: #808080">
-  <div class="row justify-content-end">
-    <div class="col-md-4 col-lg-3">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search by username">
-        <div class="input-group-append">
-          <button type="button" class="btn btn-sm btn-dark">Search</button>
-
-        </div>
-      </div>
-    </div>
-  </div><br>
   <div style="display: flex; justify-content: space-between;">
     <div class="hover-shadow">
       <a href="busdetail-staff.jsp" style="flex: 1; text-align: center; display: block;">
@@ -94,10 +83,10 @@
     </div>
   </div>
 </section>
-<footer class="mt-auto">
-    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-        &copy; 2023. All rights reserved.
-    </div>
+    <footer class="fixed-bottom">
+  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
+    &copy; 2023. All rights reserved.
+  </div>
 </footer>
 
 
