@@ -82,15 +82,15 @@
                   <li>
                     <ol class="seats">
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 1A" id="1A" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 1A" id="1A" data-price="100" />
                         <label for="1A">1A</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 1B" id="1B" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 1B" id="1B" data-price="100" />
                         <label for="1B">1B</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 1C" id="1C" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 1C" id="1C" data-price="100" />
                         <label for="1C">1C</label>
                       </li>
                     </ol>
@@ -98,15 +98,15 @@
                   <li>
                     <ol class="seats">
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 2A" id="2A" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 2A" id="2A" data-price="100" />
                         <label for="2A">2A</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 2B" id="2B" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 2B" id="2B" data-price="100" />
                         <label for="2B">2B</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 2C" id="2C" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 2C" id="2C" data-price="100" />
                         <label for="2C">2C</label>
                       </li>
                     </ol>
@@ -114,15 +114,15 @@
                   <li>
                     <ol class="seats">
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 3A" id="3A" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 3A" id="3A" data-price="100" />
                         <label for="3A">3A</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 3B" id="3B" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 3B" id="3B" data-price="100" />
                         <label for="3B">3B</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 3C" id="3C" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 3C" id="3C" data-price="100" />
                         <label for="3C">3C</label>
                       </li>
                     </ol>
@@ -130,15 +130,15 @@
                   <li>
                     <ol class="seats">
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 4A" id="4A" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 4A" id="4A" data-price="100" />
                         <label for="4A">4A</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 4B" id="4B" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 4B" id="4B" data-price="100" />
                         <label for="4B">4B</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 4C" id="4C" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 4C" id="4C" data-price="100" />
                         <label for="4C">4C</label>
                       </li>
                     </ol>
@@ -146,15 +146,15 @@
                   <li>
                     <ol class="seats">
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 5A" id="5A" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 5A" id="5A" data-price="100" />
                         <label for="5A">5A</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 5B" id="5B" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 5B" id="5B" data-price="100" />
                         <label for="5B">5B</label>
                       </li>
                       <li class="seat">
-                        <input type="checkbox" name="seatcheckbox" value="Seat 5C" id="5C" data-price="100" />
+                        <input type="checkbox" name="refNo" value="Seat 5C" id="5C" data-price="100" />
                         <label for="5C">5C</label>
                       </li>
                     </ol>
@@ -165,14 +165,22 @@
           </div>
         </div>
         <div class="col-md-5">   
-          <form action="#" method="post">
+          <form action="bookingControl" method="post">
             <h3 class="card-title">Booking Details</h3>
             <h6>Selected Seats :</h6>
             <ul id="selectedSeats"></ul>
-            <h6>Total price: <span id="totalPrice">0</span></h6>
+             <h6>payment method:</h6>
+           <select class="form-select container mt-3" id="sel1" name="paymentmethod">
+			  <option>Debit card</option>
+			  <option>Cash</option>
+			</select>
+           
+ 
+            <h6>Total price: <span id="totalPrice" name="totalprice">0</span></h6>
+            
             <div class="mt-3">
               <a href="booking.html"  class="btn btn-outline-success" role="button" aria-pressed="true">Back</a>
-              <a href="#"  class="btn btn-success" role="button" aria-pressed="true">Continue</a>
+              <a href="paymentmethod-customer.jsp" type="submit" class="btn btn-success" role="button" aria-pressed="true">Continue</a>
             </div>
           </form>
         </div>
@@ -180,6 +188,8 @@
       </div>
     </div>
   </section>
+  
+  
   
      <footer class="mt-auto">
     <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">

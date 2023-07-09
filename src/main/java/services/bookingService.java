@@ -1,25 +1,26 @@
 package services;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
+import bean.booking;
 import bean.staff;
 import helper.EncryptDecryptPass;
 
 public class bookingService {
-	private EncryptDecryptPass encryptDecryptPass;
+private EncryptDecryptPass encryptDecryptPass;
 	
-	public bookingService() {
-		encryptDecryptPass = new EncryptDecryptPass();
-	}
 	
-
 	private String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String jdbcUsername = "dbbt";
 	private String jdbcPassword = "system";
-	private String SELECT_STAFF_USERNAME = "SELECT * FROM staff WHERE username=?;";
+	
+	private String INSERT_BOOKING_SQL = "INSERT INTO book(ticketID, passID, RefNo, totalprice, paymentmethod) VALUES(?,?,?,?,?)";
+	private String SELECT_ALL_BOOKING = "SELECT * FROM book;";
 	
 	public Connection getConnection() {
 		Connection connection = null;
@@ -28,6 +29,7 @@ public class bookingService {
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -51,34 +53,34 @@ public class bookingService {
 			}
 		}
 	}
-	
-	public boolean loginStaff(staff staff) throws SQLException {
-		boolean status = false;
-		try (Connection connection = getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_STAFF_USERNAME)) {
-			preparedStatement.setString(1, staff.getUsername());
+	static Connection con = null;
+    static PreparedStatement ps = null;
+    static Statement s = null;
+    static ResultSet rs = null;
+    
+    
+  //CREATE 
+  	public boolean insertBook(booking Booking) throws SQLException {
+  		boolean status = false;
 
-			ResultSet rs = preparedStatement.executeQuery();
-			System.out.println("password : " + staff.getPassword());
-			while (rs.next()) {
-				String email = rs.getString("email");
-				String password = rs.getString("password");
-				System.out.println("password db: " + password);
-				System.out.println(encryptDecryptPass.CheckPassword(staff.getPassword(), password));
-				if (email.equals(staff.getUsername())
-						&& encryptDecryptPass.CheckPassword(staff.getPassword(), password)) {
-					status = true;
-				} else {
-					status = false;
-				}
-			}
+  		try (Connection connection = getConnection();
+  				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_BOOKING_SQL)) {
+  			preparedStatement.setInt(1, Booking.getTicketID());
+  			preparedStatement.setInt(2, Booking.getPassID());
+  			preparedStatement.setInt(3, Booking.getRefNo());
+  			preparedStatement.setDouble(4, Booking.getTotalprice());
+  			preparedStatement.setString(5, Booking.getPaymentmethod());
 
-		} catch (SQLException e) {
-			printSQLException(e);
-		}
+  			preparedStatement.executeUpdate();
 
-		return status;
-	}
+  			status = true;
+
+  		} catch (SQLException e) {
+  			printSQLException(e);
+  			status = false;
+  		}
+
+  		return status;
+  	}
+  	
 }
-
-

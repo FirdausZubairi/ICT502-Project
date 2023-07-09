@@ -59,4 +59,14 @@
     <servlet-name>ReadStaff</servlet-name>
     <url-pattern>/ReadStaff</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>bookingControl</display-name>
+    <servlet-name>bookingControl</servlet-name>
+    <servlet-class>controller.customer.bookingControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookingControl</servlet-name>
+    <url-pattern>/bookingControl</url-pattern>
+  </servlet-mapping>
 </web-app>
