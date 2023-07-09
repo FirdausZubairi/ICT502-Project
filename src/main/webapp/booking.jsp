@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,7 +107,7 @@
               </div>
               <div class="col-md-12 text-center">
                 <input class="btn btn-secondary btn-lg" type="reset" value="Reset">
-                <a href="#" class="btn btn-primary btn-lg active" type="submit" value="Submit" role="button" aria-pressed="true">Submit</a>
+                <a href="bookingdetail.jsp" class="btn btn-primary btn-lg active" type="submit" value="Submit" role="button" aria-pressed="true">Submit</a>
               </div>
               <br><br>
             </form>
@@ -114,26 +116,7 @@
     <!-- END OF SEARCH SECTION -->
     
 
-<!-- DISPLAY SECTION -->
-<section class="col-8 offset-3 main-section d-flex justify-content-center align-items-center">
-  <div class="container-fluid mt-5">
-    <table class="table table-striped mt-2">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Bus</th>
-          <th>Departure</th>
-          <th>Arrival</th>
-          <th>Fare</th>
-          <th>Seats Available</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="AvailableBusTable"></tbody>
-    </table>
-  </div>
-</div>
-</section>
+
         
         
     
@@ -141,7 +124,7 @@
     
 
 
-    <script src="booking.js"></script>
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

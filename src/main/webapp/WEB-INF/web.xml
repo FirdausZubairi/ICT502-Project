@@ -39,4 +39,14 @@
     <servlet-name>loginController</servlet-name>
     <url-pattern>/loginController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>bookingController</display-name>
+    <servlet-name>bookingController</servlet-name>
+    <servlet-class>controller.bookingController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookingController</servlet-name>
+    <url-pattern>/bookingController</url-pattern>
+  </servlet-mapping>
 </web-app>
