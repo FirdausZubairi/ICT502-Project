@@ -23,7 +23,8 @@ public class staffService {
 	private String jdbcPassword = "system";
 	
 	private String INSERT_STAFF_SQL = "INSERT INTO staff(username, password, name, role) VALUES(?,?,?,?)";
-	private String SELECT_ALL_STAFF = "SELECT * FROM staff;";
+	private String SELECT_ALL_STAFF = "SELECT * FROM staff";
+	private String SELECT_STAFF_ID = "SELECT * FROM staff WHERE staffID=?";
 
 	public staffService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -185,6 +186,37 @@ public class staffService {
 		} catch (SQLException e) {
 			printSQLException(e);
 		}
+		return Staff;
+	}
+	
+	public staff getOnePatient(int id) {
+		staff Staff = null;
+		
+		try (Connection connection = getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_STAFF_ID)) {
+			preparedStatement.setInt(1, id);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+
+				int staffID = rs.getInt("staffID");
+				String username = rs.getString("username");
+				String password = rs.getString("password");
+				String name = rs.getString("name");
+				String role = rs.getString("role");
+				int adminID = rs.getInt("adminID");
+				
+//				if(doctor_id == session_doc_id) {
+				System.out.println("Staff id : " + staffID);
+				
+				Staff = new staff(staffID, username, password, name, role, adminID);
+			}
+
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		
 		return Staff;
 	}
 }

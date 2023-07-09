@@ -61,6 +61,7 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+<<<<<<< HEAD
     <display-name>bookingControl</display-name>
     <servlet-name>bookingControl</servlet-name>
     <servlet-class>controller.customer.bookingControl</servlet-class>
@@ -68,5 +69,14 @@
   <servlet-mapping>
     <servlet-name>bookingControl</servlet-name>
     <url-pattern>/bookingControl</url-pattern>
+=======
+    <display-name>UpdateStaff</display-name>
+    <servlet-name>UpdateStaff</servlet-name>
+    <servlet-class>controller.staff.UpdateStaff</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateStaff</servlet-name>
+    <url-pattern>/UpdateStaff</url-pattern>
+>>>>>>> 8cd84c61c77342e68b699e38575d05385da91677
   </servlet-mapping>
 </web-app>
