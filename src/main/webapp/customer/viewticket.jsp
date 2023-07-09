@@ -6,14 +6,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
- 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <title>Booking</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="dasboard.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
+</head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
-    <!--Nav bar-->
- <!--Navbar-->
+    <!--Navbar-->
+   <!--Navbar-->
 <nav class="navbar fixed-top navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between">
             <a class="navbar-brand" href="login.html">
@@ -21,7 +23,7 @@
                 BTS
             </a>
         <span class="navbar-text">
-            Welcome
+            Tickets
         </span>
         <!--User account-->
         <div class="btn-container-user">
@@ -34,7 +36,6 @@
         </div>
     </div>
 </nav>
-
  <!--Sidebar menu-->
 <div class="container-fluid">
   <div class="row">
@@ -60,26 +61,33 @@
 </div>
 <!-- End sidebar -->
 
+    <!-- Display section -->
     <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-      <h3>Welcome</h3>
-      <hr style="height:2px; border-width:0; color:#808080; background-color:#808080">
-      <img alt="Dashboard" src="/ICT502-Project/image/Dashboard.jpg" style="width: 60%; height: 60%;" class=" container d-flex justify-content-center">
-      <p style="text-align: center;">Discover a seamless way to travel with our advanced bus booking system. Experience convenience, reliability, and efficiency as you effortlessly reserve your bus tickets, manage your bookings, and stay updated on bus schedules. With our user-friendly interface and comprehensive features, embark on a hassle-free journey and explore the world one bus ride at a time.</p>
-      <div class="text-center">
-         <a href="booking-customer.jsp" class="btn btn-primary btn-lg ">Booking Now</a>
+      <div class="container" style="text-align: center;">
+        <div class="container" style="border: 1px solid #ccc; padding: 10px; margin-top: 50px;">
+          <h2>Search Bus Ticket Details</h2>
+          <form>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div class="container" style="border: 1px solid #ccc; padding: 20px; margin-top: 50px;">
+          <h2>Bus Information</h2>
+          <div>
+            <p><strong>Bus Name:</strong> ABC Bus</p>
+            <p><strong>Plate No:</strong> XYZ123</p>
+            <p><strong>Destination:</strong> City B</p>
+            <p><strong>State:</strong> State X</p>
+            <p><strong>Type:</strong> Deluxe</p>
+            <p><strong>Date:</strong> 2023-07-10</p>
+            <p><strong>Price:</strong> $50</p>
+          </div>
+        </div>
       </div>
     </section>
-    
-       <footer class="mt-auto">
-    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-        &copy; 2023. All rights reserved.
-    </div>
-</footer>
 
-  
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
 </body>

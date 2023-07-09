@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.staff;
 import connection.ConnectionManager;
@@ -20,7 +22,8 @@ public class staffService {
 	private String jdbcUsername = "dbbt";
 	private String jdbcPassword = "system";
 	
-	private String INSERT_PATIENT_SQL = "INSERT INTO staff(username, password, name, role) VALUES(?,?,?,?)";
+	private String INSERT_STAFF_SQL = "INSERT INTO staff(username, password, name, role) VALUES(?,?,?,?)";
+	private String SELECT_ALL_STAFF = "SELECT * FROM staff;";
 
 	public staffService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -64,7 +67,7 @@ public class staffService {
     static ResultSet rs = null;
 
 	
-	//stf = new staff()
+	//Login Staff (Clerk)
 	
 	public staff loginClerk(staff staff) throws SQLException {
 		staff stf = null;
@@ -96,6 +99,7 @@ public class staffService {
 		return stf;
 	}
 	
+	//Login Staff (Driver)	
 	public staff loginDriver(staff staff) throws SQLException {
 		staff stf = null;
 		try {
@@ -125,12 +129,13 @@ public class staffService {
 
 		return stf;
 	}
-
+	
+	//CREATE STAFF
 	public boolean insertStaff(staff Staff) throws SQLException {
 		boolean status = false;
 
 		try (Connection connection = getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PATIENT_SQL)) {
+				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_STAFF_SQL)) {
 			preparedStatement.setString(1, Staff.getUsername());
 			preparedStatement.setString(2, Staff.getPassword());
 			preparedStatement.setString(3, Staff.getName());
@@ -148,4 +153,38 @@ public class staffService {
 		return status;
 	}
 	
+	//READ STAFF
+	public List<staff> selectAllStaff() {
+
+		// using try-with-resources to avoid closing resources (boiler plate code)
+		List<staff> Staff = new ArrayList<>();
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_STAFF);) {
+//            System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int staffID = rs.getInt("staffID");
+				String username = rs.getString("username");
+				String password = rs.getString("password");
+				String name = rs.getString("name");
+				String role = rs.getString("role");
+				int adminID = rs.getInt("adminID");
+				
+//				if(doctor_id == session_doc_id) {
+				
+				Staff.add(new staff(staffID, username, password, name, role, adminID));
+//				}
+				
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return Staff;
+	}
 }

@@ -1,13 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Details</title>
+    <title>Create Bus Trip Schedule</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="dashboard-staff.css">
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
@@ -63,42 +61,54 @@
     </div>
     <!-- End side bar -->
 
-   <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-        <div class="container">
-            <!-- Bus Details -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Bus Details</h5>
-
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label>Bus Name:</label>
-                                <p id="busName"></p>
-                            </div>
-                            <div class="form-group">
-                                <label>Plate Number:</label>
-                                <p id="noPlate"></p>
-                            </div>
-                            <div class="form-group">
-                                <label>Destination Name:</label>
-                                <p id="DestinationName"></p>
-                            </div>
-                            <div class="form-group">
-                                <label>State:</label>
-                                <p id="State"></p>
-                            </div>
-                        </div>
-                    </div>
+    <section class="col-10 offset-2 main-section" style="padding-top: 70px">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img alt="Dashboard Bus" src="/ICT502-Project/image/Tripschedule.jpg"
+                        class="img-fluid" alt="Sample image">
                 </div>
+                <div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
+                <form>
+                <div class="container mt-3">
+                                            <h1>Create Trip Schedule</h1>
+                            <p>Kindly fill in this form to register.</p>
+                    <div class="form-group">
+                        <label for="bus-number">Bus Number:</label>
+                        <input type="text" class="form-control" id="bus-number" name="bus-number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Destination:</label>
+                        <select class="form-control" id="destination" name="destination" required>
+                            <option value="">Select destination</option>
+                            <option value="Melaka Sentral">Melaka Sentral</option>
+                            <option value="KL Sentral">Kelantan Sentral</option>
+                            <option value="Cheras Sentral">Cheras Sentral</option>
+                            <option value="Terminal Bas Kota Bharu">Terminal Bas Kota Bharu</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="departure-time">Departure Time:</label>
+                        <input type="time" class="form-control" id="departure-time" name="departure-time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="arrival-time">Arrival Time:</label>
+                        <input type="time" class="form-control" id="arrival-time" name="arrival-time" required>
+                    </div><br>
+            <div class="text-center"> <!-- Added text-center class here -->
+              <button type="submit" class="btn btn-primary">Create Schedule</button>
+            </div>
+                    
+                    </div><br>
+                </form>
             </div>
         </div>
+        </div>
+  
     </section>
-
 
 <footer class="mt-auto">
     <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
@@ -106,7 +116,7 @@
     </div>
 </footer>
 
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+    
