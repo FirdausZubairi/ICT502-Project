@@ -49,7 +49,7 @@ public class bookingController extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		HttpSession session = request.getSession();
-		ticketID = Integer.parseInt(request.getParameter("ticketID"));
+		
 		
 		
 		

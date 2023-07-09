@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
-   <!--Navbar-->
+    <!--Navbar-->
+  <!--Navbar-->
 <nav class="navbar fixed-top navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between">
             <a class="navbar-brand" href="login.html">
@@ -19,7 +22,7 @@
                 BTS
             </a>
         <span class="navbar-text">
-            Welcome
+            Booking
         </span>
         <!--User account-->
         <div class="btn-container-user">
@@ -57,6 +60,8 @@
   </div>
 </div>
 <!-- End sidebar -->
+
+
     <!-- SEARCH SECTION -->
     <section class="col-10 offset-2 main-section d-flex justify-content-center align-items-center" id="main" style="padding-top: 70px; background-image: url('https://img.freepik.com/premium-vector/abstract-colorful-gradient-wavy-background_263779-811.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <div class="container mt-5">
@@ -104,7 +109,7 @@
               </div>
 <div class="col-md-12 text-center">
   <input class="btn btn-secondary btn-sm" type="reset" value="Reset">
-  <a href="#" class="btn btn-primary btn-sm active" type="submit" value="Submit" role="button" aria-pressed="true">Submit</a>
+  <a href="bookingdetail.jsp" class="btn btn-primary btn-sm active" type="submit" value="Submit" role="button" aria-pressed="true">Submit</a>
 </div>
 
               <br><br>
@@ -133,12 +138,14 @@
     </table>
   </div>
 </section>
-        
-           <footer class="mt-auto">
+
+   <footer class="mt-auto">
     <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
         &copy; 2023. All rights reserved.
     </div>
 </footer>
+        
+        
     
     
     

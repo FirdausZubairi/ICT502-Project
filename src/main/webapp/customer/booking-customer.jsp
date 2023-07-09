@@ -109,7 +109,7 @@
               </div>
 <div class="col-md-12 text-center">
   <input class="btn btn-secondary btn-sm" type="reset" value="Reset">
-  <a href="#" class="btn btn-primary btn-sm active" type="submit" value="Submit" role="button" aria-pressed="true">Submit</a>
+  <a href="bookingdetail.jsp" class="btn btn-primary btn-sm active" type="submit" value="Submit" role="button" aria-pressed="true">Submit</a>
 </div>
 
               <br><br>
@@ -119,25 +119,6 @@
     <!-- END OF SEARCH SECTION -->
     
 
-<!-- DISPLAY SECTION -->
-<section class="col-10 offset-2 main-section d-flex justify-content-center align-items-center">
-  <div class="container-fluid mt-5">
-    <table class="table table-striped mt-2">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Bus</th>
-          <th>Departure</th>
-          <th>Arrival</th>
-          <th>Fare</th>
-          <th>Seats Available</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="AvailableBusTable"></tbody>
-    </table>
-  </div>
-</section>
 
    <footer class="mt-auto">
     <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
