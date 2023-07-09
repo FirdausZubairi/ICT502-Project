@@ -70,7 +70,7 @@ public class CreateStaff extends HttpServlet {
 		    StaffService.insertStaff(Staff);
 		    System.out.println("Staff inserted successfully");
 
-		    response.sendRedirect(request.getContextPath() + "/staff/accountdetails-staff.jsp");
+		    response.sendRedirect(request.getContextPath() + "/staff/accountdetails-staff");
 		} catch (SQLException e) {
 		    e.printStackTrace();
 		}

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
+<title>Account Detail</title>
 <!-- CSS only -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -75,13 +77,13 @@
 	<section class="col-10 offset-2 main-section" style="padding-top: 20px">
 		<div class="container">
 			<div class="row mt-5">
-				<div class="col-lg-6">
+				<div class="col-lg-10">
 					<h2>Staff's Details</h2>
 					<div class="table-responsive container-fluid" id="infinite-table">
 						<table class="table table-hover align-middle">
 							<thead class="header">
 								<tr>
-									<th scope="col"></th>
+									<th scope="col">ID</th>
 									<th scope="col">Name</th>
 									<th scope="col">Username</th>
 									<th scope="col">Password</th>
@@ -98,7 +100,7 @@
 
 										<th scope="row" style="color: #FF4E5B !important;"><c:out
 												value="${stf.staffID}" /></th>
-										<td><c:out value="${stf.name}" /></td>
+										<td><c:out value="${stf.getName()}" /></td>
 										<td><c:out value="${stf.username}" /></td>
 										<td><c:out value="${stf.password}" /></td>
 										<td><c:out value="${stf.role}" /></td>
@@ -106,7 +108,7 @@
 										<td>
 											<!-- Update Button -->
 											<button type="button" class="btn btn-primary"
-												onclick="updateStaff(<c:out value="${stf.staffID}" />)">
+												onclick="update-staff(<c:out value="${stf.staffID}" />)">
 												Update</button> <!-- Delete Button -->
 											<button type="button" class="btn btn-danger"
 												onclick="deleteStaff(<c:out value="${stf.staffID}" />)">
@@ -140,18 +142,7 @@
 			sessionStorage.setItem("key", x);
 			console.log("Session key : " + sessionStorage.getItem("key"));
 		}
-	</script>
-	<script>
-        document.getElementById("customerName").innerText = "John Doe";
-        document.getElementById("customerUsername").innerText = "john.doe";
-        document.getElementById("customerPhone").innerText = "0123456789";
-
-        document.getElementById("staffName").innerText = "Jane Smith";
-        document.getElementById("staffUsername").innerText = "jane.smith@company.com";
-        document.getElementById("staffPhone").innerText = "0123456789";
-        document.getElementById("staffRole").innerText = "Driver";
-        
-    </script>
+	</script>s
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
