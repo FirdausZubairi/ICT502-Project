@@ -1,24 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+ 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-    <link rel="stylesheet" href="css/dasboard.css">
+    <link rel="stylesheet" href="dashboard-staff.css">
+
 </head>
-<body>
- <!--Navbar-->
- <nav class="navbar fixed-top navbar-light bg-light">
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <!--Navbar-->
+<nav class="navbar fixed-top navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand" href="login.html">
-            <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            LOGO
-        </a>
+            <a class="navbar-brand" href="login.html">
+                <img src="/ICT502-Project/image/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                BTS
+            </a>
         <span class="navbar-text">
-            Staff Dashboard
+            Staff
         </span>
         <!--User account-->
         <div class="btn-container-user">
@@ -32,7 +35,6 @@
     </div>
 </nav>
 
-
   <!--Side bar menu-->
   <div class="container-fluid">
     <div class="row">
@@ -43,7 +45,7 @@
             Dashboard
           </a>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-          <a class="nav-link" href="create-bus-trip.html">
+          <a class="nav-link" href="tripschedule-staff.jsp">
             <i class="fas fa-bus" style="margin-right: 20px"></i>
             <span>Create Bus Trip</span>
           </a>
@@ -64,42 +66,44 @@
   <!-- End side bar -->
 
 <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-    <div class="container">
-        <!-- Bus Details -->
-        <div class="row justify-content-center mt-5">
-            <div class="col-lg-8">
-                <h2>Bus Details</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>Bus Name:</label>
-                            <p id="busName"></p>
-                        </div>
-                        <div class="form-group">
-                            <label>Plate Number:</label>
-                            <p id="noPlate"></p>
-                        </div>
-                        <div class="form-group">
-                            <label>Destination Name:</label>
-                            <p id="Destination Name"></p>
-                        </div>
-                        <div class="form-group">
-                            <label>State:</label>
-                            <p id="State"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+  <h3>Dashboard</h3>
+  <hr style="height: 2px; border-width: 0; color: #808080; background-color: #808080">
+  <div class="row justify-content-end">
+    <div class="col-md-4 col-lg-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search by username">
+        <div class="input-group-append">
+          <button type="button" class="btn btn-sm btn-dark">Search</button>
 
-    <!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
-    <script>
-        document.getElementById("busNumber").innerText = "Bus-123";
-        document.getElementById("busCapacity").innerText = "45";
-        document.getElementById("busRoute").innerText = "Route A";
-    </script>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  <div style="display: flex; justify-content: space-between;">
+    <div class="hover-shadow">
+      <a href="busdetail-staff.jsp" style="flex: 1; text-align: center; display: block;">
+        <img alt="Dashboard Bus" src="/ICT502-Project/image/DashboardBus-staff.jpg" style="width: 60%;">
+        <p>View Bus</p>
+      </a>
+    </div>
+    <div class="hover-shadow">
+      <a href="accountdetails-staff.jsp" style="flex: 1; text-align: center; display: block;">
+        <img alt="Dashboard Account" src="/ICT502-Project/image/DashboardAccount-staff.jpg" style="width: 60%;">
+        <p>View Account</p> 
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="mt-auto">
+    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
+        &copy; 2023. All rights reserved.
+    </div>
+</footer>
+
+
+
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>

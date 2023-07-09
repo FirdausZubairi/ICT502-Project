@@ -1,25 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Dashboard</title>
  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-    <link rel="stylesheet" href="css/dashboard-staff.css">
+    <link rel="stylesheet" href="dashboard-staff.css">
 
 </head>
-<body>
-    <!--Navbar-->
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <!--Navbar-->
 <nav class="navbar fixed-top navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand" href="login.html">
-            <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            LOGO
-        </a>
+            <a class="navbar-brand" href="login.html">
+                <img src="/ICT502-Project/image/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                BTS
+            </a>
         <span class="navbar-text">
             Staff
         </span>
@@ -45,7 +45,7 @@
             Dashboard
           </a>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-          <a class="nav-link" href="create-bus-trip.html">
+          <a class="nav-link" href="tripschedule-staff.jsp">
             <i class="fas fa-bus" style="margin-right: 20px"></i>
             <span>Create Bus Trip</span>
           </a>
@@ -64,28 +64,59 @@
     </div>
   </div>
   <!-- End side bar -->
+  
+  <section class="col-10 offset-2 main-section" style="padding-top: 70px">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                        class="img-fluid" alt="Sample image">
+                </div>
+                <div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
+                    <form action="CreateStaff" method="post">   
+                        <div class="container mt-3">
+                            <h1>Register</h1>
+                            <p>Kindly fill in this form to register.</p>
+                            <div class="form-group"><label for="username"><b>Username</b></label>
+              				<input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+            				</div>
+                            
+                            <div class="form-group"><label for="name"><b>Name</b></label>
+              				<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+            				</div>
+            				
+                            <div class="form-group"><label for="password"><b>Password</b></label>
+              				<input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+            				</div>
+            				
+            				<label for="role"><b>Role</b></label>
+            				<br>
+<select name="role" id="role" class="form-control" required>
+    <option disabled selected>Select Role</option>
+    <option value="clerk">Clerk</option>
+    <option value="driver">Driver</option>
+</select><br><br>
 
-<section class="col-10 offset-2 main-section" style="padding-top: 70px">
-  <h3>Staff Dashboard</h3>
-  <hr style="height: 2px; border-width: 0; color: #808080; background-color: #808080">
-  <div style="display: flex; justify-content: space-between;">
-    <div class="hover-shadow">
-      <a href="busdetail-staff.jsp" style="flex: 1; text-align: center; display: block;">
-        <img alt="Dashboard Bus" src="/ICT502-Project/image/DashboardBus-staff.jpg" style="width: 60%;">
-        <p>View Bus</p>
-      </a>
-    </div>
-    <div class="hover-shadow">
-      <a href="accountdetails-staff.jsp" style="flex: 1; text-align: center; display: block;">
-        <img alt="Dashboard Account" src="/ICT502-Project/image/DashboardAccount-staff.jpg" style="width: 60%;">
-        <p>View Account</p> 
-      </a>
-    </div>
-  </div>
-</section>
-
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <div class="text-center"> <!-- Added text-center class here -->
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     
+<footer class="mt-auto">
+    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
+        &copy; 2023. All rights reserved.
+    </div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

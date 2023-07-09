@@ -41,12 +41,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>bookingController</display-name>
-    <servlet-name>bookingController</servlet-name>
-    <servlet-class>controller.bookingController</servlet-class>
+    <display-name>CreateStaff</display-name>
+    <servlet-name>CreateStaff</servlet-name>
+    <servlet-class>controller.staff.CreateStaff</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>bookingController</servlet-name>
-    <url-pattern>/bookingController</url-pattern>
+    <servlet-name>CreateStaff</servlet-name>
+    <url-pattern>/CreateStaff</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadStaff</display-name>
+    <servlet-name>ReadStaff</servlet-name>
+    <servlet-class>controller.staff.ReadStaff</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadStaff</servlet-name>
+    <url-pattern>/ReadStaff</url-pattern>
   </servlet-mapping>
 </web-app>
