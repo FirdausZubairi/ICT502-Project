@@ -33,18 +33,18 @@
                         class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
-                    <form>
+                    <form action="CreateStaff" method="post">   
                         <div class="container mt-3">
                             <h1>Register Staff</h1>
                             <p>Kindly fill in this form to register.</p>
                             <label for="username"><b>User name</b></label>
                             <input type="text" placeholder="Enter Username" name="username" id="username" required />
                             
-                            <label for="name"><b>Name</b></label>
-                            <input type="text" placeholder="Enter Full Name" name="name" id="name" required />
-                            
                             <label for="password"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="password" id="password" required />
+                            
+                            <label for="name"><b>Name</b></label>
+                            <input type="text" placeholder="Enter Full Name" name="name" id="name" required />
 
                             <label for="role"><b>Role</b></label>
                             <select name="role" id="role" required>

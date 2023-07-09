@@ -39,4 +39,24 @@
     <servlet-name>loginController</servlet-name>
     <url-pattern>/loginController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateStaff</display-name>
+    <servlet-name>CreateStaff</servlet-name>
+    <servlet-class>controller.staff.CreateStaff</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateStaff</servlet-name>
+    <url-pattern>/CreateStaff</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadStaff</display-name>
+    <servlet-name>ReadStaff</servlet-name>
+    <servlet-class>controller.staff.ReadStaff</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadStaff</servlet-name>
+    <url-pattern>/ReadStaff</url-pattern>
+  </servlet-mapping>
 </web-app>

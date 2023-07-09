@@ -6,23 +6,26 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import bean.staff;
+import connection.ConnectionManager;
 import helper.EncryptDecryptPass;
 
 public class staffService {
 	private EncryptDecryptPass encryptDecryptPass;
+	
+	
+	private String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String jdbcUsername = "dbbt";
+	private String jdbcPassword = "system";
+	
+	private String INSERT_PATIENT_SQL = "INSERT INTO staff(username, password, name, role) VALUES(?,?,?,?)";
 
 	public staffService() {
 		encryptDecryptPass = new EncryptDecryptPass();
 	}
 	
-	private String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String jdbcUsername = "dbbt";
-	private String jdbcPassword = "system";
-	private String SELECT_STAFF_USERNAME = "SELECT * FROM staff WHERE username=?;";
-	
-
 	public Connection getConnection() {
 		Connection connection = null;
 		try {
@@ -30,6 +33,7 @@ public class staffService {
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -54,29 +58,91 @@ public class staffService {
 		}
 	}
 	
-	public boolean loginStaff(staff staff) throws SQLException {
-		boolean status = false;
-		try (Connection connection = getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_STAFF_USERNAME)) {
-			preparedStatement.setString(1, staff.getUsername());
+	static Connection con = null;
+    static PreparedStatement ps = null;
+    static Statement s = null;
+    static ResultSet rs = null;
 
-			ResultSet rs = preparedStatement.executeQuery();
-			System.out.println("password : " + staff.getPassword());
-			while (rs.next()) {
-				String email = rs.getString("email");
-				String password = rs.getString("password");
-				System.out.println("password db: " + password);
-				System.out.println(encryptDecryptPass.CheckPassword(staff.getPassword(), password));
-				if (email.equals(staff.getUsername())
-						&& encryptDecryptPass.CheckPassword(staff.getPassword(), password)) {
-					status = true;
-				} else {
-					status = false;
-				}
-			}
+	
+	//stf = new staff()
+	
+	public staff loginClerk(staff staff) throws SQLException {
+		staff stf = null;
+		try {
+			con = ConnectionManager.getConnection();
+            String username = staff.getUsername();
+            String password = staff.getPassword();
+            String role = staff.getRole();          
+
+            // Perform login validation for customers
+            String sql1 = "SELECT * FROM staff WHERE username = ? AND password = ?";
+            ps = con.prepareStatement(sql1);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                // Customer login successful
+                System.out.println("Clerk login success");
+                stf = new staff(username, password, role);
+                // Perform any necessary actions or return a success indicator
+                return stf;
+            }
+		}catch (SQLException e) {
+            e.printStackTrace();
+            // Handle any exceptions that occur during the login validation process
+        } 
+
+		return stf;
+	}
+	
+	public staff loginDriver(staff staff) throws SQLException {
+		staff stf = null;
+		try {
+			con = ConnectionManager.getConnection();
+            String username = staff.getUsername();
+            String password = staff.getPassword();
+            String role = staff.getRole();            
+
+            // Perform login validation for customers
+            String sql1 = "SELECT * FROM staff WHERE username = ? AND password = ?";
+            ps = con.prepareStatement(sql1);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                // Customer login successful
+                System.out.println("Driver login success");
+                stf = new staff(username, password, role);
+                // Perform any necessary actions or return a success indicator
+                return stf;
+            }
+		}catch (SQLException e) {
+            e.printStackTrace();
+            // Handle any exceptions that occur during the login validation process
+        } 
+
+		return stf;
+	}
+
+	public boolean insertStaff(staff Staff) throws SQLException {
+		boolean status = false;
+
+		try (Connection connection = getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PATIENT_SQL)) {
+			preparedStatement.setString(1, Staff.getUsername());
+			preparedStatement.setString(2, Staff.getPassword());
+			preparedStatement.setString(3, Staff.getName());
+			preparedStatement.setString(4, Staff.getRole());
+
+			preparedStatement.executeUpdate();
+
+			status = true;
 
 		} catch (SQLException e) {
 			printSQLException(e);
+			status = false;
 		}
 
 		return status;
