@@ -174,22 +174,22 @@
 			  <option>Debit card</option>
 			  <option>Cash</option>
 			</select>
-           
- 
-            <h6>Total price: <span id="totalPrice" name="totalprice">0</span></h6>
-            
+ 			<div name = "totalprice">
+            <h6>Total price: <span id="totalPrice" >0</span></h6>
+            </div>
             <div class="mt-3">
               <a href="booking.html"  class="btn btn-outline-success" role="button" aria-pressed="true">Back</a>
               <a href="paymentmethod-customer.jsp" type="submit" class="btn btn-success" role="button" aria-pressed="true">Continue</a>
             </div>
           </form>
         </div>
-        
       </div>
     </div>
   </section>
+ 
   
   
+  		
   
      <footer class="mt-auto">
     <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
