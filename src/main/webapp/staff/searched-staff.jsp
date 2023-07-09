@@ -1,17 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Dashboard</title>
- 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Account</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link rel="stylesheet" href="dashboard-staff.css">
-
 </head>
+<body>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
   <!--Navbar-->
 <nav class="navbar fixed-top navbar-light bg-light">
@@ -64,60 +69,61 @@
     </div>
   </div>
   <!-- End side bar -->
-  
-  <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                        class="img-fluid" alt="Sample image">
-                </div>
-                <div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
-                    <form>
-                        <div class="container mt-3">
-                            <h1>Register</h1>
-                            <p>Kindly fill in this form to register.</p>
-                            <div class="form-group"><label for="username"><b>Username</b></label>
-              				<input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
-            				</div>
-                            
-                            
-                            <div class="form-group"><label for="name"><b>Name</b></label>
-              				<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
-            				</div>
-            				
-                            <div class="form-group"><label for="password"><b>Password</b></label>
-              				<input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
-            				</div>
-            				
-            				<label for="role"><b>Role</b></label>
-            				<br>
-<select name="role" id="role" class="form-control" required>
-    <option disabled selected>Select Role</option>
-    <option value="clerk">Clerk</option>
-    <option value="driver">Driver</option>
-</select><br><br>
-
-            <div class="text-center"> <!-- Added text-center class here -->
-              <button type="submit" class="btn btn-primary">Register</button>
-            </div>
-          </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+   <section class="col-10 offset-2 main-section" style="padding-top: 70px">
+	<div class="container">
+		<div class="row justify-content-center mt-5">
+			<div class="col-md-9">
+				<div class="card">
+					<div class="card-header">
+						<div class="d-flex justify-content-between align-items-center">
+							<h5 class="mb-0">Account Details</h5>
+							<div class="dropdown">
+								<button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									Action</button>
+								<ul class="dropdown-menu">
+									<li><button class="dropdown-item" type="button">Edit</button></li>
+									<li><button class="dropdown-item" type="button">Delete</button></li>
+								</ul>
+							</div>
+						</div>
+						<div class="card-body">
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="text-center">Name</th>
+										<th class="text-center">Username</th>
+										<th class="text-center">Role</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center">John Doe</td>
+										<td class="text-center">johndoe</td>
+										<td class="text-center">Admin</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		</section>
 <footer class="mt-auto">
     <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
         &copy; 2023. All rights reserved.
     </div>
 </footer>
 
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
-
 </html>

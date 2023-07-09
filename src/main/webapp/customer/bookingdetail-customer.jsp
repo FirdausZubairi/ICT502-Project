@@ -15,48 +15,55 @@
 
 </head>
 
-<body>
-      <!--Navbar-->
-  <nav class="navbar fixed-top navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="login.html">
-        <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-        LOGO
-      </a>
-      <h3 class="h3 text-center">
-          Ticket Booking
-      </h3>
-      <!--User account-->
-      <div class="btn-container-user">
-        <div class="dropdown">
-          <button class="btn dropdown-toggle nav-box" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Farid</button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="index.html">Logout</a></li>
-          </ul>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+       <!--Navbar-->
+ <!--Navbar-->
+<nav class="navbar fixed-top navbar-light bg-light">
+    <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand" href="login.html">
+                <img src="/ICT502-Project/image/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                BTS
+            </a>
+        <span class="navbar-text">
+            Booking
+        </span>
+        <!--User account-->
+        <div class="btn-container-user">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </div>
-  </nav>
+</nav>
 
-  <!--Sidebar menu-->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
-        <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white" style="padding: 15px 0">
-          <a class="nav-link active" aria-current="page" href="dashboard-staff.jsp" style="margin-top: 70px">
-            <span class="fas fa-home" style="margin-right: 20px"></span>
-            Dashboard
-          </a>
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-          <a class="nav-link" href="booking.html">
-            <i class="fas fa-bus" style="margin-right: 20px"></i>
-            <span>Booking</span>
-          </a>
-        </div>
+ <!--Sidebar menu-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
+      <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white" style="padding: 15px 0">
+        <a class="nav-link active" aria-current="page" href="dashboard.jsp" style="margin-top: 70px">
+          <span class="fas fa-home" style="margin-right: 20px"></span>
+          Dashboard
+        </a>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
+        <a class="nav-link" href="booking-customer.jsp">
+          <i class="fa fa-bus" style="margin-right: 20px"></i>
+          <span>Booking</span>
+        </a>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
+        <a class="nav-link mb-2" href="viewticket.jsp">
+          <i class="fa-sharp fa-solid fa-ticket" style="margin-right: 20px"></i>
+          <span>View Ticket</span>
+        </a>
       </div>
     </div>
   </div>
-  <!-- End sidebar -->
+</div>
+<!-- End sidebar -->
+  
 <section class="col-10 offset-2 main-section" style="padding-top: 70px">
   <div class="container">
     <div class="row d-flex align-items-center justify-content-center">
@@ -83,7 +90,11 @@
   </div>
 </section>
 
-
+   <footer class="mt-auto">
+    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
+        &copy; 2023. All rights reserved.
+    </div>
+</footer>
 
 
   <!-- Bootstrap JS -->

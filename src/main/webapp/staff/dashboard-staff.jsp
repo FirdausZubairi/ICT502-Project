@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="dashboard-staff.css">
 
 </head>
-<body>
-    <!--Navbar-->
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <!--Navbar-->
 <nav class="navbar fixed-top navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand" href="login.html">
-            <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            LOGO
-        </a>
+            <a class="navbar-brand" href="login.html">
+                <img src="/ICT502-Project/image/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                BTS
+            </a>
         <span class="navbar-text">
             Staff
         </span>
@@ -45,7 +45,7 @@
             Dashboard
           </a>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-          <a class="nav-link" href="create-bus-trip.html">
+          <a class="nav-link" href="tripschedule-staff.jsp">
             <i class="fas fa-bus" style="margin-right: 20px"></i>
             <span>Create Bus Trip</span>
           </a>
@@ -66,8 +66,19 @@
   <!-- End side bar -->
 
 <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-  <h3>Staff Dashboard</h3>
+  <h3>Dashboard</h3>
   <hr style="height: 2px; border-width: 0; color: #808080; background-color: #808080">
+  <div class="row justify-content-end">
+    <div class="col-md-4 col-lg-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search by username">
+        <div class="input-group-append">
+          <button type="button" class="btn btn-sm btn-dark">Search</button>
+
+        </div>
+      </div>
+    </div>
+  </div><br>
   <div style="display: flex; justify-content: space-between;">
     <div class="hover-shadow">
       <a href="busdetail-staff.jsp" style="flex: 1; text-align: center; display: block;">
@@ -83,6 +94,13 @@
     </div>
   </div>
 </section>
+<footer class="mt-auto">
+    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
+        &copy; 2023. All rights reserved.
+    </div>
+</footer>
+
+
 
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

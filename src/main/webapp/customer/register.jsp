@@ -8,24 +8,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="dasboard.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/reg.css">
+    <link rel="stylesheet" href="reg.css">
 </head>
 
-<body style="height: 100%;">
-    <!-- LOGO -->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+  <!--Nav bar-->
+ <!--Navbar-->
+<nav class="navbar fixed-top navbar-light bg-light">
+    <div class="container-fluid d-flex justify-content-between">
             <a class="navbar-brand" href="login.html">
-                <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
-                    class="d-inline-block align-text-top">
-                LOGO
+                <img src="/ICT502-Project/image/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                BTS
             </a>
+        <span class="navbar-text">
+            Registration
+        </span>
+        <!--User account-->
+        <div class="btn-container-user">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                </ul>
+            </div>
         </div>
-    </nav>
-    <!-- LOGO -->
+    </div>
+</nav>
 
-    <section class="vh-100">
+ <!--Sidebar menu-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
+      <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white" style="padding: 15px 0">
+        <a class="nav-link active" aria-current="page" href="dashboard.jsp" style="margin-top: 70px">
+          <span class="fas fa-home" style="margin-right: 20px"></span>
+          Dashboard
+        </a>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
+        <a class="nav-link" href="booking-customer.jsp">
+          <i class="fa fa-bus" style="margin-right: 20px"></i>
+          <span>Booking</span>
+        </a>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
+        <a class="nav-link mb-2" href="viewticket.jsp">
+          <i class="fa-sharp fa-solid fa-ticket" style="margin-right: 20px"></i>
+          <span>View Ticket</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End sidebar -->
+
+ <section class="col-10 offset-2 main-section" style="padding-top: 70px">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
@@ -37,36 +75,42 @@
                         <div class="container mt-3">
                             <h1>Register</h1>
                             <p>Kindly fill in this form to register.</p>
-                            <label for="username"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="username" id="username" required />
+                            <div class="form-group"><label for="username"><b>Username</b></label>
+              				<input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+            				</div>
                             
-                             <label for="name"><b>Name</b></label>
-                            <input type="text" placeholder="Enter Full Name" name="name" id="name" required />
+                            
+                            <div class="form-group"><label for="name"><b>Name</b></label>
+              				<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+            				</div>
 
-                            <label for="phone"><b>Phone</b></label>
-                            <input type="text" placeholder="Enter Phone Number" name="phone" id="phone" required />
+                            <div class="form-group"><label for="phoneNo"><b>Phone Number</b></label>
+              				<input type="text" class="form-control" id="phoneNo" name="phoneNo" placeholder="Enter Phone Number" required>
+            				</div>
 
-                            <label for="password"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="password" id="password" required />
+                            <div class="form-group"><label for="password"><b>Password</b></label>
+              				<input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+            				</div>
 
-                            <button type="submit">Register</button>
-                        </div>
-
-                        <div>
-                            <p>Already have an account? <a href="login.html">Log in</a>.</p>
-                        </div>
+            <div class="text-center"> <!-- Added text-center class here -->
+              <button type="submit" class="btn btn-primary">Register</button><br><br>
+               <p>Already have an account? <a href="login.html">Log in</a>.</p>
+            </div>
+          </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-        <div class="text-white mb-3 mb-md-0">
-            Copyright © 2020. All rights reserved.
-        </div>
+   <footer class="mt-auto">
+    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
+        &copy; 2023. All rights reserved.
     </div>
+</footer>
 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
