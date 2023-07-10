@@ -34,70 +34,78 @@
     </nav>
 
     <!-- Side bar menu -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
-                <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white" style="padding: 15px 0">
-                    <a class="nav-link active" aria-current="page" href="dashboard-staff.jsp" style="margin-top: 70px">
-                        <span class="fas fa-home" style="margin-right: 20px"></span>
-                        Dashboard
-                    </a>
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-                    <a class="nav-link" href="tripschedule-staff.jsp">
-                        <i class="fas fa-bus" style="margin-right: 20px"></i>
-                        <span>Create Bus Trip</span>
-                    </a>
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-                    <a class="nav-link" href="register-staff.jsp">
-                        <i class="fas fa-user-plus" style="margin-right: 20px"></i>
-                        <span>Create Staff</span>
-                    </a>
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-                    <a class="nav-link" href="update-staff.jsp">
-                        <i class="fas fa-user-edit" style="margin-right: 20px"></i>
-                        <span>Update Staff</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-2 position-fixed" id="sticky-sidebar"
+				style="border-right: #888; box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);">
+				<div
+					class="nav flex-column flex-nowrap vh-100 overflow-auto text-white"
+					style="padding: 15px 0">
+					<a class="nav-link active" aria-current="page"
+						href="dashboard-staff.jsp" style="margin-top: 70px"> <span
+						class="fas fa-home" style="margin-right: 20px"></span> Dashboard
+					</a>
+					<div
+						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
+						style="padding: 0 40px"></div>
+					<a class="nav-link" href="create-bus-trip.html"> <i
+						class="fas fa-bus" style="margin-right: 20px"></i> <span>Create
+							Bus Trip</span>
+					</a>
+					<div
+						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
+						style="padding: 0 40px"></div>
+					<a class="nav-link" href="register-staff.jsp"> <i
+						class="fas fa-user-plus" style="margin-right: 20px"></i> <span>Create
+							Staff</span>
+					</a>
+					<div
+						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
+						style="padding: 0 40px"></div>
+<a class="nav-link" href="accountdetails-staff.jsp">
+  <i class="fas fa-user" style="margin-right: 20px"></i>
+  <span>View Account</span>
+</a>
+					<div
+						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
+						style="padding: 0 40px"></div>
+<a class="nav-link" href="view-bus-details.jsp">
+  <i class="fa fa-table" style="margin-right: 20px"></i>
+  <span>View Bus</span>
+</a>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
     <!-- End side bar -->
 
-   <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-        <div class="container">
-            <!-- Bus Details -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Bus Details</h5>
-
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label>Bus Name:</label>
-                                <p id="busName"></p>
-                            </div>
-                            <div class="form-group">
-                                <label>Plate Number:</label>
-                                <p id="noPlate"></p>
-                            </div>
-                            <div class="form-group">
-                                <label>Destination Name:</label>
-                                <p id="DestinationName"></p>
-                            </div>
-                            <div class="form-group">
-                                <label>State:</label>
-                                <p id="State"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="col-10 offset-2 main-section" style="padding-top: 20px">
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-lg-10">
+					<h2>Bus Details</h2>
+					<div class="table-responsive container-fluid" id="infinite-table">
+						<table class="table table-hover align-middle">
+							<thead class="header">
+								<tr>
+									<th scope="col"></th>
+									<th scope="col">Bus Name</th>
+									<th scope="col">Plate Number</th>
+									<th scope="col">DestinationName</th>
+									<th scope="col">State</th>
+									<!-- New column for actions -->
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
     <footer class="fixed-bottom">
