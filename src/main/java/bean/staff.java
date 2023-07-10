@@ -22,6 +22,15 @@ public class staff {
 			this.adminID = adminID;
 		}
 		
+		public staff(int staffID, String username, String name, String password, String role) {
+			super();
+			this.staffID = staffID;
+			this.username = username;
+			this.name = name;
+			this.password = password;
+			this.role = role;
+		}
+		
 		public staff(String username, String password, String name, String role, int adminID) {
 			super();
 			this.username = username;

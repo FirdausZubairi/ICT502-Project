@@ -27,9 +27,9 @@
 				<div class="dropdown">
 					<button class="btn dropdown-toggle nav-box" type="button"
 						id="dropdownMenuButton" data-bs-toggle="dropdown"
-						aria-expanded="false">Farid</button>
+						aria-expanded="false">more</button>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<li><a class="dropdown-item" href="index.html">Logout</a></li>
+						<li><a class="dropdown-item" href="login.jsp">Logout</a></li>
 					</ul>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="update-staff.jsp"> <i
+					<a class="nav-link" href="UpdateStaff"> <i
 						class="fas fa-user-edit" style="margin-right: 20px"></i> <span>Update
 							Staff</span>
 					</a>
@@ -95,23 +95,22 @@
 							</thead>
 							<tbody>
 								<c:forEach var="stf" items="${listStaff}">
-									<tr key="<c:out value="${stf.staffID}" />"
-										onclick="myFunction(<c:out value="${stf.staffID}" />, '<%=request.getContextPath()%>/update-staff')">
+									<tr key="<c:out value="${stf.staffID}" />">
 
 										<th scope="row" style="color: #FF4E5B !important;"><c:out
 												value="${stf.staffID}" /></th>
-										<td><c:out value="${stf.getName()}" /></td>
-										<td><c:out value="${stf.username}" /></td>
-										<td><c:out value="${stf.password}" /></td>
+										<td><c:out value="${stf.getName()}"/></td>
+										<td><c:out value="${stf.username}"/></td>
+										<td><c:out value="${stf.password}"/></td>
 										<td><c:out value="${stf.role}" /></td>
-										<td><c:out value="${stf.adminID}" /></td>
+										<td><c:out value="${stf.adminID}"/></td>
 										<td>
 											<!-- Update Button -->
 											<button type="button" class="btn btn-primary"
-												onclick="update-staff(<c:out value="${stf.staffID}" />)">
+												 onclick="myFunction(<c:out value='${stf.staffID}'/>, '/ICT502-Project/staff/update-staff')">
 												Update</button> <!-- Delete Button -->
 											<button type="button" class="btn btn-danger"
-												onclick="deleteStaff(<c:out value="${stf.staffID}" />)">
+												onclick="myFunction(<c:out value="${stf.staffID}"/>, 'DeleteStaff')">
 												Delete</button>
 										</td>
 									</tr>

@@ -25,6 +25,8 @@ public class staffService {
 	private String INSERT_STAFF_SQL = "INSERT INTO staff(username, password, name, role) VALUES(?,?,?,?)";
 	private String SELECT_ALL_STAFF = "SELECT * FROM staff";
 	private String SELECT_STAFF_ID = "SELECT * FROM staff WHERE staffID=?";
+	private String UPDATE_STAFF_ID = "UPDATE staff set username=?, password=?, name=?, role=? WHERE staffID=?";
+	private String DELETE_PATIENT_SQL = "DELETE from staff WHERE staffID = ?";
 
 	public staffService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -189,7 +191,8 @@ public class staffService {
 		return Staff;
 	}
 	
-	public staff getOnePatient(int id) {
+	//UPDATE STAFF
+	public staff getOneStaff(int id) {
 		staff Staff = null;
 		
 		try (Connection connection = getConnection();
@@ -219,4 +222,38 @@ public class staffService {
 		
 		return Staff;
 	}
+	
+	public boolean updateStaff(staff Staff) throws SQLException{
+		boolean status = false;
+		
+		try (Connection connection = getConnection();
+			PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_STAFF_ID)) {
+			preparedStatement.setString(1, Staff.getUsername());
+			preparedStatement.setString(2, Staff.getPassword());
+			preparedStatement.setString(3, Staff.getName());
+			preparedStatement.setString(4, Staff.getRole());
+			preparedStatement.setInt(5, Staff.getStaffID());
+			//private String UPDATE_STAFF_ID = "UPDATE staff set username=?, password=?, name=?, role=? WHERE staffID=?";
+
+			System.out.println(Staff.getUsername());
+			preparedStatement.executeUpdate();
+			status = true;
+		} catch (SQLException e) {
+			printSQLException(e);
+			status = false;
+		}
+		
+		return status;
+	}
+	
+	//DELETE STAFF
+	public boolean deleteStaff(int staffID) throws SQLException {
+        boolean rowDeleted;
+        try (Connection connection = getConnection();) {
+        	PreparedStatement statement = connection.prepareStatement(DELETE_PATIENT_SQL);
+            statement.setInt(1, staffID);
+            rowDeleted = statement.executeUpdate() > 0;
+        }
+        return rowDeleted;
+    }
 }

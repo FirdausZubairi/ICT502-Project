@@ -69,4 +69,14 @@
     <servlet-name>UpdateStaff</servlet-name>
     <url-pattern>/UpdateStaff</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteStaff</display-name>
+    <servlet-name>DeleteStaff</servlet-name>
+    <servlet-class>controller.staff.DeleteStaff</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteStaff</servlet-name>
+    <url-pattern>/DeleteStaff</url-pattern>
+  </servlet-mapping>
 </web-app>

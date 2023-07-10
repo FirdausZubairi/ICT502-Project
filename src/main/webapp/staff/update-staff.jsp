@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,25 +74,29 @@
                         class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
-                    <form>
+                    <form action="update-staff" method="post">
                         <div class="container mt-3">
                             <h1>Update Account</h1>
                             <p>Kindly fill in this form to update your account.</p>
+                            <c:if test="${Staff != null}">
+                            	<input type="hidden" name="staffID"
+								value="<c:out value='${Staff.staffID}' />" />
+                            </c:if>
                             <div class="form-group">
                                 <label for="username"><b>Username</b></label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" value='${Staff.username}' required>
                             </div>
                             <div class="form-group">
                                 <label for="name"><b>Name</b></label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value='${Staff.name}' required>
                             </div>
                             <div class="form-group">
                                 <label for="password"><b>Password</b></label>
-                                <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                                <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" value='${Staff.password}' required>
                             </div>
                             <label for="role"><b>Role</b></label>
                             <br>
-                            <select name="role" id="role" class="form-control" required>
+                            <select name="role" id="role" class="form-control" value='${Staff.role}' required>
                                 <option disabled selected>Select Role</option>
                                 <option value="clerk">Clerk</option>
                                 <option value="driver">Driver</option>
