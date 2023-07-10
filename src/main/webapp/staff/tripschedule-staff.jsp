@@ -107,10 +107,6 @@
                         <input type="time" class="form-control" id="departure-time" name="departure-time" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="arrival-time">Arrival Time:</label>
-                        <input type="time" class="form-control" id="arrival-time" name="arrival-time" required>
-                    </div>
             <div class="text-center"> <!-- Added text-center class here -->
               <button type="submit" class="btn btn-primary btn-block">Create Schedule</button>
             </div>

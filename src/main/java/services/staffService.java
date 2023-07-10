@@ -156,6 +156,30 @@ public class staffService {
 		return status;
 	}
 	
+//	public boolean insertClerk(Clerk clerk) throws SQLException {
+//		boolean status = false;
+//		try (Connection connection = getConnection();
+//				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CLERK_SQL)) {
+//			int id = insertStaff(new Users(clerk.getUsername(), fulltime.getPhone(), fulltime.getEmail(),
+//					fulltime.getAge(), fulltime.getGender(), fulltime.getRoleId()));
+//			preparedStatement.setInt(1, id);
+//			preparedStatement.setInt(2, fulltime.getAnnualLeave());
+//			preparedStatement.setInt(3, fulltime.getSickLeave());
+//			preparedStatement.setString(4, fulltime.getInsurance());
+//			preparedStatement.setInt(5, fulltime.getUnpaidLeave());
+//
+//			preparedStatement.executeUpdate();
+//
+//			status = true;
+//
+//		} catch (SQLException e) {
+//			printSQLException(e);
+//			status = false;
+//		}
+//
+//		return status;
+//	}
+	
 	//READ STAFF
 	public List<staff> selectAllStaff() {
 
