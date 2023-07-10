@@ -24,13 +24,8 @@
 			</a> <span class="navbar-text"> Staff </span>
 			<!--User account-->
 			<div class="btn-container-user">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
-                </ul>
-            </div>
-        </div>
+				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Logout</a>
+			</div>
 		</div>
 	</nav>
 
@@ -49,7 +44,7 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="create-bus-trip.html"> <i
+					<a class="nav-link" href="tripschedule-staff.jsp"> <i
 						class="fas fa-bus" style="margin-right: 20px"></i> <span>Create
 							Bus Trip</span>
 					</a>
@@ -63,7 +58,6 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-
 					<a class="nav-link" href="accountdetails-staff"> <i
 						class="fas fa-user" style="margin-right: 20px"></i> <span>View
 							Account</span>
@@ -71,10 +65,11 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="busdetails-staff.jsp"> <i
+					<a class="nav-link" href="busdetail-staff.jsp"> <i
 						class="fa fa-table" style="margin-right: 20px"></i> <span>View
 							Bus</span>
 					</a>
+
 
 				</div>
 			</div>

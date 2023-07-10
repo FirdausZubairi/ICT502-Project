@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Details</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="dashboard-staff.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bus Details</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="dashboard-staff.css">
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-light bg-light">
-        <div class="container-fluid d-flex justify-content-between">
-            <a class="navbar-brand" href="login.html">
-                <img src="/ICT502-Project/image/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                BTS
-            </a>
-            <span class="navbar-text">
-                Staff
-            </span>
-            <!-- User account -->
-           <div class="btn-container-user">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
-                </ul>
-            </div>
-        </div>
-        </div>
-    </nav>
+	<!-- Navbar -->
+	<nav class="navbar fixed-top navbar-light bg-light">
+		<div class="container-fluid d-flex justify-content-between">
+			<a class="navbar-brand" href="login.html"> <img
+				src="/ICT502-Project/image/bus-stop.png" alt="" width="30"
+				height="24" class="d-inline-block align-text-top"> BTS
+			</a> <span class="navbar-text"> Staff </span>
+			<!-- User account -->
+			<div class="btn-container-user">
+				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Logout</a>
+			</div>
+		</div>
+	</nav>
 
-    <!-- Side bar menu -->
+	<!--Side bar menu-->
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2 position-fixed" id="sticky-sidebar"
@@ -48,7 +43,7 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="create-bus-trip.html"> <i
+					<a class="nav-link" href="tripschedule-staff.jsp"> <i
 						class="fas fa-bus" style="margin-right: 20px"></i> <span>Create
 							Bus Trip</span>
 					</a>
@@ -62,26 +57,26 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-<a class="nav-link" href="accountdetails-staff.jsp">
-  <i class="fas fa-user" style="margin-right: 20px"></i>
-  <span>View Account</span>
-</a>
+					<a class="nav-link" href="accountdetails-staff"> <i
+						class="fas fa-user" style="margin-right: 20px"></i> <span>View
+							Account</span>
+					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-<a class="nav-link" href="view-bus-details.jsp">
-  <i class="fa fa-table" style="margin-right: 20px"></i>
-  <span>View Bus</span>
-</a>
+					<a class="nav-link" href="busdetail-staff.jsp"> <i
+						class="fa fa-table" style="margin-right: 20px"></i> <span>View
+							Bus</span>
+					</a>
 
 
 				</div>
 			</div>
 		</div>
 	</div>
-    <!-- End side bar -->
+	<!-- End side bar -->
 
-  <section class="col-10 offset-2 main-section" style="padding-top: 20px">
+	<section class="col-10 offset-2 main-section" style="padding-top: 20px">
 		<div class="container">
 			<div class="row mt-5">
 				<div class="col-lg-10">
@@ -108,13 +103,14 @@
 	</section>
 
 
-    <footer class="fixed-bottom">
-  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
-    &copy; 2023. All rights reserved.
-  </div>
-</footer>
+	<footer class="fixed-bottom">
+		<div
+			class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary"
+			style="width: 100%;">&copy; 2023. All rights reserved.</div>
+	</footer>
 
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

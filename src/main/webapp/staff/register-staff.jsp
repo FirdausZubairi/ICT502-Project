@@ -25,17 +25,12 @@
         </span>
         <!--User account-->
         <div class="btn-container-user">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
-                </ul>
-            </div>
-        </div>
+				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Logout</a>
+			</div>
     </div>
 </nav>
 
-  <!--Side bar menu-->
+<!--Side bar menu-->
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2 position-fixed" id="sticky-sidebar"
@@ -50,7 +45,7 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="create-bus-trip.html"> <i
+					<a class="nav-link" href="tripschedule-staff.jsp"> <i
 						class="fas fa-bus" style="margin-right: 20px"></i> <span>Create
 							Bus Trip</span>
 					</a>
@@ -64,24 +59,24 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-<a class="nav-link" href="accountdetails-staff.jsp">
-  <i class="fas fa-user" style="margin-right: 20px"></i>
-  <span>View Account</span>
-</a>
+					<a class="nav-link" href="accountdetails-staff"> <i
+						class="fas fa-user" style="margin-right: 20px"></i> <span>View
+							Account</span>
+					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-<a class="nav-link" href="view-bus-details.jsp">
-  <i class="fa fa-table" style="margin-right: 20px"></i>
-  <span>View Bus</span>
-</a>
+					<a class="nav-link" href="busdetail-staff.jsp"> <i
+						class="fa fa-table" style="margin-right: 20px"></i> <span>View
+							Bus</span>
+					</a>
 
 
 				</div>
 			</div>
 		</div>
 	</div>
-  <!-- End side bar -->
+	<!-- End side bar -->
   
   <section class="col-10 offset-2 main-section" style="padding-top: 70px">
         <div class="container-fluid h-custom">
