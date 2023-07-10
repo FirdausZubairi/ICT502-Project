@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +46,8 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="tripschedule-staff.jsp"> <i
-						class="fas fa-bus" style="margin-right: 20px"></i> <span>Create
+					<a class="nav-link" href="bustrip"> <i
+						class="fas fa-bus" style="margin-right: 20px"></i> <span>
 							Bus Trip</span>
 					</a>
 					<div
@@ -64,7 +67,7 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="busdetail-staff.jsp"> <i
+					<a class="nav-link" href="busdetail-staff"> <i
 						class="fa fa-table" style="margin-right: 20px"></i> <span>View
 							Bus</span>
 					</a>
@@ -76,24 +79,42 @@
 	</div>
 	<!-- End side bar -->
 
-	<section class="col-10 offset-2 main-section" style="padding-top: 20px">
-		<div class="container">
-			<div class="row mt-5">
-				<div class="col-lg-10">
+	<section class="col-10 offset-2 main-section " style="padding-top: 20px">
+		<div class="container " style= "margin-top:10px">
+			<div class="row mt-5 ">
+				<div class="col-lg-10 "> 
+				<div class=" d-flex justify-content-between align-items-center "> 
 					<h2>Bus Details</h2>
+					
+					</div>
+					
 					<div class="table-responsive container-fluid" id="infinite-table">
 						<table class="table table-hover align-middle">
 							<thead class="header">
 								<tr>
-									<th scope="col"></th>
-									<th scope="col">Bus Name</th>
-									<th scope="col">Plate Number</th>
-									<th scope="col">DestinationName</th>
-									<th scope="col">State</th>
+									<th scope="col">BusID</th>
+									<th scope="col">Name</th>
+									<th scope="col">NoPlate</th>
+									<th scope="col">Actions</th>
 									<!-- New column for actions -->
 								</tr>
 							</thead>
 							<tbody>
+								<c:forEach var="bd" items="${listBus}">
+									<tr key="<c:out value="${bd.busID}" />">
+
+										<th scope="row" style="color: #FF4E5B !important;"><c:out
+												value="${bd.busID}" /></th>
+										<td><c:out value="${bd.getName()}" /></td>
+										<td><c:out value="${bd.noPlate}" /></td>
+										<td>
+											<!-- Delete Button -->
+											<button type="button" class="btn btn-danger"
+												onclick="myFunction(<c:out value="${bd.busID}"/>, 'DeleteStaff')">
+												Delete</button>
+										</td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -108,7 +129,14 @@
 			class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary"
 			style="width: 100%;">&copy; 2023. All rights reserved.</div>
 	</footer>
-
+	<script>
+		function myFunction(x,y) {
+			console.log("Row index is: " + x); 
+			window.location.href= y + "?id=" + x;
+			sessionStorage.setItem("key", x);
+			console.log("Session key : " + sessionStorage.getItem("key"));
+		}
+	</script>
 
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

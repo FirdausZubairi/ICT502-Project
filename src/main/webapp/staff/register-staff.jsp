@@ -45,8 +45,8 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="tripschedule-staff.jsp"> <i
-						class="fas fa-bus" style="margin-right: 20px"></i> <span>Create
+					<a class="nav-link" href="bustrip"> <i
+						class="fas fa-bus" style="margin-right: 20px"></i> <span>
 							Bus Trip</span>
 					</a>
 					<div
@@ -66,7 +66,7 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="busdetail-staff.jsp"> <i
+					<a class="nav-link" href="busdetail-staff"> <i
 						class="fa fa-table" style="margin-right: 20px"></i> <span>View
 							Bus</span>
 					</a>
@@ -77,50 +77,59 @@
 		</div>
 	</div>
 	<!-- End side bar -->
-  
-  <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                        class="img-fluid" alt="Sample image">
-                </div>
-                <div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
-                    <form action="CreateStaff" method="post">   
-                        <div class="container mt-3">
-                            <h1>Register</h1>
-                            <p>Kindly fill in this form to register.</p>
-                            <div class="form-group"><label for="username"><b>Username</b></label>
-              				<input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
-            				</div>
-                            
-                            <div class="form-group"><label for="name"><b>Name</b></label>
-              				<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
-            				</div>
-            				
-                            <div class="form-group"><label for="password"><b>Password</b></label>
-              				<input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
-            				</div>
-            				
-            				<label for="role"><b>Role</b></label>
-            				<br>
-<select name="role" id="role" class="form-control" required>
-    <option disabled selected>Select Role</option>
-    <option value="clerk">Clerk</option>
-    <option value="driver">Driver</option>
-</select><br><br>
 
-            <div class="text-center"> <!-- Added text-center class here -->
-              <button type="submit" class="btn btn-primary">Register</button>
-            </div>
-          </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <footer class="fixed-bottom">
+	<section class="col-10 offset-2 main-section" style="padding-top: 70px">
+		<div class="container-fluid h-custom">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-md-9 col-lg-6 col-xl-5">
+					<img
+						src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+						class="img-fluid" alt="Sample image">
+				</div>
+				<div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
+					<form action="CreateStaff" method="post">
+						<div class="container mt-3">
+							<h1>Register</h1>
+							<p>Kindly fill in this form to register.</p>
+							<div class="form-group">
+								<label for="username"><b>Username</b></label> <input type="text"
+									class="form-control" id="username" name="username"
+									placeholder="Enter Username" required>
+							</div>
+
+							<div class="form-group">
+								<label for="name"><b>Name</b></label> <input type="text"
+									class="form-control" id="name" name="name"
+									placeholder="Enter Name" required>
+							</div>
+
+							<div class="form-group">
+								<label for="password"><b>Password</b></label> <input type="text"
+									class="form-control" id="password" name="password"
+									placeholder="Enter Password" required>
+							</div>
+
+							<label for="role"><b>Role</b></label> <br> <select
+								name="role" id="role" class="form-control" required>
+								<option disabled selected>Select Role</option>
+								<option value="clerk">Clerk</option>
+								<option value="driver">Driver</option>
+							</select><br>
+							<br>
+
+							<div class="text-center">
+								<!-- Added text-center class here -->
+								<button type="submit" class="btn btn-primary">Register</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="fixed-bottom">
   <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
     &copy; 2023. All rights reserved.
   </div>

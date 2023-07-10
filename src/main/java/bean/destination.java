@@ -10,6 +10,11 @@ public class destination {
 		this.destinationName = destinationName;
 	}
 	
+	public destination(String destinationName) {
+		super();
+		this.destinationName = destinationName;
+	}
+	
 	public destination() {
 		
 	}

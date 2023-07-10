@@ -9,7 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.BusDest;
 import bean.bus;
+import bean.destination;
 import bean.staff;
 import bean.trip;
 import helper.EncryptDecryptPass;
@@ -23,6 +25,8 @@ private EncryptDecryptPass encryptDecryptPass;
 	private String jdbcPassword = "system";
 	
 	private String INSERT_BUS_SQL = "INSERT INTO bus(name, noPlate) VALUES(?,?)";
+	private String SELECT_ALL_BUS_DESTINATION = "SELECT b.busid, b.name, b.noplate, d.destinationid, d.destinationname FROM bus b JOIN trip t ON b.busid = t.busid JOIN destination d ON t.destinationid = d.destinationid";
+	private String SELECT_ALL_BUS = "SELECT * FROM bus";
 	
 	public busService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -79,6 +83,72 @@ private EncryptDecryptPass encryptDecryptPass;
 			}
 
 			return status;
+		}
+	//READ BUS JOIN DESTINATION
+		public List<BusDest> selectAllBusTrip() {
+
+			// using try-with-resources to avoid closing resources (boiler plate code)
+			List<BusDest> busDest = new ArrayList<>();
+			// Step 1: Establishing a Connection
+			try (Connection connection = getConnection();
+
+					// Step 2:Create a statement using connection object
+					PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_BUS_DESTINATION);) {
+//	            System.out.println(preparedStatement);
+				// Step 3: Execute the query or update query
+				ResultSet rs = preparedStatement.executeQuery();
+
+				// Step 4: Process the ResultSet object.
+				while (rs.next()) {
+					int busID = rs.getInt("busID");
+					String name = rs.getString("name");
+					String noPlate = rs.getString("noPlate");
+					int destinationID = rs.getInt("destinationID");
+					String destinationName = rs.getString("destinationName");
+					
+//					if(doctor_id == session_doc_id) {
+					
+				busDest.add(new BusDest(busID, name, noPlate, destinationID, destinationName));
+					
+//					}
+					
+				}
+			} catch (SQLException e) {
+				printSQLException(e);
+			}
+			return busDest;
+		}
+	//READ BUS
+		public List<bus> selectAllBus() {
+
+			// using try-with-resources to avoid closing resources (boiler plate code)
+			List<bus> Bus = new ArrayList<>();
+			// Step 1: Establishing a Connection
+			try (Connection connection = getConnection();
+
+					// Step 2:Create a statement using connection object
+					PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_BUS);) {
+//	            System.out.println(preparedStatement);
+				// Step 3: Execute the query or update query
+				ResultSet rs = preparedStatement.executeQuery();
+
+				// Step 4: Process the ResultSet object.
+				while (rs.next()) {
+					int busID = rs.getInt("busID");
+					String name = rs.getString("name");
+					String noPlate = rs.getString("noPlate");
+					
+//					if(doctor_id == session_doc_id) {
+					
+				Bus.add(new bus(busID, name, noPlate));
+					
+//					}
+					
+				}
+			} catch (SQLException e) {
+				printSQLException(e);
+			}
+			return Bus;
 		}
 	
 }

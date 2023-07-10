@@ -12,6 +12,12 @@ public class bus {
 			this.noPlate = noPlate;
 		}
 		
+		public bus( String name, String noPlate) {
+			super();
+			this.name = name;
+			this.noPlate = noPlate;
+		}
+		
 		public bus() {
 			
 		}

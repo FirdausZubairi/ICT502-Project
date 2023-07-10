@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Account Detail</title>
+<title>bus trip</title>
 <!-- CSS only -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -75,44 +75,47 @@
 			</div>
 		</div>
 	</div>
+	
+        
 	<!-- End side bar -->
-	<section class="col-10 offset-2 main-section" style="padding-top: 20px">
-		<div class="container">
-			<div class="row mt-5">
-				<div class="col-lg-10">
-					<h2>Staff's Details</h2>
+	<section class="col-10 offset-2 main-section " style="padding-top: 20px">
+		<div class="container " style= "margin-top:10px">
+			<div class="row mt-5 ">
+				<div class="col-lg-10 "> 
+				<div class=" d-flex justify-content-between align-items-center "> 
+					<h2>Bus Trip</h2>
+					<a href="destination.jsp"> 
+					<button  type="button" class="btn btn-info"> Add Trip</button>
+					</a>
+					</div>
+					
 					<div class="table-responsive container-fluid" id="infinite-table">
 						<table class="table table-hover align-middle">
 							<thead class="header">
 								<tr>
-									<th scope="col">ID</th>
+									<th scope="col">BusID</th>
 									<th scope="col">Name</th>
-									<th scope="col">Username</th>
-									<th scope="col">Password</th>
-									<th scope="col">Role</th>
-									<th scope="col">AdminID</th>
+									<th scope="col">NoPlate</th>
+									<th scope="col">DestinationID</th>
+									<th scope="col">Destination Name</th>
 									<th scope="col">Actions</th>
 									<!-- New column for actions -->
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="stf" items="${listStaff}">
-									<tr key="<c:out value="${stf.staffID}" />">
+								<c:forEach var="bd" items="${listBusDest}">
+									<tr key="<c:out value="${bd.busID}" />">
 
 										<th scope="row" style="color: #FF4E5B !important;"><c:out
-												value="${stf.staffID}" /></th>
-										<td><c:out value="${stf.getName()}" /></td>
-										<td><c:out value="${stf.username}" /></td>
-										<td><c:out value="${stf.password}" /></td>
-										<td><c:out value="${stf.role}" /></td>
-										<td><c:out value="${stf.adminID}" /></td>
+												value="${bd.busID}" /></th>
+										<td><c:out value="${bd.getName()}" /></td>
+										<td><c:out value="${bd.noPlate}" /></td>
+										<td><c:out value="${bd.destinationID}" /></td>
+										<td><c:out value="${bd.destinationName}" /></td>
 										<td>
-											<!-- Update Button -->
-											<button type="button" class="btn btn-primary"
-												onclick="myFunction(<c:out value='${stf.staffID}'/>, '/ICT502-Project/staff/update-staff')">
-												Update</button> <!-- Delete Button -->
+											<!-- Delete Button -->
 											<button type="button" class="btn btn-danger"
-												onclick="myFunction(<c:out value="${stf.staffID}"/>, 'DeleteStaff')">
+												onclick="myFunction(<c:out value="${bd.busID}"/>, 'DeleteStaff')">
 												Delete</button>
 										</td>
 									</tr>

@@ -87,5 +87,45 @@
   <servlet-mapping>
     <servlet-name>DeleteStaff</servlet-name>
     <url-pattern>/DeleteStaff</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateBus</display-name>
+    <servlet-name>CreateBus</servlet-name>
+    <servlet-class>controller.staff.CreateBus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateBus</servlet-name>
+    <url-pattern>/CreateBus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadBus</display-name>
+    <servlet-name>ReadBus</servlet-name>
+    <servlet-class>controller.staff.ReadBus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadBus</servlet-name>
+    <url-pattern>/ReadBus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateDestination</display-name>
+    <servlet-name>CreateDestination</servlet-name>
+    <servlet-class>controller.staff.CreateDestination</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateDestination</servlet-name>
+    <url-pattern>/CreateDestination</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadBusDest</display-name>
+    <servlet-name>ReadBusDest</servlet-name>
+    <servlet-class>controller.staff.ReadBusDest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadBusDest</servlet-name>
+    <url-pattern>/ReadBusDest</url-pattern>
+  </servlet-mapping>
 </web-app>

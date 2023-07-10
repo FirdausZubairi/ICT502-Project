@@ -46,8 +46,8 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="tripschedule-staff.jsp"> <i
-						class="fas fa-bus" style="margin-right: 20px"></i> <span>Create
+					<a class="nav-link" href="bustrip"> <i
+						class="fas fa-bus" style="margin-right: 20px"></i> <span>
 							Bus Trip</span>
 					</a>
 					<div
@@ -67,7 +67,7 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="busdetail-staff.jsp"> <i
+					<a class="nav-link" href="busdetail-staff"> <i
 						class="fa fa-table" style="margin-right: 20px"></i> <span>View
 							Bus</span>
 					</a>
@@ -85,7 +85,7 @@
 			style="height: 2px; border-width: 0; color: #808080; background-color: #808080">
 		<div style="display: flex; justify-content: space-between;">
 			<div class="hover-shadow">
-				<a href="busdetail-staff.jsp"
+				<a href="busdetail-staff"
 					style="flex: 1; text-align: center; display: block;"> <img
 					alt="Dashboard Bus"
 					src="/ICT502-Project/image/DashboardBus-staff.jpg"

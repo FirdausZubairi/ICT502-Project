@@ -44,9 +44,8 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="bustrip"> <i
-						class="fas fa-bus" style="margin-right: 20px"></i> <span>
-							Bus Trip</span>
+					<a class="nav-link" href="bustrip"> <i class="fas fa-bus"
+						style="margin-right: 20px"></i> <span> Bus Trip</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
@@ -76,57 +75,69 @@
 		</div>
 	</div>
 	<!-- End side bar -->
-	<section class="col-10 offset-2 main-section" style="padding-top: 20px">
-		<div class="container">
-			<div class="row mt-5">
-				<div class="col-lg-10">
-					<h2>Staff's Details</h2>
-					<div class="table-responsive container-fluid" id="infinite-table">
-						<table class="table table-hover align-middle">
-							<thead class="header">
-								<tr>
-									<th scope="col">ID</th>
-									<th scope="col">Name</th>
-									<th scope="col">Username</th>
-									<th scope="col">Password</th>
-									<th scope="col">Role</th>
-									<th scope="col">AdminID</th>
-									<th scope="col">Actions</th>
-									<!-- New column for actions -->
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="stf" items="${listStaff}">
-									<tr key="<c:out value="${stf.staffID}" />">
 
-										<th scope="row" style="color: #FF4E5B !important;"><c:out
-												value="${stf.staffID}" /></th>
-										<td><c:out value="${stf.getName()}" /></td>
-										<td><c:out value="${stf.username}" /></td>
-										<td><c:out value="${stf.password}" /></td>
-										<td><c:out value="${stf.role}" /></td>
-										<td><c:out value="${stf.adminID}" /></td>
-										<td>
-											<!-- Update Button -->
-											<button type="button" class="btn btn-primary"
-												onclick="myFunction(<c:out value='${stf.staffID}'/>, '/ICT502-Project/staff/update-staff')">
-												Update</button> <!-- Delete Button -->
-											<button type="button" class="btn btn-danger"
-												onclick="myFunction(<c:out value="${stf.staffID}"/>, 'DeleteStaff')">
-												Delete</button>
-										</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
+	<section class="col-10 offset-2 main-section" style="padding-top: 70px">
+		<div class="container-fluid h-custom">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-md-9 col-lg-6 col-xl-5">
+					<img alt="Dashboard Bus" src="/ICT502-Project/image/buss.png"
+						class="img-fluid" alt="Sample image">
 				</div>
+				<div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
+					<form action="CreateBus" method="post">
+						<div class="container mt-3">
+							<h4>Register Bus</h4>
+
+							<div class="form-group">
+								<label for="bus-number">Name:</label> <input type="text"
+									class="form-control" id="bus-number" name="name" required>
+							</div>
+
+
+							<div class="form-group">
+								<label for="bus-number">Number Plate:</label> <input type="text"
+									class="form-control" id="bus-number" name="noPlate" required>
+							</div>
+							<div class="text-center">
+								<!-- Added text-center class here -->
+								<button type="submit" class="btn btn-primary btn-block">Submit</button>
+							</div>
+						</div>
+
+					</form >
+					<hr>
+					<form action="CreateDestination" method="post">
+						<div class="container mt-3">
+							<h4>Register Destination</h4>
+
+							<div class="form-group">
+								<label for="destination">Destination:</label> <select
+									class="form-control" id="destination" name="destinationName"
+									required>
+									<option value="">Select destination</option>
+									<option value="Melaka Sentral">Melaka Sentral</option>
+									<option value="KL Sentral">Kelantan Sentral</option>
+									<option value="Cheras Sentral">Cheras Sentral</option>
+									<option value="Terminal Bas Kota Bharu">Terminal Bas
+										Kota Bharu</option>
+								</select>
+							</div>
+
+
+							<div class="text-center">
+								<!-- Added text-center class here -->
+								<button type="submit" class="btn btn-primary btn-block">Submit</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+
 			</div>
 		</div>
+		      
 	</section>
-	<br>
-
-
 
 
 	<footer class="fixed-bottom">
@@ -138,14 +149,14 @@
 	<!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
 	<!-- <script src="js/script.js"></script> -->
 	<script>
-		function myFunction(x,y) {
-			console.log("Row index is: " + x); 
-			window.location.href= y + "?id=" + x;
+		function myFunction(x, y) {
+			console.log("Row index is: " + x);
+			window.location.href = y + "?id=" + x;
 			sessionStorage.setItem("key", x);
 			console.log("Session key : " + sessionStorage.getItem("key"));
 		}
 	</script>
-	
+
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
