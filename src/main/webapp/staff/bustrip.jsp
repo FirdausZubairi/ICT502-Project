@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Staff Dashboard</title>
+<title>bus trip</title>
+<!-- CSS only -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -14,7 +13,6 @@
 	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="dashboard-staff.css">
-
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 	<!--Navbar-->
@@ -77,42 +75,81 @@
 			</div>
 		</div>
 	</div>
+	
+        
 	<!-- End side bar -->
+	<section class="col-10 offset-2 main-section " style="padding-top: 20px">
+		<div class="container " style= "margin-top:10px">
+			<div class="row mt-5 ">
+				<div class="col-lg-10 "> 
+				<div class=" d-flex justify-content-between align-items-center "> 
+					<h2>Bus Trip</h2>
+					<a href="destination.jsp"> 
+					<button  type="button" class="btn btn-info"> Add Trip</button>
+					</a>
+					</div>
+					
+					<div class="table-responsive container-fluid" id="infinite-table">
+						<table class="table table-hover align-middle">
+							<thead class="header">
+								<tr>
+									<th scope="col">BusID</th>
+									<th scope="col">Name</th>
+									<th scope="col">NoPlate</th>
+									<th scope="col">Actions</th>
+									<!-- New column for actions -->
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="stf" items="${listStaff}">
+									<tr key="<c:out value="${stf.BusID}" />">
 
-	<section class="col-10 offset-2 main-section" style="padding-top: 70px">
-		<h3>Dashboard</h3>
-		<hr
-			style="height: 2px; border-width: 0; color: #808080; background-color: #808080">
-		<div style="display: flex; justify-content: space-between;">
-			<div class="hover-shadow">
-				<a href="busdetail-staff.jsp"
-					style="flex: 1; text-align: center; display: block;"> <img
-					alt="Dashboard Bus"
-					src="/ICT502-Project/image/DashboardBus-staff.jpg"
-					style="width: 60%;">
-					<p>View Bus</p>
-				</a>
-			</div>
-			<div class="hover-shadow">
-				<a href="accountdetails-staff"
-					style="flex: 1; text-align: center; display: block;"> <img
-					alt="Dashboard Account"
-					src="/ICT502-Project/image/DashboardAccount-staff.jpg"
-					style="width: 60%;">
-					<p>View Account</p>
-				</a>
+										<th scope="row" style="color: #FF4E5B !important;"><c:out
+												value="${stf.BusID}" /></th>
+										<td><c:out value="${stf.getName()}" /></td>
+										<td><c:out value="${stf.Name}" /></td>
+										<td><c:out value="${stf.noplate}" /></td>
+										<td>
+											<!-- Update Button -->
+											<button type="button" class="btn btn-primary"
+												onclick="myFunction(<c:out value='${stf.BusID}'/>, '/ICT502-Project/staff/update-staff')">
+												Update</button> <!-- Delete Button -->
+											<button type="button" class="btn btn-danger"
+												onclick="myFunction(<c:out value="${stf.BusID}"/>, 'DeleteStaff')">
+												Delete</button>
+										</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
+	<br>
+
+
+
+
 	<footer class="fixed-bottom">
 		<div
 			class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary"
 			style="width: 100%;">&copy; 2023. All rights reserved.</div>
 	</footer>
 
-
-
-
+	<!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
+	<!-- <script src="js/script.js"></script> -->
+	<script>
+		function myFunction(x,y) {
+			console.log("Row index is: " + x); 
+			window.location.href= y + "?id=" + x;
+			sessionStorage.setItem("key", x);
+			console.log("Session key : " + sessionStorage.getItem("key"));
+		}
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

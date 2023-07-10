@@ -43,8 +43,8 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="tripschedule-staff.jsp"> <i
-						class="fas fa-bus" style="margin-right: 20px"></i> <span>Create
+					<a class="nav-link" href="bustrip.jsp"> <i
+						class="fas fa-bus" style="margin-right: 20px"></i> <span>
 							Bus Trip</span>
 					</a>
 					<div
