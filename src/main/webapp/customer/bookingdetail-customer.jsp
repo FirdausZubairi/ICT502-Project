@@ -11,7 +11,7 @@
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/dasboard.css">
+  <link rel="stylesheet" href="dasboard.css">
 
 </head>
 
@@ -27,16 +27,12 @@
         <span class="navbar-text">
             Booking
         </span>
-        <!--User account-->
         <div class="btn-container-user">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
-                </ul>
-            </div>
+           <div class="btn-container-user">
+				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Staff Login</a>
+			</div>
         </div>
-    </div>
+	</div>
 </nav>
 
  <!--Sidebar menu-->
@@ -90,13 +86,13 @@
   </div>
 </section>
 
-   <footer class="mt-auto">
-    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-        &copy; 2023. All rights reserved.
-    </div>
+<footer class="fixed-bottom">
+  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
+    &copy; 2023. All rights reserved.
+  </div>
 </footer>
 
-
+<script src="booking.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

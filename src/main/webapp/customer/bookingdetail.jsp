@@ -111,17 +111,38 @@
               <br><br>
             </form>
           </div>
+    </section>
+    <!-- END OF SEARCH SECTION -->
+    
+
+<!-- DISPLAY SECTION -->
+<section class="col-10 offset-2 main-section d-flex justify-content-center align-items-center">
+  <div class="container-fluid mt-5">
+    <table class="table table-striped mt-2">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Bus</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Fare</th>
+          <th>Seats Available</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="AvailableBusTable"></tbody>
+    </table>
+  </div>
+</section>
 
 <footer class="fixed-bottom">
   <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
     &copy; 2023. All rights reserved.
   </div>
 </footer>
-
-          
-    </section>
-    <!-- END OF SEARCH SECTION -->
-
+        
+    
+    
     
 
 

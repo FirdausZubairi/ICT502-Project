@@ -68,8 +68,7 @@ public class loginController extends HttpServlet {
 					e.printStackTrace();
 				}
 	        }
-	  
-	        
+	  	        
 	        if (stf != null) {
 	            // Login successful	
 	            // Set the session based on the returned Login object

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,15 +24,13 @@
 			</a> <span class="navbar-text"> Staff </span>
 			<!--User account-->
 			<div class="btn-container-user">
-				<div class="dropdown">
-					<button class="btn dropdown-toggle nav-box" type="button"
-						id="dropdownMenuButton" data-bs-toggle="dropdown"
-						aria-expanded="false">more</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<li><a class="dropdown-item" href="login.jsp">Logout</a></li>
-					</ul>
-				</div>
-			</div>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
 		</div>
 	</nav>
 
@@ -65,10 +63,19 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="UpdateStaff"> <i
-						class="fas fa-user-edit" style="margin-right: 20px"></i> <span>Update
-							Staff</span>
+
+					<a class="nav-link" href="accountdetails-staff"> <i
+						class="fas fa-user" style="margin-right: 20px"></i> <span>View
+							Account</span>
 					</a>
+					<div
+						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
+						style="padding: 0 40px"></div>
+					<a class="nav-link" href="busdetails-staff.jsp"> <i
+						class="fa fa-table" style="margin-right: 20px"></i> <span>View
+							Bus</span>
+					</a>
+
 				</div>
 			</div>
 		</div>
@@ -99,15 +106,15 @@
 
 										<th scope="row" style="color: #FF4E5B !important;"><c:out
 												value="${stf.staffID}" /></th>
-										<td><c:out value="${stf.getName()}"/></td>
-										<td><c:out value="${stf.username}"/></td>
-										<td><c:out value="${stf.password}"/></td>
+										<td><c:out value="${stf.getName()}" /></td>
+										<td><c:out value="${stf.username}" /></td>
+										<td><c:out value="${stf.password}" /></td>
 										<td><c:out value="${stf.role}" /></td>
-										<td><c:out value="${stf.adminID}"/></td>
+										<td><c:out value="${stf.adminID}" /></td>
 										<td>
 											<!-- Update Button -->
 											<button type="button" class="btn btn-primary"
-												 onclick="myFunction(<c:out value='${stf.staffID}'/>, '/ICT502-Project/staff/update-staff')">
+												onclick="myFunction(<c:out value='${stf.staffID}'/>, '/ICT502-Project/staff/update-staff')">
 												Update</button> <!-- Delete Button -->
 											<button type="button" class="btn btn-danger"
 												onclick="myFunction(<c:out value="${stf.staffID}"/>, 'DeleteStaff')">
@@ -127,9 +134,10 @@
 
 
 
-	<footer class="mt-auto">
-		<div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-			&copy; 2023. All rights reserved.</div>
+	<footer class="fixed-bottom">
+		<div
+			class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary"
+			style="width: 100%;">&copy; 2023. All rights reserved.</div>
 	</footer>
 
 	<!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
@@ -141,7 +149,8 @@
 			sessionStorage.setItem("key", x);
 			console.log("Session key : " + sessionStorage.getItem("key"));
 		}
-	</script>s
+	</script>
+	s
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

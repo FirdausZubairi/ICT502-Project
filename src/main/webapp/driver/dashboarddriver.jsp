@@ -23,7 +23,7 @@
             Staff
         </span>
         <!--User account-->
-        <div class="btn-container-user">
+       <div class="btn-container-user">
             <div class="dropdown">
                 <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -69,10 +69,10 @@
       </div>
     </section>
 
-   <footer class="mt-auto">
-    <div class="text-center text-white py-2 px-4 px-xl-5 bg-primary">
-        &copy; 2023. All rights reserved.
-    </div>
+    <footer class="fixed-bottom">
+  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
+    &copy; 2023. All rights reserved.
+  </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -25,14 +25,10 @@
         <span class="navbar-text">
             Tickets
         </span>
-        <!--User account-->
         <div class="btn-container-user">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
-                </ul>
-            </div>
+           <div class="btn-container-user">
+				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Staff Login</a>
+			</div>
         </div>
     </div>
 </nav>
@@ -73,20 +69,34 @@
             <button type="submit">Search</button>
           </form>
         </div>
-        <div class="container" style="border: 1px solid #ccc; padding: 20px; margin-top: 50px;">
-          <h2>Bus Information</h2>
-          <div>
-            <p><strong>Bus Name:</strong> ABC Bus</p>
-            <p><strong>Plate No:</strong> XYZ123</p>
-            <p><strong>Destination:</strong> City B</p>
-            <p><strong>State:</strong> State X</p>
-            <p><strong>Type:</strong> Deluxe</p>
-            <p><strong>Date:</strong> 2023-07-10</p>
-            <p><strong>Price:</strong> $50</p>
-          </div>
-        </div>
+<div class="container" style="border: 1px solid #ccc; padding: 20px; margin-top: 20px;">
+  <h2>Bus Information</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Bus Name:</strong> ABC Bus</p>
+      <p><strong>Plate No:</strong> XYZ123</p>
+      <p><strong>Destination:</strong> City B</p>
+    </div>
+    <div class="col-md-6">
+      <p><strong>State:</strong> State X</p>
+      <p><strong>Type:</strong> Deluxe</p>
+      <p><strong>Date:</strong> 2023-07-10</p>
+    </div>
+  </div>
+     <div class="text-center">
+      <p><strong>Price:</strong> $50</p>
+    </div>
+</div>
+
       </div>
     </section>
+    
+    <footer class="fixed-bottom">
+  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
+    &copy; 2023. All rights reserved.
+  </div>
+</footer>
+    
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
