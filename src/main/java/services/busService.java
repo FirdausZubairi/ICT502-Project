@@ -27,6 +27,8 @@ private EncryptDecryptPass encryptDecryptPass;
 	private String INSERT_BUS_SQL = "INSERT INTO bus(name, noPlate) VALUES(?,?)";
 	private String SELECT_ALL_BUS_DESTINATION = "SELECT b.busid, b.name, b.noplate, d.destinationid, d.destinationname FROM bus b JOIN trip t ON b.busid = t.busid JOIN destination d ON t.destinationid = d.destinationid";
 	private String SELECT_ALL_BUS = "SELECT * FROM bus";
+	private String SELECT_BUS_ID = "SELECT * FROM bus WHERE busID=?";
+	private String UPDATE_BUS_ID = "UPDATE bus set name=?, noPlate=? WHERE busID=?";
 	
 	public busService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -149,6 +151,55 @@ private EncryptDecryptPass encryptDecryptPass;
 				printSQLException(e);
 			}
 			return Bus;
+		}
+		
+		//UPDATE BUS
+		public bus getOneBus(int id) {
+			bus Bus = null;
+			
+			try (Connection connection = getConnection();
+					PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BUS_ID)) {
+				preparedStatement.setInt(1, id);
+
+				ResultSet rs = preparedStatement.executeQuery();
+
+				while (rs.next()) {
+
+					int busID = rs.getInt("busID");
+					String name = rs.getString("name");
+					String noPlate = rs.getString("noPlate");
+					
+//					if(doctor_id == session_doc_id) {
+					System.out.println("Bus id : " + busID);
+					
+					Bus = new bus(busID, name, noPlate);
+				}
+				
+			} catch (SQLException e) {
+				printSQLException(e);
+			}
+			
+			return Bus;
+		}
+		
+		public boolean updateBus(bus Bus) throws SQLException{
+			boolean status = false;
+			
+			try (Connection connection = getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_BUS_ID)) {
+				preparedStatement.setString(1, Bus.getName());
+				preparedStatement.setString(2, Bus.getNoPlate());
+				//private String UPDATE_STAFF_ID = "UPDATE staff set username=?, password=?, name=?, role=? WHERE staffID=?";
+
+				System.out.println(Bus.getName());
+				preparedStatement.executeUpdate();
+				status = true;
+			} catch (SQLException e) {
+				printSQLException(e);
+				status = false;
+			}
+			
+			return status;
 		}
 	
 }

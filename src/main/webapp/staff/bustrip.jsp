@@ -84,7 +84,7 @@
 				<div class="col-lg-10 "> 
 				<div class=" d-flex justify-content-between align-items-center "> 
 					<h2>Bus Trip</h2>
-					<a href="destination.jsp"> 
+					<a href="create-trip.jsp"> 
 					<button  type="button" class="btn btn-info"> Add Trip</button>
 					</a>
 					</div>

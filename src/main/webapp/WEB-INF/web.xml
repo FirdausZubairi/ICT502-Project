@@ -128,4 +128,14 @@
     <servlet-name>ReadBusDest</servlet-name>
     <url-pattern>/ReadBusDest</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateBus</display-name>
+    <servlet-name>UpdateBus</servlet-name>
+    <servlet-class>controller.staff.UpdateBus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateBus</servlet-name>
+    <url-pattern>/UpdateBus</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Staff Dashboard</title>
+<title>Account Detail</title>
+<!-- CSS only -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -14,7 +13,6 @@
 	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="dashboard-staff.css">
-
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 	<!--Navbar-->
@@ -46,9 +44,8 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="bustrip"> <i
-						class="fas fa-bus" style="margin-right: 20px"></i> <span>
-							Bus Trip</span>
+					<a class="nav-link" href="bustrip"> <i class="fas fa-bus"
+						style="margin-right: 20px"></i> <span> Bus Trip</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
@@ -61,14 +58,18 @@
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
 					<a class="nav-link" href="accountdetails-staff"> <i
-						class="fas fa-user" style="margin-right: 20px"></i> <span>Account</span>
+						class="fas fa-user" style="margin-right: 20px"></i> <span>View
+							Account</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
 					<a class="nav-link" href="busdetail-staff"> <i
-						class="fa fa-table" style="margin-right: 20px"></i> <span>Bus</span>
+						class="fa fa-table" style="margin-right: 20px"></i> <span>View
+							Bus</span>
 					</a>
+
+
 				</div>
 			</div>
 		</div>
@@ -76,39 +77,66 @@
 	<!-- End side bar -->
 
 	<section class="col-10 offset-2 main-section" style="padding-top: 70px">
-		<h3>Dashboard</h3>
-		<hr
-			style="height: 2px; border-width: 0; color: #808080; background-color: #808080">
-		<div style="display: flex; justify-content: space-between;">
-			<div class="hover-shadow">
-				<a href="busdetail-staff"
-					style="flex: 1; text-align: center; display: block;"> <img
-					alt="Dashboard Bus"
-					src="/ICT502-Project/image/DashboardBus-staff.jpg"
-					style="width: 60%;">
-					<p>View Bus</p>
-				</a>
-			</div>
-			<div class="hover-shadow">
-				<a href="accountdetails-staff"
-					style="flex: 1; text-align: center; display: block;"> <img
-					alt="Dashboard Account"
-					src="/ICT502-Project/image/DashboardAccount-staff.jpg"
-					style="width: 60%;">
-					<p>View Account</p>
-				</a>
+		<div class="container-fluid h-custom">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-md-9 col-lg-6 col-xl-5">
+					<img alt="Dashboard Bus" src="/ICT502-Project/image/buss.png"
+						class="img-fluid" alt="Sample image">
+				</div>
+				<div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
+					<form action="update-bus" method="post">
+						<div class="container mt-3">
+							<h4>Update Bus</h4>
+							<p>Kindly fill in this form to update your account.</p>
+							<c:if test="${Bus != null}">
+								<input type="hidden" name="busID"
+									value="<c:out value='${Bus.busID}' />" />
+							</c:if>
+							<div class="form-group">
+								<label for="bus-number">Name:</label> <input type="text"
+									class="form-control" id="bus-number" name="name" value='${Bus.Name}' required>
+							</div>
+
+
+							<div class="form-group">
+								<label for="bus-number">Number Plate:</label> <input type="text"
+									class="form-control" id="bus-number" name="noPlate" value='${Bus.noPlate}' required>
+							</div>
+							<div class="text-center">
+								<!-- Added text-center class here -->
+								<button type="submit" class="btn btn-primary btn-block">Submit</button>
+							</div>
+						</div>
+
+					</form >
+					
+				</div>
+
 			</div>
 		</div>
+		      
 	</section>
+
+
 	<footer class="fixed-bottom">
 		<div
 			class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary"
 			style="width: 100%;">&copy; 2023. All rights reserved.</div>
 	</footer>
 
+	<!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
+	<!-- <script src="js/script.js"></script> -->
+	<script>
+		function myFunction(x, y) {
+			console.log("Row index is: " + x);
+			window.location.href = y + "?id=" + x;
+			sessionStorage.setItem("key", x);
+			console.log("Session key : " + sessionStorage.getItem("key"));
+		}
+	</script>
 
-
-
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

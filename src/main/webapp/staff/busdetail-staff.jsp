@@ -84,8 +84,9 @@
 			<div class="row mt-5 ">
 				<div class="col-lg-10 "> 
 				<div class=" d-flex justify-content-between align-items-center "> 
-					<h2>Bus Details</h2>
-					
+					<a href="destination.jsp"> 
+					<button  type="button" class="btn btn-info"> Add Bus</button>
+					</a>
 					</div>
 					
 					<div class="table-responsive container-fluid" id="infinite-table">
@@ -108,9 +109,12 @@
 										<td><c:out value="${bd.getName()}" /></td>
 										<td><c:out value="${bd.noPlate}" /></td>
 										<td>
-											<!-- Delete Button -->
+											<!-- Update Button -->
+											<button type="button" class="btn btn-primary"
+												onclick="myFunction(<c:out value='${bd.busID}'/>, '/ICT502-Project/staff/update-bus')">
+												Update</button> <!-- Delete Button -->
 											<button type="button" class="btn btn-danger"
-												onclick="myFunction(<c:out value="${bd.busID}"/>, 'DeleteStaff')">
+												onclick="myFunction(<c:out value="${bd.busID}"/>, 'DeleteBus')">
 												Delete</button>
 										</td>
 									</tr>
