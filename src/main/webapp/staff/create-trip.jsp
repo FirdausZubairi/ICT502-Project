@@ -88,30 +88,32 @@
 						class="img-fluid" alt="Sample image">
 				</div>
 				<div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
-					<form action="CreateStaff" method="post">
+					<form action="CreateTrip" method="post">
 						<div class="container mt-3">
 							<h1>Bus Trip</h1>
 							<p>Kindly fill in this form to register.</p>
 							<div class="form-group">
 								<label for="username"><b>Destination ID</b></label> <input type="text"
-									class="form-control" id="username" name="username"
-									placeholder="Enter Username" required>
+									class="form-control" id="username" name="destinationID" 
+									placeholder="" required>
 							</div>
 
 							<div class="form-group">
 								<label for="name"><b>Bus ID</b></label> <input type="text"
-									class="form-control" id="name" name="name"
-									placeholder="Enter Name" required>
+									class="form-control" id="name" name="busID"
+									placeholder="" required>
 							</div>
 
 							<div class="form-group">
-								<label for="password"><b>Time</b></label>  <input type="date" class="form-control " id="date" min="" required>
+								<label for="time"><b>Time</b></label>  <input type="text" class="form-control " id="date" name="time" required>
 							</div>
 
 							
 							<div class="text-center">
 								<!-- Added text-center class here -->
+	
 								<button type="submit" class="btn btn-primary">Submit</button>
+								
 							</div>
 						</div>
 					</form>

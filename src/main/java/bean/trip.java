@@ -5,15 +5,21 @@ import java.sql.Date;
 public class trip {
 		private int destinationID;
 		private int busID;
-		private Date time;
+		private String time;
 		
-		public trip(int destinationID, int busID, Date time) {
+		public trip(int destinationID, int busID, String time) {
 			super();
 			this.destinationID = destinationID;
 			this.busID = busID;
 			this.time = time;
 		}
 
+		public trip( String time) {
+			super();
+			this.time = time;
+		}
+		
+		
 		public int getDestinationID() {
 			return destinationID;
 		}
@@ -30,11 +36,11 @@ public class trip {
 			this.busID = busID;
 		}
 
-		public Date getTime() {
+		public String getTime() {
 			return time;
 		}
 
-		public void setTime(Date time) {
+		public void setTime(String time) {
 			this.time = time;
 		}
 		

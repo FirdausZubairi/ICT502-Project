@@ -128,4 +128,34 @@
     <servlet-name>ReadBusDest</servlet-name>
     <url-pattern>/ReadBusDest</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateBus</display-name>
+    <servlet-name>UpdateBus</servlet-name>
+    <servlet-class>controller.staff.UpdateBus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateBus</servlet-name>
+    <url-pattern>/UpdateBus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateTrip</display-name>
+    <servlet-name>CreateTrip</servlet-name>
+    <servlet-class>controller.staff.CreateTrip</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateTrip</servlet-name>
+    <url-pattern>/CreateTrip</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>passengerControl</display-name>
+    <servlet-name>passengerControl</servlet-name>
+    <servlet-class>controller.customer.passengerControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>passengerControl</servlet-name>
+    <url-pattern>/passengerControl</url-pattern>
+  </servlet-mapping>
 </web-app>

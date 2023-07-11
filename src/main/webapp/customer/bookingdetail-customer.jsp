@@ -70,14 +70,14 @@
       </div>
       <div class="col-md-6">
         <h1>Passenger Details</h1>
-        <form action="paymentmethod-customer.jsp">
+        <form action="passengerControl" method="post">
           <div class="form-group">
             <label for="customerName">Name</label>
-            <input type="text" class="form-control" id="customerName" placeholder="Enter passenger name" required>
+            <input type="text" class="form-control" id="customerName" name ="name" placeholder="Enter passenger name" required>
           </div>
           <div class="form-group">
             <label for="phoneNo">Phone Number</label>
-            <input type="tel" class="form-control" id="phoneNo" placeholder="Enter your phone number" required>
+            <input type="tel" class="form-control" id="phoneNo" name="phone" placeholder="Enter your phone number" required>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>

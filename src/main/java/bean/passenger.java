@@ -16,6 +16,14 @@ public class passenger {
 			this.password = password;
 		}
 		
+		public passenger( String name, String phone) {
+			super();
+			
+			this.name = name;
+			this.phone = phone;
+			
+		}
+		
 		public passenger() {
 			
 		}

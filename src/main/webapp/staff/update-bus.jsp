@@ -2,29 +2,27 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bus Details</title>
+<title>Account Detail</title>
+<!-- CSS only -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="dashboard-staff.css">
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
-	<!-- Navbar -->
+	<!--Navbar-->
 	<nav class="navbar fixed-top navbar-light bg-light">
 		<div class="container-fluid d-flex justify-content-between">
 			<a class="navbar-brand" href="login.html"> <img
 				src="/ICT502-Project/image/bus-stop.png" alt="" width="30"
 				height="24" class="d-inline-block align-text-top"> BTS
 			</a> <span class="navbar-text"> Staff </span>
-			<!-- User account -->
+			<!--User account-->
 			<div class="btn-container-user">
 				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Logout</a>
 			</div>
@@ -46,9 +44,8 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="bustrip"> <i
-						class="fas fa-bus" style="margin-right: 20px"></i> <span>
-							Bus Trip</span>
+					<a class="nav-link" href="bustrip"> <i class="fas fa-bus"
+						style="margin-right: 20px"></i> <span> Bus Trip</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
@@ -79,52 +76,46 @@
 	</div>
 	<!-- End side bar -->
 
-	<section class="col-10 offset-2 main-section " style="padding-top: 20px">
-		<div class="container " style= "margin-top:10px">
-			<div class="row mt-5 ">
-				<div class="col-lg-10 "> 
-				<div class=" d-flex justify-content-between align-items-center "> 
-					<a href="destination.jsp"> 
-					<button  type="button" class="btn btn-info"> Add Bus</button>
-					</a>
-					</div>
-					
-					<div class="table-responsive container-fluid" id="infinite-table">
-						<table class="table table-hover align-middle">
-							<thead class="header">
-								<tr>
-									<th scope="col">BusID</th>
-									<th scope="col">Name</th>
-									<th scope="col">NoPlate</th>
-									<th scope="col">Actions</th>
-									<!-- New column for actions -->
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="bd" items="${listBus}">
-									<tr key="<c:out value="${bd.busID}" />">
-
-										<th scope="row" style="color: #FF4E5B !important;"><c:out
-												value="${bd.busID}" /></th>
-										<td><c:out value="${bd.getName()}" /></td>
-										<td><c:out value="${bd.noPlate}" /></td>
-										<td>
-											<!-- Update Button -->
-											<button type="button" class="btn btn-primary"
-												onclick="myFunction(<c:out value='${bd.busID}'/>, '/ICT502-Project/staff/update-bus')">
-												Update</button> <!-- Delete Button -->
-											<button type="button" class="btn btn-danger"
-												onclick="myFunction(<c:out value="${bd.busID}"/>, 'DeleteBus')">
-												Delete</button>
-										</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
+	<section class="col-10 offset-2 main-section" style="padding-top: 70px">
+		<div class="container-fluid h-custom">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-md-9 col-lg-6 col-xl-5">
+					<img alt="Dashboard Bus" src="/ICT502-Project/image/buss.png"
+						class="img-fluid" alt="Sample image">
 				</div>
+				<div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
+					<form action="update-bus" method="post">
+						<div class="container mt-3">
+							<h4>Update Bus</h4>
+							<p>Kindly fill in this form to update your account.</p>
+							<c:if test="${Bus != null}">
+								<input type="hidden" name="busID"
+									value="<c:out value='${Bus.busID}' />" />
+							</c:if>
+							<div class="form-group">
+								<label for="bus-number">Name:</label> <input type="text"
+									class="form-control" id="bus-number" name="name" value='${Bus.Name}' required>
+							</div>
+
+
+							<div class="form-group">
+								<label for="bus-number">Number Plate:</label> <input type="text"
+									class="form-control" id="bus-number" name="noPlate" value='${Bus.noPlate}' required>
+							</div>
+							<div class="text-center">
+								<!-- Added text-center class here -->
+								<button type="submit" class="btn btn-primary btn-block">Submit</button>
+							</div>
+						</div>
+
+					</form >
+					
+				</div>
+
 			</div>
 		</div>
+		      
 	</section>
 
 
@@ -133,16 +124,21 @@
 			class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary"
 			style="width: 100%;">&copy; 2023. All rights reserved.</div>
 	</footer>
+
+	<!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
+	<!-- <script src="js/script.js"></script> -->
 	<script>
-		function myFunction(x,y) {
-			console.log("Row index is: " + x); 
-			window.location.href= y + "?id=" + x;
+		function myFunction(x, y) {
+			console.log("Row index is: " + x);
+			window.location.href = y + "?id=" + x;
 			sessionStorage.setItem("key", x);
 			console.log("Session key : " + sessionStorage.getItem("key"));
 		}
 	</script>
 
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
