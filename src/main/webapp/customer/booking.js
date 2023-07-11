@@ -45,7 +45,7 @@ function populateTable() {
       <td>${data.arrival}</td>
       <td>${data.fare}</td>
       <td>${data.seatsAvailable} Seats Availability</td>
-      <td><a href="seatSelect.jsp" class="select-button btn btn-success" role="button" aria-pressed="true">Book</a></td>
+      <td><a href="bookingdetail-customer.jsp" class="select-button btn btn-success" role="button" aria-pressed="true">Book</a></td>
     `;
   
     // Append the row to the table body
@@ -76,6 +76,4 @@ function swapData() {
   
   fromSelect.value = toValue;
   toSelect.value = fromValue;
-}/**
- * 
- */
+}
