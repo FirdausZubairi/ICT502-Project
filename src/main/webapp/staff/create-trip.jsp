@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>bus trip</title>
+<title>create trip</title>
 <!-- CSS only -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -13,6 +13,10 @@
 	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="dashboard-staff.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+	integrity="sha384-PJsj/BTMqILvmcej7ulplguok8ag4xFTPryRq8xevL7eBYSmpXKcbNVuy+P0RMgq"
+	crossorigin="anonymous">
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 	<!--Navbar-->
@@ -21,7 +25,7 @@
 			<a class="navbar-brand" href="login.html"> <img
 				src="/ICT502-Project/image/bus-stop.png" alt="" width="30"
 				height="24" class="d-inline-block align-text-top"> BTS
-			</a> <span class="navbar-text"> Staff </span>
+			</a>
 			<!--User account-->
 			<div class="btn-container-user">
 				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Logout</a>
@@ -44,9 +48,8 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="bustrip"> <i
-						class="fas fa-bus" style="margin-right: 20px"></i> <span>
-							Bus Trip</span>
+					<a class="nav-link" href="bustrip"> <i class="fas fa-bus"
+						style="margin-right: 20px"></i> <span> Bus Trip</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
@@ -70,66 +73,82 @@
 							Bus</span>
 					</a>
 
-					
+
 				</div>
 			</div>
 		</div>
 	</div>
-	
-        
-	<!-- End side bar -->
-	<section class="col-10 offset-2 main-section " style="padding-top: 20px">
-		<div class="container " style= "margin-top:10px">
-			<div class="row mt-5 ">
-				<div class="col-lg-10 "> 
-				<div class=" d-flex justify-content-between align-items-center "> 
-					<h2>Bus Trip</h2>
-					<a href="create-trip"> 
-					<button  type="button" class="btn btn-info"> Add Trip</button>
-					</a>
-					</div>
-					
-					<div class="table-responsive container-fluid" id="infinite-table">
-						<table class="table table-hover align-middle">
-							<thead class="header">
-								<tr>
-									<th scope="col">BusID</th>
-									<th scope="col">Name</th>
-									<th scope="col">NoPlate</th>
-									<th scope="col">DestinationID</th>
-									<th scope="col">Destination Name</th>
-									<th scope="col">Time</th>
-									<th scope="col">Actions</th>
-									<!-- New column for actions -->
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="bd" items="${listBusDest}">
-									<tr key="<c:out value="${bd.busID}" />">
 
-										<th scope="row" style="color: #FF4E5B !important;"><c:out
-												value="${bd.busID}" /></th>
-										<td><c:out value="${bd.getName()}" /></td>
-										<td><c:out value="${bd.noPlate}" /></td>
-										<td><c:out value="${bd.destinationID}" /></td>
-										<td><c:out value="${bd.destinationName}" /></td>
-										<td><c:out value="${bd.time}" /></td>
-										<td>
-											<!-- Delete Button -->
-											<button type="button" class="btn btn-danger"
-												onclick="myFunction(<c:out value="${bd.busID}"/>, 'DeleteTrip')">
-												Delete</button>
-										</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
+
+	<!-- End side bar -->
+
+	<section class="col-10 offset-2 main-section" style="padding-top: 70px">
+		<div class="container-fluid h-custom">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-md-9 col-lg-6 col-xl-5">
+					<img src="/ICT502-Project/image/tourist.jpg" class="img-fluid"
+						alt="Sample image">
+				</div>
+				<div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
+					<form action="create-trip" method="post">
+						<div class="container mt-3">
+							<h1>Bus Trip</h1>
+							<p>Kindly fill in this form to register.</p>
+
+							<div class="form-group">
+								<label for="name"><b>Bus name</b></label> <select name="busID"
+									class="form-select" aria-label="Default select example">
+									<option selected hidden>Choose Bus Name</option>
+									<c:forEach items="${listBus}" var="bus">
+										<option value="${bus.busID }"><c:out
+												value="${bus.name }" /></option>
+									</c:forEach>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="name"><b>Destination name</b></label> <select
+									name="destinationID" class="form-select"
+									aria-label="Default select example">
+									<option selected hidden>Choose destination</option>
+									<c:forEach items="${listDestination}" var="des">
+										<option value="${des.destinationID }"><c:out
+												value="${des.destinationName }" /></option>
+									</c:forEach>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="time">Time:</label> <select class="form-control"
+									id="time" name="time" required>
+									
+									<option >Select Time</option>
+									<option >12:00 AM</option>
+									<option >03:00 AM</option>
+									<option >06:00 AM</option>
+									<option >09:00 AM</option>
+									<option >12:00 PM</option>
+									<option >03:00 PM</option>
+									<option >06:00 PM</option>
+									<option >09:00 PM</option>
+								</select>
+							</div>
+
+
+							<div class="text-center">
+								<!-- Added text-center class here -->
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</section>
-	<br>
+
+
+
+
 
 
 
@@ -142,15 +161,10 @@
 
 	<!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
 	<!-- <script src="js/script.js"></script> -->
-	<script>
-		function myFunction(x,y) {
-			console.log("Row index is: " + x); 
-			window.location.href= y + "?id=" + x;
-			sessionStorage.setItem("key", x);
-			console.log("Session key : " + sessionStorage.getItem("key"));
-		}
-	</script>
-	
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

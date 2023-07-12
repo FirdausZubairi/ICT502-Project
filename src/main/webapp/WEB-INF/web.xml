@@ -138,4 +138,44 @@
     <servlet-name>UpdateBus</servlet-name>
     <url-pattern>/UpdateBus</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteBus</display-name>
+    <servlet-name>DeleteBus</servlet-name>
+    <servlet-class>controller.staff.DeleteBus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteBus</servlet-name>
+    <url-pattern>/DeleteBus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadSchedule</display-name>
+    <servlet-name>ReadSchedule</servlet-name>
+    <servlet-class>controller.driver.ReadSchedule</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadSchedule</servlet-name>
+    <url-pattern>/ReadSchedule</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateTrip</display-name>
+    <servlet-name>CreateTrip</servlet-name>
+    <servlet-class>controller.staff.CreateTrip</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateTrip</servlet-name>
+    <url-pattern>/CreateTrip</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteBusDes</display-name>
+    <servlet-name>DeleteBusDes</servlet-name>
+    <servlet-class>controller.staff.DeleteBusDes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteBusDes</servlet-name>
+    <url-pattern>/DeleteBusDes</url-pattern>
+  </servlet-mapping>
 </web-app>

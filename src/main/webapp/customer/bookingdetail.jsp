@@ -116,24 +116,52 @@
     
 
 <!-- DISPLAY SECTION -->
-<section class="col-10 offset-2 main-section d-flex justify-content-center align-items-center">
-  <div class="container-fluid mt-5">
-    <table class="table table-striped mt-2">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Bus</th>
-          <th>Departure</th>
-          <th>Arrival</th>
-          <th>Fare</th>
-          <th>Seats Available</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="AvailableBusTable"></tbody>
-    </table>
-  </div>
-</section>
+	<section class="col-10 offset-2 main-section " style="padding-top: 20px">
+		<div class="container " style= "margin-top:10px">
+			<div class="row mt-5 ">
+				<div class="col-lg-10 "> 
+				<div class=" d-flex justify-content-between align-items-center "> 
+				
+					</div>
+					
+					<div class="table-responsive container-fluid " id="infinite-table">
+						<table class="table table-hover align-middle">
+							<thead class="header">
+								<tr>
+									<th scope="col">Bus ID</th>
+									<th scope="col">Name</th>
+									<th scope="col">No Plate</th>
+									<th scope="col">Destination ID</th>
+									<th scope="col">Destination Name</th>
+									<th scope="col">Actions</th>
+									<!-- New column for actions -->
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="bd" items="${listBusDest}">
+									<tr key="<c:out value="${bd.busID}" />">
+
+										<th scope="row" style="color: #FF4E5B !important;"><c:out
+												value="${bd.busID}" /></th>
+										<td><c:out value="${bd.getName()}" /></td>
+										<td><c:out value="${bd.noPlate}" /></td>
+										<td><c:out value="${bd.destinationID}" /></td>
+										<td><c:out value="${bd.destinationName}" /></td>
+										<td>
+											<!-- Delete Button -->
+											<a href="bookingdetail-customer.jsp">
+											<button type="button"  class="btn btn-success">Book</button>
+											</a>
+										</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 <footer class="fixed-bottom">
   <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
@@ -146,7 +174,7 @@
     
 
 
-    <script src="booking.js"></script>
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

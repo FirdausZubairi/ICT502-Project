@@ -1,38 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking</title>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="dasboard.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
+<title>Ticket</title>
+<!-- CSS only -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="booking.css">
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
-    <!--Navbar-->
-   <!--Navbar-->
-<nav class="navbar fixed-top navbar-light bg-light">
-    <div class="container-fluid d-flex justify-content-between">
-            <a class="navbar-brand" href="login.html">
-                <img src="/ICT502-Project/image/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                BTS
-            </a>
-        <span class="navbar-text">
-            Tickets
-        </span>
-        <div class="btn-container-user">
-           <div class="btn-container-user">
-				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Staff Login</a>
+	<!--Navbar-->
+	<nav class="navbar fixed-top navbar-light bg-light">
+		<div class="container-fluid d-flex justify-content-between">
+			<a class="navbar-brand" href="login.html"> <img
+				src="/ICT502-Project/image/bus-stop.png" alt="" width="30"
+				height="24" class="d-inline-block align-text-top"> BTS
+			</a> <span class="navbar-text"> Customer </span>
+			<!--User account-->
+			<div class="btn-container-user">
+				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Logout</a>
 			</div>
-        </div>
-    </div>
-</nav>
- <!--Sidebar menu-->
+		</div>
+	</nav>
+
+	<!--Sidebar menu-->
 <div class="container-fluid">
   <div class="row">
     <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
@@ -56,49 +53,79 @@
   </div>
 </div>
 <!-- End sidebar -->
+	<section class="col-10 offset-2 main-section" style="padding-top: 20px">
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-lg-10">
+					<h2>Ticket</h2>
+					<div class="table-responsive container-fluid" id="infinite-table">
+						<table class="table table-hover align-middle">
+							<thead class="header">
+								<tr>
+									<th scope="col">Ticket ID</th>
+									<th scope="col">Type</th>
+									<th scope="col">Date</th>
+									<th scope="col">Price</th>
+									<th scope="col">Destination ID</th>
+									<th scope="col">Bus ID</th>
+									
+									<!-- New column for actions -->
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="stf" items="${listStaff}">
+									<tr key="<c:out value="${stf.ticketID}" />">
 
-    <!-- Display section -->
-    <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-      <div class="container" style="text-align: center;">
-        <div class="container" style="border: 1px solid #ccc; padding: 10px; margin-top: 50px;">
-          <h2>Search Bus Ticket Details</h2>
-          <form>
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-            <br><br>
-            <button type="submit">Search</button>
-          </form>
-        </div>
-<div class="container" style="border: 1px solid #ccc; padding: 20px; margin-top: 20px;">
-  <h2>Bus Information</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <p><strong>Bus Name:</strong> ABC Bus</p>
-      <p><strong>Plate No:</strong> XYZ123</p>
-      <p><strong>Destination:</strong> City B</p>
-    </div>
-    <div class="col-md-6">
-      <p><strong>State:</strong> State X</p>
-      <p><strong>Type:</strong> Deluxe</p>
-      <p><strong>Date:</strong> 2023-07-10</p>
-    </div>
-  </div>
-     <div class="text-center">
-      <p><strong>Price:</strong> $50</p>
-    </div>
-</div>
+										<th scope="row" style="color: #FF4E5B !important;"><c:out
+												value="${stf.ticketID}" /></th>
+										<td><c:out value="${stf.getType()}" /></td>
+										<td><c:out value="${stf.date}" /></td>
+										<td><c:out value="${stf.price}" /></td>
+										<td><c:out value="${stf.destinationID}" /></td>
+										<td><c:out value="${stf.busID}" /></td>
+										<td>
+											<!-- Update Button -->
+											<button type="button" class="btn btn-primary"
+												onclick="myFunction(<c:out value='${stf.ticketID}'/>, '/ICT502-Project/staff/update-staff')">
+												Update</button> <!-- Delete Button -->
+											<button type="button" class="btn btn-danger"
+												onclick="myFunction(<c:out value="${stf.ticketID}"/>, 'DeleteStaff')">
+												Delete</button>
+										</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<br>
 
-      </div>
-    </section>
-    
-    <footer class="fixed-bottom">
-  <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
-    &copy; 2023. All rights reserved.
-  </div>
-</footer>
-    
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
+
+	<footer class="fixed-bottom">
+		<div
+			class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary"
+			style="width: 100%;">&copy; 2023. All rights reserved.</div>
+	</footer>
+
+	<!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
+	<!-- <script src="js/script.js"></script> -->
+	<script>
+		function myFunction(x,y) {
+			console.log("Row index is: " + x); 
+			window.location.href= y + "?id=" + x;
+			sessionStorage.setItem("key", x);
+			console.log("Session key : " + sessionStorage.getItem("key"));
+		}
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

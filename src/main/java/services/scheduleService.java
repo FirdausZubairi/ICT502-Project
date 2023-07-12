@@ -5,30 +5,25 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.bus;
-import bean.destination;
-import bean.staff;
-import bean.trip;
+import bean.BusDest;
 import helper.EncryptDecryptPass;
 
-public class destinationService {
-	private EncryptDecryptPass encryptDecryptPass;
+public class scheduleService {
 
 	private String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String jdbcUsername = "dbbt";
 	private String jdbcPassword = "system";
-
-	private String INSERT_DESTINATION_SQL = "INSERT INTO destination(destinationName) VALUES(?)";
-	private String SELECT_ALL_DESTINATION = "SELECT * FROM destination ORDER BY destinationID";
-
-	public destinationService() {
-		encryptDecryptPass = new EncryptDecryptPass();
+	
+	private String SELECT_ALL_BUS_DESTINATION = "SELECT b.busid, b.name, b.noplate, d.destinationid, d.destinationname, t.time FROM bus b JOIN trip t ON b.busid = t.busid JOIN destination d ON t.destinationid = d.destinationid";
+	
+	public scheduleService() {
+		
+	
 	}
-
+	
 	public Connection getConnection() {
 		Connection connection = null;
 		try {
@@ -44,7 +39,7 @@ public class destinationService {
 		}
 		return connection;
 	}
-
+	
 	public void printSQLException(SQLException ex) {
 		for (Throwable e : ex) {
 			if (e instanceof SQLException) {
@@ -61,51 +56,40 @@ public class destinationService {
 		}
 	}
 
-	// CREATE Destination
-	public boolean insertDestination(destination Destination) throws SQLException {
-		boolean status = false;
+	// READ BUS JOIN DESTINATION
+	public List<BusDest> selectAllBusSchedule() {
 
-		try (Connection connection = getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_DESTINATION_SQL)) {
-			preparedStatement.setString(1, Destination.getDestinationName());
-
-			preparedStatement.executeUpdate();
-
-			status = true;
-
-		} catch (SQLException e) {
-			printSQLException(e);
-			status = false;
-		}
-
-		return status;
-	}
-
-	// READ BRIDGE
-	public List<destination> selectAllDestination() {
-
-		List<destination> Dest = new ArrayList<>();
+		// using try-with-resources to avoid closing resources (boiler plate code)
+		List<BusDest> busSchedule = new ArrayList<>();
+		// Step 1: Establishing a Connection
 		try (Connection connection = getConnection();
 
 				// Step 2:Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_DESTINATION);) {
-			System.out.println(preparedStatement);
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_BUS_DESTINATION);) {
+//		            System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 
 			// Step 4: Process the ResultSet object.
 			while (rs.next()) {
+				int busID = rs.getInt("busID");
+				String name = rs.getString("name");
+				String noPlate = rs.getString("noPlate");
 				int destinationID = rs.getInt("destinationID");
 				String destinationName = rs.getString("destinationName");
-				System.out.println(destinationID + destinationName);
+				String time = rs.getString("time");
+				
 
-				Dest.add(new destination(destinationID, destinationName));
+//						if(doctor_id == session_doc_id) {
+
+				busSchedule.add(new BusDest(busID, name, noPlate, destinationID, destinationName, time));
+
+//						}
+
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
 		}
-
-		return Dest;
+		return busSchedule;
 	}
-
 }
