@@ -13,6 +13,10 @@
 	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="dashboard-staff.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+	integrity="sha384-PJsj/BTMqILvmcej7ulplguok8ag4xFTPryRq8xevL7eBYSmpXKcbNVuy+P0RMgq"
+	crossorigin="anonymous">
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 	<!--Navbar-->
@@ -21,7 +25,7 @@
 			<a class="navbar-brand" href="login.html"> <img
 				src="/ICT502-Project/image/bus-stop.png" alt="" width="30"
 				height="24" class="d-inline-block align-text-top"> BTS
-			</a> 
+			</a>
 			<!--User account-->
 			<div class="btn-container-user">
 				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Logout</a>
@@ -78,37 +82,65 @@
 
 	<!-- End side bar -->
 
-<section class="col-10 offset-2 main-section" style="padding-top: 70px">
+	<section class="col-10 offset-2 main-section" style="padding-top: 70px">
 		<div class="container-fluid h-custom">
 			<div
 				class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col-md-9 col-lg-6 col-xl-5">
-					<img
-						src="/ICT502-Project/image/tourist.jpg"
-						class="img-fluid" alt="Sample image">
+					<img src="/ICT502-Project/image/tourist.jpg" class="img-fluid"
+						alt="Sample image">
 				</div>
 				<div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
-					<form action="CreateTrip" method="post">
+
+					<form action="create-trip" method="post">
+
 						<div class="container mt-3">
 							<h1>Bus Trip</h1>
 							<p>Kindly fill in this form to register.</p>
+
 							<div class="form-group">
-								<label for="username"><b>Destination ID</b></label> <input type="text"
-									class="form-control" id="username" name="destinationID" 
-									placeholder="" required>
+
+								<label for="name"><b>Bus name</b></label> <select name="busID"
+									class="form-select" aria-label="Default select example">
+									<option selected hidden>Choose Bus Name</option>
+									<c:forEach items="${listBus}" var="bus">
+										<option value="${bus.busID }"><c:out
+												value="${bus.name }" /></option>
+									</c:forEach>
+								</select>
 							</div>
 
 							<div class="form-group">
-								<label for="name"><b>Bus ID</b></label> <input type="text"
-									class="form-control" id="name" name="busID"
-									placeholder="" required>
-							</div>
+								<label for="name"><b>Destination name</b></label> <select
+									name="destinationID" class="form-select"
+									aria-label="Default select example">
+									<option selected hidden>Choose destination</option>
+									<c:forEach items="${listDestination}" var="des">
+										<option value="${des.destinationID }"><c:out
+												value="${des.destinationName }" /></option>
+									</c:forEach>
+								</select>
 
+							</div>
 							<div class="form-group">
-								<label for="time"><b>Time</b></label>  <input type="text" class="form-control " id="date" name="time" required>
+
+								<label for="time">Time:</label> <select class="form-control"
+									id="time" name="time" required>
+									
+									<option >Select Time</option>
+									<option >12:00 AM</option>
+									<option >03:00 AM</option>
+									<option >06:00 AM</option>
+									<option >09:00 AM</option>
+									<option >12:00 PM</option>
+									<option >03:00 PM</option>
+									<option >06:00 PM</option>
+									<option >09:00 PM</option>
+								</select>
+
 							</div>
 
-							
+
 							<div class="text-center">
 								<!-- Added text-center class here -->
 	
@@ -137,10 +169,13 @@
 
 	<!-- JavaScript to fill the fields. In real scenario, this could be a data fetch from server-side -->
 	<!-- <script src="js/script.js"></script> -->
-
-
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

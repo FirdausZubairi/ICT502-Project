@@ -25,10 +25,12 @@ private EncryptDecryptPass encryptDecryptPass;
 	private String jdbcPassword = "system";
 	
 	private String INSERT_BUS_SQL = "INSERT INTO bus(name, noPlate) VALUES(?,?)";
-	private String SELECT_ALL_BUS_DESTINATION = "SELECT b.busid, b.name, b.noplate, d.destinationid, d.destinationname FROM bus b JOIN trip t ON b.busid = t.busid JOIN destination d ON t.destinationid = d.destinationid";
+	private String SELECT_ALL_BUS_DESTINATION = "SELECT b.busid, b.name, b.noplate, d.destinationid, d.destinationname, t.time FROM bus b JOIN trip t ON b.busid = t.busid JOIN destination d ON t.destinationid = d.destinationid";
 	private String SELECT_ALL_BUS = "SELECT * FROM bus";
+	private static final String SELECT_ALL_BUS_NAME = "SELECT * FROM bus ORDER BY busID";
 	private String SELECT_BUS_ID = "SELECT * FROM bus WHERE busID=?";
 	private String UPDATE_BUS_ID = "UPDATE bus set name=?, noPlate=? WHERE busID=?";
+	private String DELETE_BUS_SQL = "DELETE from bus WHERE busID = ?";
 	
 	public busService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -107,6 +109,7 @@ private EncryptDecryptPass encryptDecryptPass;
 					String noPlate = rs.getString("noPlate");
 					int destinationID = rs.getInt("destinationID");
 					String destinationName = rs.getString("destinationName");
+					String time = rs.getString("time");
 					
 //					if(doctor_id == session_doc_id) {
 					
@@ -150,6 +153,34 @@ private EncryptDecryptPass encryptDecryptPass;
 			} catch (SQLException e) {
 				printSQLException(e);
 			}
+			return Bus;
+		}
+		
+		//READ BRIDGE
+		public List<bus> selectAllBusName() {
+
+			List<bus> Bus = new ArrayList<>();
+			try (Connection connection = getConnection();
+
+					// Step 2:Create a statement using connection object
+					PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_BUS_NAME);) {
+				System.out.println(preparedStatement);
+				// Step 3: Execute the query or update query
+				ResultSet rs = preparedStatement.executeQuery();
+
+				// Step 4: Process the ResultSet object.
+				while (rs.next()) {
+					int busID = rs.getInt("busID");
+					String name = rs.getString("name");
+					String noPlate = rs.getString("noPlate");
+					
+
+					Bus.add(new bus(busID, name, noPlate));
+				}
+			} catch (SQLException e) {
+				printSQLException(e);
+			}
+
 			return Bus;
 		}
 		
@@ -201,5 +232,15 @@ private EncryptDecryptPass encryptDecryptPass;
 			
 			return status;
 		}
+		//DELETE STAFF
+		public boolean deleteBus(int busID) throws SQLException {
+	        boolean rowDeleted;
+	        try (Connection connection = getConnection();) {
+	        	PreparedStatement statement = connection.prepareStatement(DELETE_BUS_SQL);
+	            statement.setInt(1, busID);
+	            rowDeleted = statement.executeUpdate() > 0;
+	        }
+	        return rowDeleted;
+	    }
 	
 }

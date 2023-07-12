@@ -6,8 +6,18 @@ public class BusDest {
 	private String noPlate;
 	private int destinationID;
 	private String destinationName;
+	private String time;
 	
-	public BusDest(int busID, String name, String noPlate, int destinationID, String destinationName) {
+	public BusDest(int busID, String name, String noPlate, int destinationID, String destinationName, String time ) {
+		super();
+		this.busID = busID;
+		this.name = name;
+		this.noPlate = noPlate;
+		this.destinationID = destinationID;
+		this.destinationName = destinationName;
+		this.time = time;
+	}
+	public BusDest(int busID, String name, String noPlate, int destinationID, String destinationName ) {
 		super();
 		this.busID = busID;
 		this.name = name;
@@ -54,6 +64,12 @@ public class BusDest {
 
 	public void setDestinationName(String destinationName) {
 		this.destinationName = destinationName;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
 	}
 	
 	

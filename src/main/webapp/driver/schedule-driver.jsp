@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,34 +59,49 @@
 </div>
     <!-- End sidebar -->
     
-  <section class="col-10 offset-2 main-section" style="padding-top: 70px">
-    <div class="container">
-      <div class="row justify-content-center mt-5">
-        <div class="col-lg-8">
-          <div class="card">
-            <div class="card-header">
-              <div class="d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Bus Details</h5>
-              </div>
-            </div>
-            <div class="card-body">
-              <table id="scheduleTable" class="table">
-                <thead>
-                  <tr>
-                    <th>Staff ID</th>
-                    <th>Schedule</th>
-                    <th>Trip History</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <section class="col-10 offset-2 main-section " style="padding-top: 20px">
+		<div class="container " style= "margin-top:10px">
+			<div class="row mt-5 ">
+				<div class="col-lg-10 "> 
+				<div class=" d-flex justify-content-between align-items-center "> 
+					<h2>Schedule</h2>
+					</div>
+					
+					<div class="table-responsive container-fluid" id="infinite-table">
+						<table class="table table-hover align-middle">
+							<thead class="header">
+								<tr>
+									<th scope="col">BusID</th>
+									<th scope="col">Name</th>
+									<th scope="col">NoPlate</th>
+									<th scope="col">DestinationID</th>
+									<th scope="col">Destination Name</th>
+									<th scope="col">Time</th>
+									<!-- New column for actions -->
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="bd" items="${listBusSchedule}">
+									<tr key="<c:out value="${bd.busID}" />">
+
+										<th scope="row" style="color: #FF4E5B !important;"><c:out
+												value="${bd.busID}" /></th>
+										<td><c:out value="${bd.getName()}" /></td>
+										<td><c:out value="${bd.noPlate}" /></td>
+										<td><c:out value="${bd.destinationID}" /></td>
+										<td><c:out value="${bd.destinationName}" /></td>
+										<td><c:out value="${bd.time}" /></td>
+										<td>
+										</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
   
     <footer class="fixed-bottom">
   <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">

@@ -26,7 +26,7 @@ public class staffService {
 	private String SELECT_ALL_STAFF = "SELECT * FROM staff";
 	private String SELECT_STAFF_ID = "SELECT * FROM staff WHERE staffID=?";
 	private String UPDATE_STAFF_ID = "UPDATE staff set username=?, password=?, name=?, role=? WHERE staffID=?";
-	private String DELETE_PATIENT_SQL = "DELETE from staff WHERE staffID = ?";
+	private String DELETE_STAFF_SQL = "DELETE from staff WHERE staffID = ?";
 
 	public staffService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -274,7 +274,7 @@ public class staffService {
 	public boolean deleteStaff(int staffID) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();) {
-        	PreparedStatement statement = connection.prepareStatement(DELETE_PATIENT_SQL);
+        	PreparedStatement statement = connection.prepareStatement(DELETE_STAFF_SQL);
             statement.setInt(1, staffID);
             rowDeleted = statement.executeUpdate() > 0;
         }

@@ -25,6 +25,11 @@ public class UpdateBus extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	public void init() {
+		BusService = new busService();
+	}
+       
+	
     public UpdateBus() {
         super();
         // TODO Auto-generated constructor stub

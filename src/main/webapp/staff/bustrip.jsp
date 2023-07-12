@@ -84,7 +84,7 @@
 				<div class="col-lg-10 "> 
 				<div class=" d-flex justify-content-between align-items-center "> 
 					<h2>Bus Trip</h2>
-					<a href="create-trip.jsp"> 
+					<a href="create-trip"> 
 					<button  type="button" class="btn btn-info"> Add Trip</button>
 					</a>
 					</div>
@@ -98,6 +98,7 @@
 									<th scope="col">NoPlate</th>
 									<th scope="col">DestinationID</th>
 									<th scope="col">Destination Name</th>
+									<th scope="col">Time</th>
 									<th scope="col">Actions</th>
 									<!-- New column for actions -->
 								</tr>
@@ -112,10 +113,11 @@
 										<td><c:out value="${bd.noPlate}" /></td>
 										<td><c:out value="${bd.destinationID}" /></td>
 										<td><c:out value="${bd.destinationName}" /></td>
+										<td><c:out value="${bd.time}" /></td>
 										<td>
 											<!-- Delete Button -->
 											<button type="button" class="btn btn-danger"
-												onclick="myFunction(<c:out value="${bd.busID}"/>, 'DeleteStaff')">
+												onclick="myFunction(<c:out value="${bd.busID}"/>, 'DeleteTrip')">
 												Delete</button>
 										</td>
 									</tr>

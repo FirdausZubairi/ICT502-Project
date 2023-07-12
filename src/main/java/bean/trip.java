@@ -1,6 +1,7 @@
 package bean;
 
-import java.sql.Date;
+
+import java.sql.Time;
 
 public class trip {
 		private int destinationID;

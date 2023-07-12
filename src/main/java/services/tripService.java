@@ -1,22 +1,32 @@
 package services;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import bean.bus;
+
+
 import bean.trip;
 import helper.EncryptDecryptPass;
 
 public class tripService {
 	private EncryptDecryptPass encryptDecryptPass;
-	
+
+
+
 	private String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String jdbcUsername = "dbbt";
 	private String jdbcPassword = "system";
 	
-	private String INSERT_TRIP_SQL = "INSERT INTO trip(destinationID, busID, time) VALUES(?,?,?)";
+
+	private String INSERT_TRIP_SQL = "INSERT INTO trip(busID, destinationID, time) VALUES(?,?,?)";
+			
+	public tripService() {
+		encryptDecryptPass = new EncryptDecryptPass();
+	}
+
 	
 	public Connection getConnection() {
 		Connection connection = null;
@@ -33,7 +43,9 @@ public class tripService {
 		}
 		return connection;
 	}
-	
+
+
+
 	public void printSQLException(SQLException ex) {
 		for (Throwable e : ex) {
 			if (e instanceof SQLException) {
@@ -50,24 +62,29 @@ public class tripService {
 		}
 	}
 	
-	//CREATE Bus Trip
-			public boolean insertTrip(trip Trip) throws SQLException {
-				boolean status = false;
 
-				try (Connection connection = getConnection();
-						PreparedStatement preparedStatement = connection.prepareStatement(INSERT_TRIP_SQL)) {
-					preparedStatement.setInt(1, Trip.getDestinationID());
-					preparedStatement.setInt(2, Trip.getBusID());
-					preparedStatement.setString(3, Trip.getTime());
-					preparedStatement.executeUpdate();
+	// CREATE Trip
+		public boolean insertTrip(trip Trip) throws SQLException {
+			boolean status = false;
 
-					status = true;
+			try (Connection connection = getConnection();
+					PreparedStatement preparedStatement = connection.prepareStatement(INSERT_TRIP_SQL)) {
+				preparedStatement.setInt(1, Trip.getBusID());
+				preparedStatement.setInt(2, Trip.getDestinationID());
+				preparedStatement.setString(3, Trip.getTime());
 
-				} catch (SQLException e) {
-					printSQLException(e);
-					status = false;
-				}
+				preparedStatement.executeUpdate();
 
-				return status;
+				status = true;
+
+			} catch (SQLException e) {
+				printSQLException(e);
+				status = false;
 			}
+
+			return status;
+		}
+	// DELETE Trip
+		
+
 }
