@@ -87,12 +87,15 @@
 						alt="Sample image">
 				</div>
 				<div class="col-md-8 col-lg-2 col-xl-4 offset-xl-1">
+
 					<form action="create-trip" method="post">
+
 						<div class="container mt-3">
 							<h1>Bus Trip</h1>
 							<p>Kindly fill in this form to register.</p>
 
 							<div class="form-group">
+
 								<label for="name"><b>Bus name</b></label> <select name="busID"
 									class="form-select" aria-label="Default select example">
 									<option selected hidden>Choose Bus Name</option>
@@ -113,8 +116,10 @@
 												value="${des.destinationName }" /></option>
 									</c:forEach>
 								</select>
+
 							</div>
 							<div class="form-group">
+
 								<label for="time">Time:</label> <select class="form-control"
 									id="time" name="time" required>
 									
@@ -128,12 +133,15 @@
 									<option >06:00 PM</option>
 									<option >09:00 PM</option>
 								</select>
+
 							</div>
 
 
 							<div class="text-center">
 								<!-- Added text-center class here -->
+	
 								<button type="submit" class="btn btn-primary">Submit</button>
+								
 							</div>
 						</div>
 					</form>

@@ -178,4 +178,34 @@
     <servlet-name>DeleteBusDes</servlet-name>
     <url-pattern>/DeleteBusDes</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Createbook</display-name>
+    <servlet-name>Createbook</servlet-name>
+    <servlet-class>controller.customer.Createbook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Createbook</servlet-name>
+    <url-pattern>/Createbook</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateBook</display-name>
+    <servlet-name>CreateBook</servlet-name>
+    <servlet-class>controller.customer.CreateBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateBook</servlet-name>
+    <url-pattern>/CreateBook</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateTicket</display-name>
+    <servlet-name>CreateTicket</servlet-name>
+    <servlet-class>controller.customer.CreateTicket</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateTicket</servlet-name>
+    <url-pattern>/CreateTicket</url-pattern>
+  </servlet-mapping>
 </web-app>

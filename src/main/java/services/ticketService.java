@@ -1,33 +1,25 @@
 package services;
 
 import java.sql.Connection;
-
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
-
-import bean.trip;
+import bean.ticket;
 import helper.EncryptDecryptPass;
 
-public class tripService {
+public class ticketService {
 	private EncryptDecryptPass encryptDecryptPass;
-
-
-
+	
 	private String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String jdbcUsername = "dbbt";
 	private String jdbcPassword = "system";
 	
-
-	private String INSERT_TRIP_SQL = "INSERT INTO trip(busID, destinationID, time) VALUES(?,?,?)";
-	private String DELETE_TRIP_SQL = "DELETE FROM trip WHERE busid = ? AND destinationid = ?";
-			
-	public tripService() {
+	private String INSERT_TICKET_SQL = "INSERT INTO ticket( type, ticketDate, price) VALUES(?,?,?)";
+	
+	public ticketService() {
 		encryptDecryptPass = new EncryptDecryptPass();
 	}
-
 	
 	public Connection getConnection() {
 		Connection connection = null;
@@ -44,9 +36,7 @@ public class tripService {
 		}
 		return connection;
 	}
-
-
-
+	
 	public void printSQLException(SQLException ex) {
 		for (Throwable e : ex) {
 			if (e instanceof SQLException) {
@@ -63,37 +53,26 @@ public class tripService {
 		}
 	}
 	
+	// CREATE Ticket
+			public boolean insertTicket(ticket Ticket) throws SQLException {
+				boolean status = false;
 
-	// CREATE Trip
-		public boolean insertTrip(trip Trip) throws SQLException {
-			boolean status = false;
+				try (Connection connection = getConnection();
+						PreparedStatement preparedStatement = connection.prepareStatement(INSERT_TICKET_SQL)) {
+					preparedStatement.setString(1, Ticket.getType());
+					preparedStatement.setDate(2, Ticket.getTicketDate());
+					preparedStatement.setString(3, Ticket.getPrice());
 
-			try (Connection connection = getConnection();
-					PreparedStatement preparedStatement = connection.prepareStatement(INSERT_TRIP_SQL)) {
-				preparedStatement.setInt(1, Trip.getBusID());
-				preparedStatement.setInt(2, Trip.getDestinationID());
-				preparedStatement.setString(3, Trip.getTime());
+					preparedStatement.executeUpdate();
 
-				preparedStatement.executeUpdate();
+					status = true;
 
-				status = true;
+				} catch (SQLException e) {
+					printSQLException(e);
+					status = false;
+				}
 
-			} catch (SQLException e) {
-				printSQLException(e);
-				status = false;
+				return status;
 			}
 
-			return status;
-		}
-	// DELETE Trip
-		public boolean deleteTrip(int busID, int destinationID) throws SQLException {
-	        boolean rowDeleted;
-	        try (Connection connection = getConnection();) {
-	        	PreparedStatement statement = connection.prepareStatement(DELETE_TRIP_SQL);
-	            statement.setInt(1, busID);
-	            statement.setInt(2, destinationID);
-	            rowDeleted = statement.executeUpdate() > 0;
-	        }
-	        return rowDeleted;
-	    }
 }

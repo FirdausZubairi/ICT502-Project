@@ -1,8 +1,5 @@
 package bean;
 
-
-import java.sql.Time;
-
 public class trip {
 		private int destinationID;
 		private int busID;
@@ -15,6 +12,12 @@ public class trip {
 			this.time = time;
 		}
 
+		public trip( String time) {
+			super();
+			this.time = time;
+		}
+		
+		
 		public int getDestinationID() {
 			return destinationID;
 		}

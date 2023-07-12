@@ -16,6 +16,22 @@ public class passenger {
 			this.password = password;
 		}
 		
+		public passenger(int passID, String name, String phone) {
+			super();
+			this.passID = passID;
+			this.name = name;
+			this.phone = phone;
+			
+		}
+		
+		public passenger( String name, String phone) {
+			super();
+			
+			this.name = name;
+			this.phone = phone;
+			
+		}
+		
 		public passenger() {
 			
 		}
