@@ -76,7 +76,7 @@
                 <div class="exit"></div>
                 <ol>
                   <li>
-                    <ol class="seats">
+                    <ol class="seats" name="refNo">
                       <li class="seat">
                         <input type="checkbox" name="refNo" value="Seat 1A" id="1A" data-price="100" />
                         <label for="1A">1A</label>
@@ -182,6 +182,47 @@
       </div>
     </div>
   </section>
+  <script type="text/javascript">
+
+  window.onload = function() {
+    let seats = document.querySelectorAll('input[type="checkbox"]');
+    let display = document.getElementById('selectedSeats');
+    let totalPrice = 0;
+    let totalDisplay = document.getElementById('totalPrice');
+
+    for (let i = 0; i < seats.length; i++) {
+      seats[i].addEventListener('change', function() {
+        let seatPrice = parseInt(this.dataset.price);
+        if (this.checked) {
+          let li = document.createElement('li');
+          li.textContent = this.value + ' RM ' + seatPrice;
+          li.id = 'li' + this.id;
+
+          let cancelBtn = document.createElement('button');
+          cancelBtn.innerHTML = '<i class="fas fa-trash"></i> Cancel';
+          cancelBtn.className = 'btn-cancel';
+          cancelBtn.addEventListener('click', function() {
+            document.getElementById(seats[i].id).checked = false;
+            document.getElementById('li' + seats[i].id).remove();
+            totalPrice -= seatPrice;
+            totalDisplay.textContent = 'RM ' + totalPrice;
+          });
+
+          li.appendChild(cancelBtn);
+          display.appendChild(li);
+          totalPrice += seatPrice;
+        } else {
+          document.getElementById('li' + this.id).remove();
+          totalPrice -= seatPrice;
+        }
+        totalDisplay.textContent = 'RM ' + totalPrice;
+      });
+    }
+  };
+
+ 
+
+  </script>
   
 <footer class="fixed-bottom">
   <div class="col-10 offset-2 text-center text-white py-2 px-4 px-xl-5 bg-primary" style="width: 100%;">
@@ -189,7 +230,7 @@
   </div>
 </footer>
 
-  <script src="seatSelect.js"></script>
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bus Ticketing System</title>
+  <title>Ticket</title>
   <!-- Bootstrap CSS -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -24,9 +24,7 @@
                 <img src="/ICT502-Project/image/bus-stop.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 BTS
             </a>
-        <span class="navbar-text">
-            Booking
-        </span>
+        
         <div class="btn-container-user">
            <div class="btn-container-user">
 				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Staff Login</a>
@@ -65,23 +63,25 @@
     <div class="row d-flex align-items-center justify-content-center">
       <div class="col-md-6">
         <div style="text-align: center;">
-          <img alt="Dashboard Account" src="/ICT502-Project/image/BookingDetail-customer.jpg" style="width: 100%;">
+          <img alt="Dashboard Account" src="/ICT502-Project/image/ticket.jpg" style="width: 100%;">
         </div>
       </div>
       <div class="col-md-6">
-        <h1>Passenger Details</h1>
-        <form action="passengerControl" method="post">
+        <h1>Ticket</h1>
+        <form action="CreateTicket" method="post">
           <div class="form-group">
-            <label for="customerName">Name</label>
-            <input type="text" class="form-control" id="customerName" name ="name" placeholder="Enter passenger name" required>
+            <label for="type">Type</label>
+            <input type="text" class="form-control" id="customerName" name ="type" placeholder="" required>
           </div>
           <div class="form-group">
-            <label for="phoneNo">Phone Number</label>
-            <input type="tel" class="form-control" id="phoneNo" name="phone" placeholder="Enter your phone number" required>
+            <label for="phoneNo">Date</label>
+            <input type="date" class="form-control" id="phoneNo" name="ticketDate" placeholder="" required>
           </div>
-          
+          <div class="form-group">
+            <label for="phoneNo">Price</label>
+            <input type="tel" class="form-control" id="phoneNo" name="price" placeholder="" required>
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
-          
         </form>
       </div>
     </div>

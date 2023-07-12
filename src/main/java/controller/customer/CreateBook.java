@@ -7,31 +7,31 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import services.bookingService;
+import services.bookService;
 import services.passengerService;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
+import bean.book;
 import bean.booking;
 import bean.passenger;
 
 /**
- * Servlet implementation class passengerControl
+ * Servlet implementation class CreateBook
  */
-@WebServlet("/customer/passengerControl")
-public class passengerControl extends HttpServlet {
+public class CreateBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private passengerService PassengerService;
+	private bookService BookService;
 	
 	public void init() {
-		PassengerService = new passengerService();
+		BookService = new bookService();
 	}
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public passengerControl() {
+    public CreateBook() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,7 +42,7 @@ public class passengerControl extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/customer/bookingdetail-customer.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/customer/ticket.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -51,29 +51,35 @@ public class passengerControl extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	//	doGet(request, response);
+//		doGet(request, response);
 		HttpSession session = request.getSession();
-		String name =request.getParameter("name");
-		String phone =request.getParameter("phone");
+		int ticketID = Integer.parseInt(request.getParameter("ticketID"));
+		int passID = Integer.parseInt(request.getParameter("passID"));
+		int refNo = Integer.parseInt(request.getParameter("refNo"));
+		double totalprice = Double.parseDouble(request.getParameter("totalprice"));
+		String paymentmethod = request.getParameter("paymentmethod");
 
-		System.out.println("name: " + name);
-		System.out.println("phone: " + phone);
-		
+		System.out.println("ticketID: " + ticketID);
+		System.out.println("passID: " + passID);
+		System.out.println("refNo: " + refNo);
+		System.out.println("totalprice: " + totalprice);
+		System.out.println("paymentmethod" + paymentmethod);
 
 		try {
 		    System.out.println("hello 2");
-		    passenger Passenger = new passenger( name, phone);
-		    PassengerService.insertPassenger(Passenger);
-		    System.out.println("passenger successfully");
+		    book Book = new book(ticketID, passID, refNo, totalprice, paymentmethod);
+		    BookService.insertBook(Book);
+		    System.out.println("booking successfully");
 
-		    response.sendRedirect(request.getContextPath() + "/customer/create-ticket");
+		    response.sendRedirect(request.getContextPath() + "/customer/seatSelect.jsp");
 		} catch (SQLException e) {
 		    e.printStackTrace();
 		}
 		
 	
 	
-}
 	}
+}
+
 
 
