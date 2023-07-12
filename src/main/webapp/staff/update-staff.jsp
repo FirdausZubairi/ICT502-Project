@@ -32,7 +32,7 @@
 		</div>
 	</nav>
 
-	<!-- Side bar menu -->
+	<!--Side bar menu-->
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2 position-fixed" id="sticky-sidebar"
@@ -47,8 +47,9 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="bustrip"> <i class="fas fa-bus"
-						style="margin-right: 20px"></i> <span> Bus Trip</span>
+					<a class="nav-link" href="bustrip"> <i
+						class="fas fa-bus" style="margin-right: 20px"></i> <span>
+							Bus Trip</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
@@ -61,15 +62,13 @@
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
 					<a class="nav-link" href="accountdetails-staff"> <i
-						class="fas fa-user" style="margin-right: 20px"></i> <span>View
-							Account</span>
+						class="fas fa-user" style="margin-right: 20px"></i> <span>Account</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
 					<a class="nav-link" href="busdetail-staff"> <i
-						class="fa fa-table" style="margin-right: 20px"></i> <span>View
-							Bus</span>
+						class="fa fa-table" style="margin-right: 20px"></i> <span>Bus</span>
 					</a>
 
 

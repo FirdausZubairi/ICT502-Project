@@ -20,38 +20,28 @@
                 BTS
             </a>
         <span class="navbar-text">
-            Staff
+            Driver
         </span>
         <!--User account-->
-        <div class="btn-container-user">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle nav-box" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Farid</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
-                </ul>
-            </div>
-        </div>
+			<div class="btn-container-user">
+				<a class="dropdown-item" href="/ICT502-Project/login.jsp">Logout</a>
+			</div>
     </div>
 </nav>
 
-    <!--Sidebar menu-->
+  <!--Sidebar menu-->
 <div class="container-fluid">
     <div class="row">
         <div class="col-2 position-fixed" id="sticky-sidebar" style="border-right: #888; box-shadow: 2px 0px 5px rgba(0,0,0,0.1);">
             <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white" style="padding: 15px 0">
-                <a class="nav-link active" aria-current="page" href="dashboard.html" style="margin-top: 70px">
+                <a class="nav-link active" aria-current="page" href="dashboarddriver.jsp" style="margin-top: 70px">
                     <span class="fas fa-home" style="margin-right: 20px"></span>
                     Dashboard
                 </a>
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-                <a class="nav-link" href="booking.html">
+                <a class="nav-link" href="schedule-driver">
                     <i class="fa fa-calendar" style="margin-right: 20px"></i>
                     <span>Schedule</span>
-                </a>
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-                <a class="nav-link mb-2" href="/view">
-                    <i class="fa fa-history" style="margin-right: 20px"></i>
-                    <span>Trip History</span>
                 </a>
             </div>
         </div>
@@ -108,7 +98,6 @@
     &copy; 2023. All rights reserved.
   </div>
 </footer>
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

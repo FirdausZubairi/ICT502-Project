@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Account Detail</title>
+<title>Bus Detail</title>
 <!-- CSS only -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -44,8 +44,9 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="bustrip"> <i class="fas fa-bus"
-						style="margin-right: 20px"></i> <span> Bus Trip</span>
+					<a class="nav-link" href="bustrip"> <i
+						class="fas fa-bus" style="margin-right: 20px"></i> <span>
+							Bus Trip</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
@@ -58,15 +59,13 @@
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
 					<a class="nav-link" href="accountdetails-staff"> <i
-						class="fas fa-user" style="margin-right: 20px"></i> <span>View
-							Account</span>
+						class="fas fa-user" style="margin-right: 20px"></i> <span>Account</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
 					<a class="nav-link" href="busdetail-staff"> <i
-						class="fa fa-table" style="margin-right: 20px"></i> <span>View
-							Bus</span>
+						class="fa fa-table" style="margin-right: 20px"></i> <span>Bus</span>
 					</a>
 
 
@@ -91,13 +90,13 @@
 
 							<div class="form-group">
 								<label for="bus-number">Name:</label> <input type="text"
-									class="form-control" id="bus-number" name="name" required>
+									class="form-control" placeholder="Bus Name" id="bus-number" name="name" required>
 							</div>
 
 
 							<div class="form-group">
 								<label for="bus-number">Number Plate:</label> <input type="text"
-									class="form-control" id="bus-number" name="noPlate" required>
+									class="form-control" placeholder="Plate Number" id="bus-number" name="noPlate" required>
 							</div>
 							<div class="text-center">
 								<!-- Added text-center class here -->
@@ -107,31 +106,6 @@
 
 					</form >
 					<hr>
-					<form action="CreateDestination" method="post">
-						<div class="container mt-3">
-							<h4>Register Destination</h4>
-
-							<div class="form-group">
-								<label for="destination">Destination:</label> <select
-									class="form-control" id="destination" name="destinationName"
-									required>
-									<option value="">Select destination</option>
-									<option value="Melaka Sentral">Melaka Sentral</option>
-									<option value="KL Sentral">Kelantan Sentral</option>
-									<option value="Cheras Sentral">Cheras Sentral</option>
-									<option value="Terminal Bas Kota Bharu">Terminal Bas
-										Kota Bharu</option>
-								</select>
-							</div>
-
-
-							<div class="text-center">
-								<!-- Added text-center class here -->
-								<button type="submit" class="btn btn-primary btn-block">Submit</button>
-							</div>
-						</div>
-
-					</form>
 				</div>
 
 			</div>

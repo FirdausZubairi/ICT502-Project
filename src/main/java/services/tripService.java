@@ -16,6 +16,7 @@ public class tripService {
 	private String jdbcPassword = "system";
 	
 	private String INSERT_TRIP_SQL = "INSERT INTO trip(busID, destinationID, time) VALUES(?,?,?)";
+	private String DELETE_TRIP_SQL = "DELETE FROM trip WHERE busid = ? AND destinationid = ?";
 			
 	public tripService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -75,5 +76,14 @@ public class tripService {
 			return status;
 		}
 	// DELETE Trip
-		
+		public boolean deleteTrip(int busID, int destinationID) throws SQLException {
+	        boolean rowDeleted;
+	        try (Connection connection = getConnection();) {
+	        	PreparedStatement statement = connection.prepareStatement(DELETE_TRIP_SQL);
+	            statement.setInt(1, busID);
+	            statement.setInt(2, destinationID);
+	            rowDeleted = statement.executeUpdate() > 0;
+	        }
+	        return rowDeleted;
+	    }
 }
