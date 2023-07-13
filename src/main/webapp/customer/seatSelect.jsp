@@ -160,28 +160,7 @@
 					</div>
 					<div class="col-md-5">
 						<h3 class="card-title">Booking Details</h3>
-						<div>
-							<label for="name"><b>Passenger ID</b></label> 
-								<select name="passID"
-									class="form-select" aria-label="Default select example">
-									<option selected hidden>ID</option>
-									<c:forEach items="${listPassenger}" var="pass">
-										<option value="${pass.passID }"><c:out
-												value="${pass.passID }" /></option>
-									</c:forEach>
-								</select>								
-						</div>
-						<div>
-							<label for="name"><b>Ticket ID</b></label> 
-								<select name="ticketID"
-									class="form-select" aria-label="Default select example">
-									<option selected hidden>ID</option>
-									<c:forEach items="${listTicket}" var="ticket">
-										<option value="${ticket.ticketID }"><c:out
-												value="${ticket.ticketID }" /></option>
-									</c:forEach>
-								</select>								
-						</div>
+												
 						<h6>Selected Seats :</h6>
 						<ul id="selectedSeats" name="seat"></ul>
 						<h6>payment method:</h6>

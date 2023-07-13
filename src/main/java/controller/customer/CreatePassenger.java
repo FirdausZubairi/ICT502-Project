@@ -67,7 +67,7 @@ public class CreatePassenger extends HttpServlet {
 		    System.out.println("hello 2");
 		    passenger Passenger = new passenger( name, phone);
 		    PassengerService.insertPassenger(Passenger);
-		    session.setAttribute("passengerID", id_pass);
+		    session.setAttribute("passID", id_pass);
 		    
 		    System.out.println("passenger successfully");
 

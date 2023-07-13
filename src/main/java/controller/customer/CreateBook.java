@@ -73,21 +73,21 @@ public class CreateBook extends HttpServlet {
 		
 		
 		
-		Ticket.setTicketID(Integer.parseInt(request.getParameter("ticketID")));
-		Passenger.setPassID(Integer.parseInt(request.getParameter("passID")));
+//		Ticket.setTicketID(Integer.parseInt(request.getParameter("ticketID")));
+//		Passenger.setPassID(Integer.parseInt(request.getParameter("passID")));
+//		
+//		System.out.println("Ticket ID : " + Ticket.getTicketID());
+//		System.out.println("Passenger ID : " + Passenger.getPassID());
 		
-		System.out.println("Ticket ID : " + Ticket.getTicketID());
-		System.out.println("Passenger ID : " + Passenger.getPassID());
-		
-		int ticketID = Integer.parseInt(request.getParameter("ticketID"));
-		int passID = Integer.parseInt(request.getParameter("passID"));
+//		int ticketID = Integer.parseInt(request.getParameter("ticketID"));
+//		int passID = Integer.parseInt(request.getParameter("passID"));
 	
 		String seat = request.getParameter("seat");
 		Double totalPrice = Double.parseDouble(request.getParameter("totalPrice")); 
 		String paymentMethod = request.getParameter("paymentMethod");
 		
-		System.out.println("ticketID : " + ticketID);
-		System.out.println("passengerID : " + passID);
+//		System.out.println("ticketID : " + ticketID);
+//		System.out.println("passengerID : " + passID);
 		System.out.println("seat: " + seat);
 		System.out.println("total payment: " + totalPrice);
 		System.out.println("payment method: " + paymentMethod);
