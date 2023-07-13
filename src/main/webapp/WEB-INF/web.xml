@@ -208,4 +208,14 @@
     <servlet-name>CreateTicket</servlet-name>
     <url-pattern>/CreateTicket</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadTicket</display-name>
+    <servlet-name>ReadTicket</servlet-name>
+    <servlet-class>controller.customer.ReadTicket</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadTicket</servlet-name>
+    <url-pattern>/ReadTicket</url-pattern>
+  </servlet-mapping>
 </web-app>
