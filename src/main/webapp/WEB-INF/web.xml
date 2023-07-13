@@ -180,26 +180,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Createbook</display-name>
-    <servlet-name>Createbook</servlet-name>
-    <servlet-class>controller.customer.Createbook</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Createbook</servlet-name>
-    <url-pattern>/Createbook</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>CreateBook</display-name>
-    <servlet-name>CreateBook</servlet-name>
-    <servlet-class>controller.customer.CreateBook</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CreateBook</servlet-name>
-    <url-pattern>/CreateBook</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>CreateTicket</display-name>
     <servlet-name>CreateTicket</servlet-name>
     <servlet-class>controller.customer.CreateTicket</servlet-class>
@@ -227,5 +207,45 @@
   <servlet-mapping>
     <servlet-name>ReadBookingDetail</servlet-name>
     <url-pattern>/ReadBookingDetail</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateBooking</display-name>
+    <servlet-name>CreateBooking</servlet-name>
+    <servlet-class>controller.customer.CreateBooking</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateBooking</servlet-name>
+    <url-pattern>/CreateBooking</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateBook</display-name>
+    <servlet-name>CreateBook</servlet-name>
+    <servlet-class>controller.customer.CreateBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateBook</servlet-name>
+    <url-pattern>/CreateBook</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChartContoller</display-name>
+    <servlet-name>ChartContoller</servlet-name>
+    <servlet-class>controller.driver.ChartContoller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChartContoller</servlet-name>
+    <url-pattern>/ChartContoller</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChartController</display-name>
+    <servlet-name>ChartController</servlet-name>
+    <servlet-class>controller.driver.ChartController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChartController</servlet-name>
+    <url-pattern>/ChartController</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -76,7 +76,7 @@
                 <div class="exit"></div>
                 <ol>
                   <li>
-                    <ol class="seats" name="refNo">
+                    <ol class="seats" name="seat">
                       <li class="seat">
                         <input type="checkbox" name="refNo" value="Seat 1A" id="1A" data-price="100" />
                         <label for="1A">1A</label>
@@ -166,11 +166,11 @@
             <h6>Selected Seats :</h6>
             <ul id="selectedSeats"></ul>
              <h6>payment method:</h6>
-           <select class="form-select container mt-3" id="sel1" name="paymentmethod">
+           <select class="form-select container mt-3" id="sel1" name="paymentMethod">
 			  <option>Debit card</option>
 			  <option>Cash</option>
 			</select>
- 			<div name = "totalprice">
+ 			<div name = "totalPrice">
             <h6>Total price: <span id="totalPrice" >0</span></h6>
             </div>
             <div class="mt-3">

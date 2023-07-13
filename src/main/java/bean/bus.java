@@ -4,6 +4,7 @@ public class bus {
 		private int busID;
 		private String name;
 		private String noPlate;
+		private int counter;
 		
 		public bus(int busID, String name, String noPlate) {
 			super();
@@ -20,6 +21,11 @@ public class bus {
 		
 		public bus() {
 			
+		}
+		
+		public bus(int counter) {
+			super();
+			this.counter = counter;
 		}
 
 		public int getBusID() {
@@ -44,6 +50,14 @@ public class bus {
 
 		public void setNoPlate(String noPlate) {
 			this.noPlate = noPlate;
+		}
+
+		public int getCounter() {
+			return counter;
+		}
+
+		public void setCounter(int counter) {
+			this.counter = counter;
 		}
 		
 		

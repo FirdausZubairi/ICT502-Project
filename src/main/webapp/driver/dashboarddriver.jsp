@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +17,7 @@
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="driver.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 
@@ -62,6 +67,8 @@
 		<div class="offset-4 justify-content-center" style="height: 400px; width: 400px;">
 			<canvas id="pieChart" style=""></canvas>
 		</div>
+		
+		<p id="bus" style="display: none;">${busCount}</p>
 		<p style="text-align: center;">Discover a seamless way to travel
 			with our advanced bus booking system. Experience convenience,
 			reliability, and efficiency as you effortlessly reserve your bus
@@ -88,30 +95,28 @@
 
 	<script>
   // Dummy data
-  const data = [
-    { category: 'Driver', value: 9 },
-    { category: 'Bus', value: 9 },
-    { category: 'Destination', value: 25 }
-  ];
+  	let valBus = document.getElementById("bus").innerText;
 
-  // Get the canvas element
-  const canvas = document.getElementById('pieChart');
-
-  // Create the chart
-  const ctx = canvas.getContext('2d');
-  const chart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: data.map(item => item.category),
-      datasets: [{
-        data: data.map(item => item.value),
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-      }]
-    },
-    options: {
-      responsive: true
-    }
-  });
+    var pieData = {
+            labels: ['bus3', 'bus2', 'bus1'],
+            datasets: [{
+              data: [valBus, valBus, valBus],
+              backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+          };
+	 
+      var pieCtx = document.getElementById('pieChart').getContext('2d');
+      var pieChart = new Chart(pieCtx, {
+        type: 'pie',
+        data: pieData,
+        options: options
+      });
+      var options = {
+    	        responsive: true,
+    	        maintainAspectRatio: false
+    	      };
 </script>
+
+
 </body>
 </html>
