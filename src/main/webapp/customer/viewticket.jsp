@@ -63,33 +63,30 @@
 							<thead class="header">
 								<tr>
 									<th scope="col">Ticket ID</th>
-									<th scope="col">Type</th>
 									<th scope="col">Date</th>
-									<th scope="col">Price</th>
 									<th scope="col">Destination ID</th>
 									<th scope="col">Bus ID</th>
+									<th scope="col">Bus Name</th>
+									<th scope="col">Destination Name</th>
 									
 									<!-- New column for actions -->
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="stf" items="${listStaff}">
-									<tr key="<c:out value="${stf.ticketID}" />">
+								<c:forEach var="tb" items="${listTicket}">
+									<tr key="<c:out value="${tb.ticketID}" />">
 
 										<th scope="row" style="color: #FF4E5B !important;"><c:out
-												value="${stf.ticketID}" /></th>
-										<td><c:out value="${stf.getType()}" /></td>
-										<td><c:out value="${stf.date}" /></td>
-										<td><c:out value="${stf.price}" /></td>
-										<td><c:out value="${stf.destinationID}" /></td>
-										<td><c:out value="${stf.busID}" /></td>
+												value="${tb.ticketID}" /></th>
+										<td><c:out value="${tb.ticketDate}" /></td>
+										<td><c:out value="${tb.destinationID}" /></td>
+										<td><c:out value="${tb.busID}" /></td>
+										<td><c:out value="${tb.name}" /></td>
+										<td><c:out value="${tb.destinationName}" /></td>
 										<td>
-											<!-- Update Button -->
-											<button type="button" class="btn btn-primary"
-												onclick="myFunction(<c:out value='${stf.ticketID}'/>, '/ICT502-Project/staff/update-staff')">
-												Update</button> <!-- Delete Button -->
+										 <!-- Delete Button -->
 											<button type="button" class="btn btn-danger"
-												onclick="myFunction(<c:out value="${stf.ticketID}"/>, 'DeleteStaff')">
+												onclick="myFunction(<c:out value="${tb.ticketID}"/>, 'DeleteStaff')">
 												Delete</button>
 										</td>
 									</tr>

@@ -1,38 +1,36 @@
 package controller.customer;
 
 import jakarta.servlet.RequestDispatcher;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
-import services.passengerService;
+import services.busService;
+import services.ticketService;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.util.List;
 
-
-import bean.passenger;
+import bean.BusDest;
+import bean.TBD;
+import bean.ticket;
 
 /**
- * Servlet implementation class passengerControl
+ * Servlet implementation class ReadTicket
  */
-@WebServlet("/customer/CreatePassenger")
-public class CreatePassenger extends HttpServlet {
+@WebServlet("/customer/viewticket")
+public class ReadTicket extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private passengerService PassengerService;
-	
-	public void init() {
-		PassengerService = new passengerService();
-	}
+	private ticketService TicketService;
        
+	public void init() {
+		TicketService = new ticketService();
+	}
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreatePassenger() {
+    public ReadTicket() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,7 +41,10 @@ public class CreatePassenger extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/customer/bookingdetail-customer.jsp");
+		List<TBD> listTicket = TicketService.selectAllTicketService();
+		request.setAttribute("listTicket", listTicket);
+		System.out.println(listTicket.isEmpty());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewticket.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -52,29 +53,7 @@ public class CreatePassenger extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	//	doGet(request, response);
-		HttpSession session = request.getSession();
-		String name =request.getParameter("name");
-		String phone =request.getParameter("phone");
-
-		System.out.println("name: " + name);
-		System.out.println("phone: " + phone);
-		
-
-		try {
-		    System.out.println("hello 2");
-		    passenger Passenger = new passenger( name, phone);
-		    PassengerService.insertPassenger(Passenger);
-		    System.out.println("passenger successfully");
-
-		    response.sendRedirect(request.getContextPath() + "/customer/create-ticket.jsp");
-		} catch (SQLException e) {
-		    e.printStackTrace();
-		}
-		
-	
-	
-}
+//		doGet(request, response);
 	}
 
-
+}

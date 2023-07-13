@@ -8,7 +8,6 @@ public class ticket {
 	int destinationID;
 	int busID;
 	
-	
 	public ticket(int ticketID, Date ticketDate, int destinationID, int busID) {
 		super();
 		this.ticketID = ticketID;
@@ -23,7 +22,7 @@ public class ticket {
 		this.destinationID = destinationID;
 		this.busID = busID;
 	}
-	
+
 	public int getTicketID() {
 		return ticketID;
 	}
