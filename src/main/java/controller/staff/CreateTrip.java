@@ -94,7 +94,7 @@ public class CreateTrip extends HttpServlet {
 		
 	try {
 	    System.out.println("hello 2");
-	    trip Trip = new trip(busID, destinationID, time);
+	    trip Trip = new trip(destinationID, busID, time);
 	    TripService.insertTrip(Trip);
 	    System.out.println("Trip inserted successfully");
 

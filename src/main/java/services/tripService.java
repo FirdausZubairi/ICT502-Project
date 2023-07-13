@@ -21,7 +21,7 @@ public class tripService {
 	private String jdbcPassword = "system";
 	
 
-	private String INSERT_TRIP_SQL = "INSERT INTO trip(busID, destinationID, time) VALUES(?,?,?)";
+	private String INSERT_TRIP_SQL = "INSERT INTO trip(busid, destinationid, time) VALUES(?,?,?)";
 	private String DELETE_TRIP_SQL = "DELETE FROM trip WHERE busid = ? AND destinationid = ?";
 			
 	public tripService() {
@@ -74,7 +74,11 @@ public class tripService {
 				preparedStatement.setInt(2, Trip.getDestinationID());
 				preparedStatement.setString(3, Trip.getTime());
 
+				System.out.println("Bus ID :" + Trip.getBusID());
+				System.out.println("Destination ID :" + Trip.getDestinationID());
+				
 				preparedStatement.executeUpdate();
+			
 
 				status = true;
 
