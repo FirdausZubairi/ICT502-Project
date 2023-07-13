@@ -70,7 +70,7 @@
       </div>
       <div class="col-md-6">
         <h1>Passenger Details</h1>
-        <form action="passengerControl" method="post">
+        <form action="CreatePassenger" method="post">
           <div class="form-group">
             <label for="customerName">Name</label>
             <input type="text" class="form-control" id="customerName" name ="name" placeholder="Enter passenger name" required>

@@ -15,7 +15,7 @@ public class ticketService {
 	private String jdbcUsername = "dbbt";
 	private String jdbcPassword = "system";
 	
-	private String INSERT_TICKET_SQL = "INSERT INTO ticket( type, ticketDate, price) VALUES(?,?,?)";
+	private String INSERT_TICKET_SQL = "INSERT INTO ticket( ticketDate, busID, destinationID) VALUES(?,?,?)";
 	
 	public ticketService() {
 		encryptDecryptPass = new EncryptDecryptPass();
@@ -59,9 +59,10 @@ public class ticketService {
 
 				try (Connection connection = getConnection();
 						PreparedStatement preparedStatement = connection.prepareStatement(INSERT_TICKET_SQL)) {
-					preparedStatement.setString(1, Ticket.getType());
-					preparedStatement.setDate(2, Ticket.getTicketDate());
-					preparedStatement.setString(3, Ticket.getPrice());
+		
+					preparedStatement.setDate(1, Ticket.getTicketDate());
+					preparedStatement.setInt(2, Ticket.getBusID());
+					preparedStatement.setInt(3, Ticket.getDestinationID());
 
 					preparedStatement.executeUpdate();
 

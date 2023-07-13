@@ -7,26 +7,36 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import services.busService;
+import services.destinationService;
 import services.staffService;
 import services.ticketService;
+import services.tripService;
 
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 
+import bean.bus;
+import bean.destination;
 import bean.staff;
 import bean.ticket;
 
 /**
  * Servlet implementation class CreateTicket
  */
-@WebServlet("/customer/CreateTicket")
+@WebServlet("/customer/create-ticket")
 public class CreateTicket extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ticketService TicketService;
+	private destinationService DestinationService;
+	private busService BusService;
 	
 	public void init() {
 		TicketService = new ticketService();
+		DestinationService = new destinationService();
+		BusService = new busService();
 	}
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,11 +49,15 @@ public class CreateTicket extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/customer/create-ticket.jsp");
-		dispatcher.forward(request, response);
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		List<bus> listBus = BusService.selectAllBusName();
+		List<destination> listDest= DestinationService.selectAllDestination();		
+		request.setAttribute("listBus", listBus);
+		request.setAttribute("listDestination", listDest);
+		RequestDispatcher rd = request.getRequestDispatcher("/customer/create-ticket.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -52,33 +66,36 @@ public class CreateTicket extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		bus Bus = new bus();
+		destination Dest = new destination();
 		
-		HttpSession session = request.getSession();
-		String type = request.getParameter("type");
-		Date ticketDate = Date.valueOf(request.getParameter("ticketDate"));
-		String price = request.getParameter("price");
+		Bus.setName(request.getParameter("name"));
+		Dest.setDestinationName(request.getParameter("destinationName"));
+		
+		System.out.println("model Bus Name : " + Bus.getName());
+		System.out.println("model Destination Name : " + Dest.getDestinationName());
+		
+		int busID = Integer.parseInt(request.getParameter("busID"));
+		int destinationID = Integer.parseInt(request.getParameter("destinationID"));
+				Date ticketDate = Date.valueOf(request.getParameter("ticketDate"));
+		
+		System.out.println("busID : " + busID);
+		System.out.println("destinationID : " + destinationID);
+		System.out.println("Time: " + ticketDate);
+		
+	try {
+	    System.out.println("hello 2");
+	    ticket Ticket = new ticket(ticketDate, busID, destinationID);
+	    TicketService.insertTicket(Ticket);
+	    System.out.println("Ticket inserted successfully");
 
-		System.out.println("type: " + type);
-		System.out.println("date: " + ticketDate);
-		System.out.println("price: " + price);
-
-		System.out.println("hello 1");
-
-		try {
-		    System.out.println("hello 2");
-		    ticket Ticket = new ticket(type, ticketDate, price);
-		    TicketService.insertTicket(Ticket);
-		    System.out.println("Staff inserted successfully");
-
-		    response.sendRedirect(request.getContextPath() + "/customer/SeatSelect.jsp");
-		} catch (SQLException e) {
-		    e.printStackTrace();
-		}
+	    response.sendRedirect(request.getContextPath() + "/customer/seatSelect.jsp");
+	} catch (SQLException e) {
+	    e.printStackTrace();
 		
 	}
 		
 		
-		
 	}
-
+}
 

@@ -19,8 +19,8 @@ import bean.passenger;
 /**
  * Servlet implementation class passengerControl
  */
-@WebServlet("/customer/passengerControl")
-public class passengerControl extends HttpServlet {
+@WebServlet("/customer/CreatePassenger")
+public class CreatePassenger extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private passengerService PassengerService;
 	
@@ -31,7 +31,7 @@ public class passengerControl extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public passengerControl() {
+    public CreatePassenger() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -66,7 +66,7 @@ public class passengerControl extends HttpServlet {
 		    PassengerService.insertPassenger(Passenger);
 		    System.out.println("passenger successfully");
 
-		    response.sendRedirect(request.getContextPath() + "/customer/create-ticket");
+		    response.sendRedirect(request.getContextPath() + "/customer/create-ticket.jsp");
 		} catch (SQLException e) {
 		    e.printStackTrace();
 		}
