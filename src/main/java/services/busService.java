@@ -113,7 +113,7 @@ private EncryptDecryptPass encryptDecryptPass;
 					
 //					if(doctor_id == session_doc_id) {
 					
-				busDest.add(new BusDest(busID, name, noPlate, destinationID, destinationName));
+				busDest.add(new BusDest(busID, name, noPlate, destinationID, destinationName, time));
 					
 //					}
 					

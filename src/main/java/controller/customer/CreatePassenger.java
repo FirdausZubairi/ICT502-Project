@@ -67,7 +67,7 @@ public class CreatePassenger extends HttpServlet {
 		    PassengerService.insertPassenger(Passenger);
 		    System.out.println("passenger successfully");
 
-		    response.sendRedirect(request.getContextPath() + "/customer/create-ticket.jsp");
+		    response.sendRedirect(request.getContextPath() + "/customer/create-ticket");
 		} catch (SQLException e) {
 		    e.printStackTrace();
 		}

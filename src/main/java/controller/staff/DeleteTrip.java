@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * Servlet implementation class DeleteBusDes
  */
 @WebServlet("/staff/DeleteBusDes")
-public class DeleteBusDes extends HttpServlet {
+public class DeleteTrip extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private tripService TripService;
     /**
@@ -24,7 +24,7 @@ public class DeleteBusDes extends HttpServlet {
 	public void init() {
 		TripService = new tripService();
 	}
-    public DeleteBusDes() {
+    public DeleteTrip() {
         super();
         // TODO Auto-generated constructor stub
     }
