@@ -26,4 +26,22 @@ public class ChartDOA {
 
         return CountBus;
         }
+	
+	public int getCountDest() {
+        int CountDest = 0;
+        
+        try (Connection connection = ConnectionManager.getConnection();
+                PreparedStatement statement = connection.prepareStatement("SELECT COUNT(*) AS count FROM destination")) {
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                CountDest = resultSet.getInt("count");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return CountDest;
+        }
 }

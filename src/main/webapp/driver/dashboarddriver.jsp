@@ -69,6 +69,8 @@
 		</div>
 		
 		<p id="bus" style="display: none;">${busCount}</p>
+		<p id="dest" style="display: none;">${destCount}</p>
+		
 		<p style="text-align: center;">Discover a seamless way to travel
 			with our advanced bus booking system. Experience convenience,
 			reliability, and efficiency as you effortlessly reserve your bus
@@ -96,12 +98,13 @@
 	<script>
   // Dummy data
   	let valBus = document.getElementById("bus").innerText;
+  	let valDest = document.getElementById("dest").innerText;
 
     var pieData = {
-            labels: ['bus3', 'bus2', 'bus1'],
+            labels: ['bus', 'destination'],
             datasets: [{
-              data: [valBus, valBus, valBus],
-              backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+              data: [valBus, valDest],
+              backgroundColor: ['#FF6384', '#36A2EB']
             }]
           };
 	 

@@ -10,7 +10,7 @@ import services.ChartDOA;
 /**
  * Servlet implementation class ChartController
  */
-@WebServlet("/driver/ChartDOA")
+@WebServlet("/driver/dashboarddriver")
 public class ChartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ChartDOA chartDOA;
@@ -25,6 +25,7 @@ public class ChartController extends HttpServlet {
         chartDOA = new ChartDOA();
         // TODO Auto-generated constructor stub
     }
+    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,11 +35,14 @@ public class ChartController extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		int busCount = chartDOA.getCountBus();
+		int destCount = chartDOA.getCountDest();
 		
 		System.out.println("name COUNT: " + busCount);
+		System.out.println("dest COUNT: " + destCount);
 		
 		  request.setAttribute("busCount", busCount);
-		  request.getRequestDispatcher("/driver/dashboarddriver").forward(request, response);
+		  request.setAttribute("destCount", destCount);
+		  request.getRequestDispatcher("/driver/dashboarddriver.jsp").forward(request, response);
 	}
 
 	/**
@@ -50,3 +54,4 @@ public class ChartController extends HttpServlet {
 	}
 
 }
+
