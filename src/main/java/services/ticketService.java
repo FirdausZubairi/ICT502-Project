@@ -63,26 +63,32 @@ public class ticketService {
 	}
 
 	// CREATE Ticket
-	public boolean insertTicket(ticket Ticket) throws SQLException {
-		boolean status = false;
-
+	public int insertTicket(ticket Ticket) throws SQLException {
+		
+		int id = 0;
 		try (Connection connection = getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_TICKET_SQL)) {
-
+				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_TICKET_SQL, new String[] { "ticketid" })) {
+				
 			preparedStatement.setDate(1, Ticket.getTicketDate());
 			preparedStatement.setInt(2, Ticket.getBusID());
 			preparedStatement.setInt(3, Ticket.getDestinationID());
-
+			
+			System.out.println(id);
 			preparedStatement.executeUpdate();
 
-			status = true;
+			ResultSet rs = preparedStatement.getGeneratedKeys();
+			if (rs.next()) {
+				System.out.println("Ticket ID: " + rs.getInt(1));
+				id = rs.getInt(1);
+				System.out.println("Ticket Pass... ");
+
+			}
 
 		} catch (SQLException e) {
 			printSQLException(e);
-			status = false;
 		}
 
-		return status;
+		return id;
 	}
 
 	// READ Ticket
