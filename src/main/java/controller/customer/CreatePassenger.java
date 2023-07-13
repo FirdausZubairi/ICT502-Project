@@ -54,17 +54,21 @@ public class CreatePassenger extends HttpServlet {
 		// TODO Auto-generated method stub
 	//	doGet(request, response);
 		HttpSession session = request.getSession();
+		
 		String name =request.getParameter("name");
 		String phone =request.getParameter("phone");
 
 		System.out.println("name: " + name);
 		System.out.println("phone: " + phone);
 		
-
+		int id_pass = 0;
 		try {
+			id_pass = PassengerService.insertPassenger(new passenger(name, phone));
 		    System.out.println("hello 2");
 		    passenger Passenger = new passenger( name, phone);
 		    PassengerService.insertPassenger(Passenger);
+		    session.setAttribute("passengerID", id_pass);
+		    
 		    System.out.println("passenger successfully");
 
 		    response.sendRedirect(request.getContextPath() + "/customer/create-ticket");

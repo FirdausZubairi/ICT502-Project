@@ -59,24 +59,29 @@ public class passengerService {
 	}
 	
 	//CREATE Passenger
-			public boolean insertPassenger(passenger Passenger) throws SQLException {
-				boolean status = false;
-
+			public int insertPassenger(passenger Passenger) throws SQLException {
+				
+				int id=0;
 				try (Connection connection = getConnection();
-						PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PASSENGER_SQL)) {
+						PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PASSENGER_SQL, new String[] { "passID" })) {
 					preparedStatement.setString(1, Passenger.getName());
 					preparedStatement.setString(2, Passenger.getPhone());
 
 					preparedStatement.executeUpdate();
 
-					status = true;
+					ResultSet rs = preparedStatement.getGeneratedKeys();
+					if (rs.next()) {
+						System.out.println("Generated ID: " + rs.getInt(1));
+						id = rs.getInt(1);
+						System.out.println(" ID pass... ");
+
+					}
 
 				} catch (SQLException e) {
 					printSQLException(e);
-					status = false;
 				}
 
-				return status;
+				return id;
 			}
 	//READ Passenger
 			//READ BUS

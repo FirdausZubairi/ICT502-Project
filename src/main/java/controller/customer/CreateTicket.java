@@ -20,6 +20,7 @@ import java.util.List;
 
 import bean.bus;
 import bean.destination;
+import bean.passenger;
 import bean.staff;
 import bean.ticket;
 
@@ -66,6 +67,7 @@ public class CreateTicket extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		HttpSession session = request.getSession();
 		bus Bus = new bus();
 		destination Dest = new destination();
 		
@@ -83,11 +85,14 @@ public class CreateTicket extends HttpServlet {
 		System.out.println("destinationID : " + destinationID);
 		System.out.println("Time: " + ticketDate);
 		
+	int id_ticket = 0;	
 	try {
+		id_ticket = TicketService.insertTicket(new ticket(ticketDate, busID, destinationID));
 	    System.out.println("hello 2");
 	    ticket Ticket = new ticket(ticketDate, busID, destinationID);
 	    TicketService.insertTicket(Ticket);
 	    System.out.println("Ticket inserted successfully");
+	    session.setAttribute("ticketID", id_ticket);
 
 	    response.sendRedirect(request.getContextPath() + "/customer/seatSelect.jsp");
 	} catch (SQLException e) {
