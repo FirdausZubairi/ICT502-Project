@@ -96,7 +96,8 @@
 
 							<div class="form-group">
 
-								<label for="name"><b>Bus name</b></label> <select name="busID"
+								<label for="name"><b>Bus name</b></label> 
+								<select name="busID"
 									class="form-select" aria-label="Default select example">
 									<option selected hidden>Choose Bus Name</option>
 									<c:forEach items="${listBus}" var="bus">

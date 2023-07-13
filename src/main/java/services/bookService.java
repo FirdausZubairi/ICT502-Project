@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bean.book;
+<<<<<<< HEAD
 import bean.passenger;
 import helper.EncryptDecryptPass;
 
@@ -13,6 +14,13 @@ public class bookService {
 	
 	private EncryptDecryptPass encryptDecryptPass;
 	
+=======
+import helper.EncryptDecryptPass;
+
+public class bookService {
+	private EncryptDecryptPass encryptDecryptPass;
+
+
 	private String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String jdbcUsername = "dbbt";
 	private String jdbcPassword = "system";
@@ -22,7 +30,9 @@ public class bookService {
 	public bookService() {
 		encryptDecryptPass = new EncryptDecryptPass();
 	}
-	
+
+
+
 	public Connection getConnection() {
 		Connection connection = null;
 		try {
@@ -38,7 +48,8 @@ public class bookService {
 		}
 		return connection;
 	}
-	
+
+
 	public void printSQLException(SQLException ex) {
 		for (Throwable e : ex) {
 			if (e instanceof SQLException) {
@@ -54,15 +65,21 @@ public class bookService {
 			}
 		}
 	}
-	//CREATE Book
+
+
+	// CREATE BOOK
+
 	public boolean insertBook(book Book) throws SQLException {
 		boolean status = false;
 
 		try (Connection connection = getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_BOOK_SQL)) {
-			preparedStatement.setString(1, Book.getSeat());
-			preparedStatement.setDouble(2, Book.getTotalPrice());
-			preparedStatement.setString(3, Book.getPaymentMethod());
+
+			preparedStatement.setInt(1, Book.getTicketID());
+			preparedStatement.setInt(2, Book.getPassID());
+			preparedStatement.setString(3, Book.getSeat());
+			preparedStatement.setDouble(4, Book.getTotalPrice());
+			preparedStatement.setString(5, Book.getPaymentMethod());
 
 			preparedStatement.executeUpdate();
 

@@ -105,7 +105,7 @@
               </div>
 <div class="col-md-12 text-center">
   <input class="btn btn-secondary btn-sm" type="reset" value="Reset">
-  <a href="bookingdetail.jsp" class="btn btn-primary btn-sm active" type="submit" value="Submit" role="button" aria-pressed="true">Submit</a>
+  <a href="bookingdetail" class="btn btn-primary btn-sm active" type="submit" value="Submit" role="button" aria-pressed="true">Submit</a>
 </div>
 
               <br><br>

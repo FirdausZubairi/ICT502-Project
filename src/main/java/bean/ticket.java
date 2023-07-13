@@ -22,6 +22,9 @@ public class ticket {
 		this.destinationID = destinationID;
 		this.busID = busID;
 	}
+	public ticket() {
+		
+	}
 
 	public int getTicketID() {
 		return ticketID;

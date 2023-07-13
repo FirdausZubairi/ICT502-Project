@@ -19,7 +19,7 @@ import bean.staff;
  * Servlet implementation class ReadBusDest
  */
 @WebServlet("/staff/bustrip")
-public class ReadBusDest extends HttpServlet {
+public class ReadTrip extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private busService BusDestService;
        
@@ -30,7 +30,7 @@ public class ReadBusDest extends HttpServlet {
 		BusDestService = new busService();
 	}
 	
-    public ReadBusDest() {
+    public ReadTrip() {
         super();
         // TODO Auto-generated constructor stub
     }

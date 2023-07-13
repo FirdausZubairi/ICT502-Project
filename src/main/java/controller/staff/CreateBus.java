@@ -62,7 +62,7 @@ public class CreateBus extends HttpServlet {
 		    BusService.insertBus(Bus);
 		    System.out.println("Bus inserted successfully");
 
-		    response.sendRedirect(request.getContextPath() + "/staff/busdetail-staff.jsp");
+		    response.sendRedirect(request.getContextPath() + "/staff/busdetail-staff");
 		} catch (SQLException e) {
 		    e.printStackTrace();
 		}
