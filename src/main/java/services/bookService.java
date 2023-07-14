@@ -6,10 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bean.book;
+import bean.passenger;
+import helper.EncryptDecryptPass;
+	
 import helper.EncryptDecryptPass;
 
 public class bookService {
 	private EncryptDecryptPass encryptDecryptPass;
+
 
 	private String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String jdbcUsername = "dbbt";
@@ -20,6 +24,8 @@ public class bookService {
 	public bookService() {
 		encryptDecryptPass = new EncryptDecryptPass();
 	}
+
+
 
 	public Connection getConnection() {
 		Connection connection = null;
@@ -37,6 +43,7 @@ public class bookService {
 		return connection;
 	}
 
+
 	public void printSQLException(SQLException ex) {
 		for (Throwable e : ex) {
 			if (e instanceof SQLException) {
@@ -53,12 +60,15 @@ public class bookService {
 		}
 	}
 
+
 	// CREATE BOOK
+
 	public boolean insertBook(book Book) throws SQLException {
 		boolean status = false;
 
 		try (Connection connection = getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_BOOK_SQL)) {
+
 			preparedStatement.setInt(1, Book.getTicketID());
 			preparedStatement.setInt(2, Book.getPassID());
 			preparedStatement.setString(3, Book.getSeat());
@@ -77,3 +87,4 @@ public class bookService {
 		return status;
 	}
 }
+

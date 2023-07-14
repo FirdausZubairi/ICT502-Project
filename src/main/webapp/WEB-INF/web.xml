@@ -210,6 +210,8 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+
+
     <display-name>CreateBook</display-name>
     <servlet-name>CreateBook</servlet-name>
     <servlet-class>controller.customer.CreateBook</servlet-class>
@@ -218,6 +220,7 @@
     <servlet-name>CreateBook</servlet-name>
     <url-pattern>/CreateBook</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
   <servlet>
     <description></description>
     <display-name>DeleteTicket</display-name>
@@ -228,4 +231,7 @@
     <servlet-name>DeleteTicket</servlet-name>
     <url-pattern>/DeleteTicket</url-pattern>
   </servlet-mapping>
+=======
+
+>>>>>>> 43a8e5afa6e8297ffbd5fe38c7e0b6affc2283c5
 </web-app>

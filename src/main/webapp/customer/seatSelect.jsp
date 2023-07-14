@@ -41,6 +41,7 @@
 		</div>
 	</nav>
 
+
 	<!--Sidebar menu-->
 	<div class="container-fluid">
 		<div class="row">
@@ -71,6 +72,7 @@
 		</div>
 	</div>
 	<!-- End sidebar -->
+
 
 	<section class="col-9 offset-3 main-section" style="padding-top: 70px">
 		<div class="container">

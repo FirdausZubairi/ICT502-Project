@@ -1,6 +1,7 @@
 package controller.customer;
 
 import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import services.bookService;
 import services.passengerService;
+
 import services.staffService;
 import services.ticketService;
 
@@ -24,9 +26,11 @@ import bean.staff;
 import bean.ticket;
 import bean.trip;
 
+
 /**
  * Servlet implementation class CreateBook
  */
+
 @WebServlet("/customer/seatSelect")
 public class CreateBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -41,6 +45,7 @@ public class CreateBook extends HttpServlet {
 		TicketService = new ticketService();
 		PassengerService = new passengerService();
 	}
+
     public CreateBook() {
         super();
         // TODO Auto-generated constructor stub
@@ -51,12 +56,14 @@ public class CreateBook extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
 		List<ticket> listTicket = TicketService.selectAllTicket();
 		List<passenger> listPassenger= PassengerService.selectAllPassenger();		
 		request.setAttribute("listTicket", listTicket);
 		request.setAttribute("listPassenger", listPassenger);
 		RequestDispatcher rd = request.getRequestDispatcher("seatSelect.jsp");
 		rd.forward(request, response);
+
 	}
 
 	/**
@@ -64,6 +71,7 @@ public class CreateBook extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
 //		doGet(request, response);
 		
 		ticket Ticket = new ticket();
@@ -114,3 +122,4 @@ public class CreateBook extends HttpServlet {
 	}
 
 }
+

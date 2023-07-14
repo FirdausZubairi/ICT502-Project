@@ -1,12 +1,16 @@
 package bean;
 
 public class book {
+
+
 	private int ticketID;
 	private int passID;
 	private String seat;
 	private double totalPrice;
 	private String paymentMethod;
 	
+
+
 	public book(int ticketID, int passID, String seat, double totalPrice, String paymentMethod) {
 		super();
 		this.ticketID = ticketID;
@@ -16,12 +20,15 @@ public class book {
 		this.paymentMethod = paymentMethod;
 	}
 
+
 	public book(String seat, double totalPrice, String paymentMethod) {
+
 		super();
 		this.seat = seat;
 		this.totalPrice = totalPrice;
 		this.paymentMethod = paymentMethod;
 	}
+
 
 	public int getTicketID() {
 		return ticketID;
@@ -59,11 +66,14 @@ public class book {
 		return paymentMethod;
 	}
 
+
 	public void setPaymentMethod(String paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
 	
 	
 	
+
 	
+
 }
