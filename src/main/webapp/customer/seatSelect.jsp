@@ -56,13 +56,13 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="booking-customer.jsp"> <i
+					<a class="nav-link" href="bookingdetail"> <i
 						class="fa fa-bus" style="margin-right: 20px"></i> <span>Booking</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link mb-2" href="viewticket.jsp"> <i
+					<a class="nav-link mb-2" href="viewticket"> <i
 						class="fa-sharp fa-solid fa-ticket" style="margin-right: 20px"></i>
 						<span>View Ticket</span>
 					</a>
@@ -84,7 +84,7 @@
 										<h2>Please select a seat</h2>
 									</div>
 									<div class="steering">
-										<img src="image/STEERING.png">
+										<img src="/ICT502-Project/image/steering.png" style="width: 30px; height: 30px;">
 									</div>
 									<div class="exit"></div>
 									<ol>
@@ -164,7 +164,7 @@
 						<h6>Selected Seats :</h6>
 						<ul id="selectedSeats" name="seat"></ul>
 						<h6>payment method:</h6>
-						<select class="form-select container mt-3" id="sel1"
+						<select class="form-control container mt-3" id="sel1"
 							name="paymentMethod" required>
 							<option>Please Select</option>
 							<option value="Debit">Debit card</option>
@@ -172,7 +172,8 @@
 						</select>
 						<br>
 						<div>
-							<input type="text" name="totalPrice" id="hiddenTotalPrice"
+							<h6>Price :</h6>
+							<input type="text" class="form-control" name="totalPrice" id="hiddenTotalPrice"
 								readonly>
 							<h6>
 								Total price: <span id="totalPrice">0</span>

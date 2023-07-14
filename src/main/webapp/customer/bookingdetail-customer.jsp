@@ -45,12 +45,12 @@
           Dashboard
         </a>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-        <a class="nav-link" href="booking-customer.jsp">
+        <a class="nav-link" href="bookingdetail">
           <i class="fa fa-bus" style="margin-right: 20px"></i>
           <span>Booking</span>
         </a>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom" style="padding: 0 40px"></div>
-        <a class="nav-link mb-2" href="viewticket.jsp">
+        <a class="nav-link mb-2" href="viewticket">
           <i class="fa-sharp fa-solid fa-ticket" style="margin-right: 20px"></i>
           <span>View Ticket</span>
         </a>

@@ -52,13 +52,13 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="booking-customer.jsp"> <i
+					<a class="nav-link" href="bookingdetail"> <i
 						class="fa fa-bus" style="margin-right: 20px"></i> <span>Booking</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link mb-2" href="viewticket.jsp"> <i
+					<a class="nav-link mb-2" href="viewticket"> <i
 						class="fa-sharp fa-solid fa-ticket" style="margin-right: 20px"></i>
 						<span>View Ticket</span>
 					</a>
@@ -77,47 +77,16 @@
 		<div class="container mt-5">
 			<form action="#" method="#">
 				<div class="row">
-					<div class="col-md-4 mb-3">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i
-									class="fas fa-map-marker-alt"></i></span>
-							</div>
-							<div class="form-control-plaintext text-center"
-								style="padding-top: 0.375rem; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #f8f9fa;">KL
-								Sentral</div>
-
-
-
-
-
-						</div>
-					</div>
-
-					<div class="col-md-4 mb-3">
+					<div class="container d-flex flex justify-content-center col-md-4 mb-3">
 						<div class="input-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i
 									class="fas fa-map-marker-alt"></i></span>
 							</div>
 							<select class="custom-select" id="toSelect">
-								<option disabled selected>Select destination</option>
-								<option value="1">Melaka Sentral</option>
-								<option value="2">Kelantan Sentral</option>
-								<option value="3">Cheras Sentral</option>
-								<option value="4">Terminal Bas Kota Bharu</option>
-							</select>
-						</div>
-					</div>
+								<option disabled selected>KL Sentral</option>
 
-					<div class="col-md-4 mb-3">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i
-									class="fas fa-calendar-alt"></i></span>
-							</div>
-							<input type="date" class="form-control text-center" id="date"
-								min="">
+							</select>
 						</div>
 					</div>
 

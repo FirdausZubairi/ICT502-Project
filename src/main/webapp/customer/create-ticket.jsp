@@ -55,13 +55,13 @@
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link" href="booking-customer.jsp"> <i
+					<a class="nav-link" href="bookingdetail"> <i
 						class="fa fa-bus" style="margin-right: 20px"></i> <span>Booking</span>
 					</a>
 					<div
 						class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-3 mb-3 border-bottom"
 						style="padding: 0 40px"></div>
-					<a class="nav-link mb-2" href="viewticket.jsp"> <i
+					<a class="nav-link mb-2" href="viewticket"> <i
 						class="fa-sharp fa-solid fa-ticket" style="margin-right: 20px"></i>
 						<span>View Ticket</span>
 					</a>
@@ -90,8 +90,10 @@
 						</div>
 
 						<div class="form-group">
-							<label for="name"><b>Bus name</b></label> <select name="busID"
-								class="form-select" aria-label="Default select example">
+							<label for="name"><b>Bus name</b></label> <br>
+							<select name="busID"
+								class="form-control"
+									aria-label="Default select example">
 								<option selected hidden>Choose Bus Name</option>
 								<c:forEach items="${listBus}" var="bus">
 									<option value="${bus.busID }"><c:out
@@ -101,9 +103,10 @@
 						</div>
 
 						<div class="form-group">
-							<label for="name"><b>Destination name</b></label> <select
-								name="destinationID" class="form-select"
-								aria-label="Default select example">
+							<label for="name"><b>Destination name</b></label> <br>
+							<select
+								name="destinationID" class="form-control"
+									aria-label="Default select example">
 								<option selected hidden>Choose destination</option>
 								<c:forEach items="${listDestination}" var="des">
 									<option value="${des.destinationID }"><c:out

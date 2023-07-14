@@ -25,7 +25,8 @@ public class ticketService {
 
 	private String INSERT_TICKET_SQL = "INSERT INTO ticket( ticketDate, busID, destinationID) VALUES(?,?,?)";
 	private String SELECT_ALL_TICKET = "SELECT t.ticketID, t.ticketdate, t.destinationid, t.busid, b.name , d.destinationname from bus b join ticket t on t.busid = b.busid join destination d on t.destinationid = d.destinationid";
-
+	private String DELETE_TICKET_SQL = "DELETE FROM ticket WHERE ticketid = ? ";
+	
 	public ticketService() {
 		encryptDecryptPass = new EncryptDecryptPass();
 	}
@@ -159,5 +160,17 @@ public class ticketService {
 		}
 		return tbd;
 	}
+	
+	// DELETE Ticket
+			public boolean deleteTicket(int ticketID) throws SQLException {
+		        boolean rowDeleted;
+		        try (Connection connection = getConnection();) {
+		        	PreparedStatement statement = connection.prepareStatement(DELETE_TICKET_SQL);
+		        	statement.setInt(1, ticketID);
+		        			            
+		            rowDeleted = statement.executeUpdate() > 0;
+		        }
+		        return rowDeleted;
+		    }
 
 }

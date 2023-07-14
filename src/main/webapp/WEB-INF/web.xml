@@ -218,4 +218,14 @@
     <servlet-name>CreateBook</servlet-name>
     <url-pattern>/CreateBook</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteTicket</display-name>
+    <servlet-name>DeleteTicket</servlet-name>
+    <servlet-class>controller.customer.DeleteTicket</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteTicket</servlet-name>
+    <url-pattern>/DeleteTicket</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -94,7 +94,7 @@ public class CreateTicket extends HttpServlet {
 	    System.out.println("Ticket inserted successfully");
 	    session.setAttribute("ticketID", id_ticket);
 
-	    response.sendRedirect(request.getContextPath() + "/customer/seatSelect.jsp");
+	    response.sendRedirect(request.getContextPath() + "/customer/seatSelect");
 	} catch (SQLException e) {
 	    e.printStackTrace();
 		
