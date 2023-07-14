@@ -45,7 +45,7 @@
 					class="nav flex-column flex-nowrap vh-100 overflow-auto text-white"
 					style="padding: 15px 0">
 					<a class="nav-link active" aria-current="page"
-						href="dashboarddriver.jsp" style="margin-top: 70px"> <span
+						href="dashboarddriver" style="margin-top: 70px"> <span
 						class="fas fa-home" style="margin-right: 20px"></span> Dashboard
 					</a>
 					<div
@@ -71,16 +71,10 @@
 		<p id="bus" style="display: none;">${busCount}</p>
 		<p id="dest" style="display: none;">${destCount}</p>
 		
-		<p style="text-align: center;">Discover a seamless way to travel
-			with our advanced bus booking system. Experience convenience,
-			reliability, and efficiency as you effortlessly reserve your bus
-			tickets, manage your bookings, and stay updated on bus schedules.
-			With our user-friendly interface and comprehensive features, embark
-			on a hassle-free journey and explore the world one bus ride at a
-			time.</p>
+		<p style="text-align: center;">Welcome Back Our Driver !!</p>
 		<div class="text-center">
-			<a href="booking.html" class="btn btn-primary btn-lg">View
-				details</a>
+			<a href="schedule-driver" class="btn btn-primary btn-lg">View
+				Schedule</a>
 		</div>
 	</section>
 

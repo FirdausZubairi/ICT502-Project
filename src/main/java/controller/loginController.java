@@ -82,7 +82,7 @@ public class loginController extends HttpServlet {
 	                response.sendRedirect("staff/dashboard-staff.jsp");
 	            } else if (stf.getRole().equals("driver")) {
 	                // Admin login
-	                response.sendRedirect("driver/dashboarddriver.jsp");
+	                response.sendRedirect("driver/dashboarddriver");
 	            
 	            } else {
 	                // Unknown role
